@@ -34,6 +34,7 @@ namespace BaarDanaTraderPOS
         private void btnViewHistory(object sender, EventArgs e)
         {
             //asdsadsadsadasd
+            //asdsadsadsadasd
 
             ViewHistoryForm vhf = new ViewHistoryForm();
             vhf.Show();
