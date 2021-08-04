@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -32,6 +33,8 @@ namespace BaarDanaTraderPOS
 
         private void btnViewHistory(object sender, EventArgs e)
         {
+
+
             ViewHistoryForm vhf = new ViewHistoryForm();
             vhf.Show();
 
