@@ -9,11 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BaarDanaTraderPOS.Screens;
-
 namespace BaarDanaTraderPOS
 {
     public partial class Form1 : Form
     {
+        SqlConnection con = new SqlConnection();
+
 
         public Form1()
         {
@@ -22,7 +23,17 @@ namespace BaarDanaTraderPOS
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            con.ConnectionString = Connection.c;
+            try
+            {
+                con.Open();
+                MessageBox.Show("Connection Succesfull");
+            }
+            catch
+            {
+                MessageBox.Show("Error");
+            }
+            
         }
 
         private void btnCreateOrder(object sender, EventArgs e)
