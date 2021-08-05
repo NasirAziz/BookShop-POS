@@ -142,6 +142,7 @@ namespace BaarDanaTraderPOS.Screens
             this.dgvAddCustomers.RowTemplate.Height = 28;
             this.dgvAddCustomers.Size = new System.Drawing.Size(724, 502);
             this.dgvAddCustomers.TabIndex = 10;
+            this.dgvAddCustomers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAddCustomers_CellDoubleClick);
             // 
             // btnCustomerUpdate
             // 
@@ -191,6 +192,7 @@ namespace BaarDanaTraderPOS.Screens
             this.tbACSearch.Name = "tbACSearch";
             this.tbACSearch.Size = new System.Drawing.Size(343, 30);
             this.tbACSearch.TabIndex = 15;
+            this.tbACSearch.TextChanged += new System.EventHandler(this.tbACSearch_TextChanged);
             // 
             // label5
             // 

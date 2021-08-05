@@ -148,5 +148,37 @@ namespace BaarDanaTraderPOS.Screens
           
 
         }
+
+        private void tbACSearch_TextChanged(object sender, EventArgs e)
+        {
+
+            DataTable customer = new DataTable();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "Select * from Add_customer where Name Like @name + '%'";
+
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("@name", tbACSearch.Text);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            sda.Fill(customer);
+            dgvAddCustomers.DataSource = customer;
+            cmd.ExecuteNonQuery();
+        }
+
+        private void dgvAddCustomers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int id = Convert.ToInt32(dgvAddCustomers.CurrentRow.Cells[0].Value.ToString());
+            String name= dgvAddCustomers.CurrentRow.Cells[1].Value.ToString();
+            int phno = Convert.ToInt32(dgvAddCustomers.CurrentRow.Cells[2].Value.ToString());
+            String Address = dgvAddCustomers.CurrentRow.Cells[3].Value.ToString();
+            int balance = Convert.ToInt32(dgvAddCustomers.CurrentRow.Cells[4].Value.ToString());
+            tbCustomerName.Text = name;
+            tbCustomerPhone.Text = phno.ToString();
+            tbCustomerBalance.Text = balance.ToString();
+            tbCustomerAddress.Text = Address;
+
+                
+
+        }
     }
 }
