@@ -25,3 +25,17 @@ C:\Users\hp\source\repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaT
 C:\Users\hp\source\repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.csproj.CoreCompileInputs.cache
 C:\Users\hp\source\repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.exe
 C:\Users\hp\source\repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.pdb
+C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\bin\Debug\BaarDanaTraderPOS.exe.config
+C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\bin\Debug\BaarDanaTraderPOS.exe
+C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\bin\Debug\BaarDanaTraderPOS.pdb
+C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.csprojAssemblyReference.cache
+C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Properties.Resources.resources
+C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.AddCustomerForm.resources
+C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.AddItemForm.resources
+C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.CreateOrderForm.resources
+C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Form1.resources
+C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.ViewHistoryForm.resources
+C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.csproj.GenerateResource.cache
+C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.csproj.CoreCompileInputs.cache
+C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.exe
+C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.pdb

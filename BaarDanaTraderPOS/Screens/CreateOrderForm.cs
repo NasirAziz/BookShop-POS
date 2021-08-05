@@ -207,8 +207,10 @@ namespace BaarDanaTraderPOS.Screens
             {
                 MessageBox.Show("Please enter valid data");
             }
+            grandTotal = 0;
             foreach (DataRow row in order.Rows)
             {
+                
                 grandTotal += int.Parse(row["Total"].ToString());
             }
             lblGrandTotal.Text = grandTotal.ToString();
