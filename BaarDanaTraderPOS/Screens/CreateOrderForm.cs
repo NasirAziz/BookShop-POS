@@ -32,11 +32,11 @@ namespace BaarDanaTraderPOS.Screens
             con.ConnectionString = Connection.c;
             con.Open();
 
-            order.Columns.Add("ID", typeof(int)); 
-            order.Columns.Add("Product");
-            order.Columns.Add("Quantity", typeof(int));
-            order.Columns.Add("Price", typeof(int));
-            order.Columns.Add("Total", typeof(int));
+            //order.Columns.Add("ID", typeof(int)); 
+            //order.Columns.Add("Product");
+            //order.Columns.Add("Quantity", typeof(int));
+            //order.Columns.Add("Price", typeof(int));
+            //order.Columns.Add("Total", typeof(int));
         }
 
         private void CreateOrderForm_Load(object sender, EventArgs e)
@@ -140,6 +140,53 @@ namespace BaarDanaTraderPOS.Screens
         private void btnCOCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, this.panel1.ClientRectangle, Color.Black, ButtonBorderStyle.Solid);
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, this.panel2.ClientRectangle, Color.Black, ButtonBorderStyle.Solid);
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbOrderCustomerName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, this.panel3.ClientRectangle, Color.Black, ButtonBorderStyle.Solid);
+
+        }
+
+        private void lblGrandTotal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btnCOConfirm_Click(object sender, EventArgs e)
