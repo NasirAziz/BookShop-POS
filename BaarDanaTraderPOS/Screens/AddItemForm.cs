@@ -87,6 +87,8 @@ namespace BaarDanaTraderPOS.Screens
         {
             con.ConnectionString = Connection.c;
             con.Open();
+
+            LoadItems();
         }
 
         private void btnAISearch_Click(object sender, EventArgs e)
@@ -126,12 +128,21 @@ namespace BaarDanaTraderPOS.Screens
         private void btnItemDelete_Click(object sender, EventArgs e)
         {
             DeleteItem(id);
-            LoadItems();
+            tbItemName.Text = "";
+            tbItemPrice.Text = ""; 
+            tbItemQuantity.Text = "";
+            //LoadItems();
         }
 
         private void btnItemCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnShowAll_Click(object sender, EventArgs e)
+        {
+            LoadItems();
+            tbAISearch.Text = "";
         }
 
         private void tbAISearch_TextChanged(object sender, EventArgs e)

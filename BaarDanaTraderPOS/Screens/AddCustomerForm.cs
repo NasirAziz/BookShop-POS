@@ -112,14 +112,17 @@ namespace BaarDanaTraderPOS.Screens
         {
             
             
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = con;
-                cmd.CommandText = "Delete from Add_customer where Customer_id=@id";
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@id", id);
-                cmd.ExecuteNonQuery();
-                LoadCustomers();
-            
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "Delete from Add_customer where Customer_id=@id";
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.ExecuteNonQuery();
+            LoadCustomers();
+            tbCustomerName.Text = "";
+            tbCustomerPhone.Text = "";
+            tbCustomerBalance.Text = "";
+            tbCustomerAddress.Text = "";
 
         }
 
@@ -153,6 +156,12 @@ namespace BaarDanaTraderPOS.Screens
         {
             this.Close();
 
+        }
+
+        private void btnShowAll_Click(object sender, EventArgs e)
+        {
+            LoadCustomers();
+            tbACSearch.Text = "";
         }
 
         private void UpdateCustomer(int id, String name, String address, int phone,int balance)
