@@ -32,11 +32,11 @@ namespace BaarDanaTraderPOS.Screens
             con.ConnectionString = Connection.c;
             con.Open();
 
-            //order.Columns.Add("ID", typeof(int)); 
-            //order.Columns.Add("Product");
-            //order.Columns.Add("Quantity", typeof(int));
-            //order.Columns.Add("Price", typeof(int));
-            //order.Columns.Add("Total", typeof(int));
+            order.Columns.Add("ID", typeof(int)); 
+            order.Columns.Add("Product");
+            order.Columns.Add("Quantity", typeof(int));
+            order.Columns.Add("Price", typeof(int));
+            order.Columns.Add("Total", typeof(int));
         }
 
         private void CreateOrderForm_Load(object sender, EventArgs e)
@@ -187,6 +187,29 @@ namespace BaarDanaTraderPOS.Screens
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCOAddProduct_Click_1(object sender, EventArgs e)
+        {
+
+            try
+            {
+                productName = tbOrderProductName.Text;
+                customerName = tbOrderCustomerName.Text;
+                price = int.Parse(tbOrderProductPrice.Text);
+                quantity = int.Parse(tbOrderProductQuantity.Text);
+                totalPrice = price * quantity;
+            }
+            catch
+            {
+                MessageBox.Show("Please enter valid data");
+            }
+            foreach (DataRow row in order.Rows)
+            {
+                grandTotal += int.Parse(row["Total"].ToString());
+            }
+            lblGrandTotal.Text = grandTotal.ToString();
+            order.Rows.Add(1, productName, quantity, price, totalPrice);
         }
 
         private void btnCOConfirm_Click(object sender, EventArgs e)
