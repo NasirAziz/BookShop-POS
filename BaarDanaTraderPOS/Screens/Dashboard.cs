@@ -27,11 +27,10 @@ namespace BaarDanaTraderPOS
             try
             {
                 con.Open();
-                MessageBox.Show("Connection Succesfull");
             }
             catch
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Error! Database not found.");
             }
             
         }
