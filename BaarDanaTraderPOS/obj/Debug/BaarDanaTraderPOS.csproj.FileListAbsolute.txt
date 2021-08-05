@@ -16,7 +16,6 @@ C:\Users\hp\source\repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaT
 C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS\BaarDanaTraderPOS\bin\Debug\BaarDanaTraderPOS.exe.config
 C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS\BaarDanaTraderPOS\bin\Debug\BaarDanaTraderPOS.exe
 C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS\BaarDanaTraderPOS\bin\Debug\BaarDanaTraderPOS.pdb
-C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.csprojAssemblyReference.cache
 C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Properties.Resources.resources
 C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.AddCustomerForm.resources
 C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.AddItemForm.resources
@@ -28,3 +27,4 @@ C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDa
 C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.csproj.CoreCompileInputs.cache
 C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.exe
 C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.pdb
+C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.csprojAssemblyReference.cache
