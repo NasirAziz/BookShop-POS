@@ -8,6 +8,6 @@ namespace BaarDanaTraderPOS
 {
     class Connection
     {
-        public static String c = @"Data Source=.;Initial Catalog=BaarDanaTraders;Integrated Security=True";
+        public static String c = @"Data Source=ENIGMA\SQLEXPRESS;Initial Catalog=BaarDanaTraders;Integrated Security=True";
     }
 }
