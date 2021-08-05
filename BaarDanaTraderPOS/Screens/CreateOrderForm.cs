@@ -44,6 +44,9 @@ namespace BaarDanaTraderPOS.Screens
             dgvOrderItems.DataSource = order;
 
 
+
+
+
             this.tbOrderProductID.KeyDown += new KeyEventHandler(this.OnKeyDownHandler);
 
         }
@@ -210,6 +213,12 @@ namespace BaarDanaTraderPOS.Screens
             }
             lblGrandTotal.Text = grandTotal.ToString();
             order.Rows.Add(1, productName, quantity, price, totalPrice);
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, this.panel4.ClientRectangle, Color.Black, ButtonBorderStyle.Solid);
+
         }
 
         private void btnCOConfirm_Click(object sender, EventArgs e)
