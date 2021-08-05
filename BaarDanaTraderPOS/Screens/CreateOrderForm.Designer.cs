@@ -83,11 +83,10 @@ namespace BaarDanaTraderPOS.Screens
             // 
             // dgvOrderItems
             // 
-            this.dgvOrderItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvOrderItems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvOrderItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrderItems.Location = new System.Drawing.Point(503, 167);
+            this.dgvOrderItems.Location = new System.Drawing.Point(569, 167);
             this.dgvOrderItems.Name = "dgvOrderItems";
             this.dgvOrderItems.RowHeadersWidth = 62;
             this.dgvOrderItems.RowTemplate.Height = 28;
@@ -119,7 +118,7 @@ namespace BaarDanaTraderPOS.Screens
             this.btnCOConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCOConfirm.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCOConfirm.ForeColor = System.Drawing.Color.White;
-            this.btnCOConfirm.Location = new System.Drawing.Point(1905, 575);
+            this.btnCOConfirm.Location = new System.Drawing.Point(1772, 575);
             this.btnCOConfirm.Name = "btnCOConfirm";
             this.btnCOConfirm.Size = new System.Drawing.Size(186, 120);
             this.btnCOConfirm.TabIndex = 16;
@@ -129,10 +128,10 @@ namespace BaarDanaTraderPOS.Screens
             // 
             // label7
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label7.Location = new System.Drawing.Point(927, 570);
+            this.label7.Location = new System.Drawing.Point(861, 570);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(232, 32);
             this.label7.TabIndex = 17;
@@ -141,11 +140,11 @@ namespace BaarDanaTraderPOS.Screens
             // 
             // lblGrandTotal
             // 
-            this.lblGrandTotal.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lblGrandTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblGrandTotal.AutoSize = true;
             this.lblGrandTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.lblGrandTotal.ForeColor = System.Drawing.Color.Red;
-            this.lblGrandTotal.Location = new System.Drawing.Point(1165, 570);
+            this.lblGrandTotal.Location = new System.Drawing.Point(1099, 570);
             this.lblGrandTotal.Name = "lblGrandTotal";
             this.lblGrandTotal.Size = new System.Drawing.Size(31, 32);
             this.lblGrandTotal.TabIndex = 18;
@@ -307,12 +306,12 @@ namespace BaarDanaTraderPOS.Screens
             // 
             // button1
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button1.BackColor = System.Drawing.Color.DodgerBlue;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Tai Le", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1253, 535);
+            this.button1.Location = new System.Drawing.Point(1187, 535);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(143, 99);
             this.button1.TabIndex = 27;
@@ -324,7 +323,7 @@ namespace BaarDanaTraderPOS.Screens
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CausesValidation = false;
-            this.ClientSize = new System.Drawing.Size(1753, 855);
+            this.ClientSize = new System.Drawing.Size(1620, 855);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
