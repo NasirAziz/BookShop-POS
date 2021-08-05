@@ -114,7 +114,7 @@ namespace BaarDanaTraderPOS.Screens
             this.dgvOrderItems.Name = "dgvOrderItems";
             this.dgvOrderItems.RowHeadersWidth = 62;
             this.dgvOrderItems.RowTemplate.Height = 28;
-            this.dgvOrderItems.Size = new System.Drawing.Size(738, 526);
+            this.dgvOrderItems.Size = new System.Drawing.Size(1196, 526);
             this.dgvOrderItems.TabIndex = 6;
             // 
             // tbOrderProductID
@@ -208,7 +208,7 @@ namespace BaarDanaTraderPOS.Screens
             this.btnCOConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCOConfirm.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCOConfirm.ForeColor = System.Drawing.Color.White;
-            this.btnCOConfirm.Location = new System.Drawing.Point(1063, 575);
+            this.btnCOConfirm.Location = new System.Drawing.Point(1521, 575);
             this.btnCOConfirm.Name = "btnCOConfirm";
             this.btnCOConfirm.Size = new System.Drawing.Size(186, 120);
             this.btnCOConfirm.TabIndex = 16;
@@ -241,7 +241,7 @@ namespace BaarDanaTraderPOS.Screens
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1287, 729);
+            this.ClientSize = new System.Drawing.Size(1745, 836);
             this.Controls.Add(this.lblGrandTotal);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnCOConfirm);

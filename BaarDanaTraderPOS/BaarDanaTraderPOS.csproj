@@ -81,12 +81,6 @@
     <Compile Include="Screens\ViewHistoryForm.Designer.cs">
       <DependentUpon>ViewHistoryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\ViewItemsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screens\ViewItemsForm.Designer.cs">
-      <DependentUpon>ViewItemsForm.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -111,9 +105,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\ViewHistoryForm.resx">
       <DependentUpon>ViewHistoryForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\ViewItemsForm.resx">
-      <DependentUpon>ViewItemsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

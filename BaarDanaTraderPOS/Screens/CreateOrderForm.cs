@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,8 @@ namespace BaarDanaTraderPOS.Screens
     public partial class CreateOrderForm : Form
     {
         private DataTable order = new DataTable();
+        SqlConnection con = new SqlConnection();
+
 
         private String productName;
         private String customerName;
@@ -24,20 +27,44 @@ namespace BaarDanaTraderPOS.Screens
         public CreateOrderForm()
         {
             InitializeComponent();
+
+            con.ConnectionString = Connection.c;
+            con.Open();
+
             order.Columns.Add("ID", typeof(int)); 
             order.Columns.Add("Product");
             order.Columns.Add("Quantity", typeof(int));
             order.Columns.Add("Price", typeof(int));
             order.Columns.Add("Total", typeof(int));
-
-           order.Rows.Add(1, "Tomato",10, 100,1000);
-           order.Rows.Add(2, "Potato", 10, 100, 1000);
-           order.Rows.Add(3, "Apple", 10, 100, 1000);
         }
 
         private void CreateOrderForm_Load(object sender, EventArgs e)
         {
             dgvOrderItems.DataSource = order;
+
+
+            this.tbOrderProductID.KeyDown += new KeyEventHandler(this.OnKeyDownHandler);
+
+        }
+
+        private void OnKeyDownHandler(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                int id = int.Parse(tbOrderProductID.Text);
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "Select * from Add_item where Item_id=@id";
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@id", id);
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                sda.Fill(order);
+                dgvOrderItems.DataSource = order;
+                cmd.ExecuteNonQuery();
+                //MessageBox.Show("key");
+            }
+
         }
 
         private void btnCOAddProduct_Click(object sender, EventArgs e)
@@ -63,12 +90,20 @@ namespace BaarDanaTraderPOS.Screens
 
         private void btnCORemoveProduct_Click(object sender, EventArgs e)
         {
+            String name = tbOrderProductName.Text;
+            foreach (DataRow row in order.Rows) {
+                if(name == row["Product"].ToString())
+                {
+                    order.Rows.Remove(row);
+                }
+            }
 
+            dgvOrderItems.DataSource = order;
         }
 
         private void btnCOCancel_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void btnCOConfirm_Click(object sender, EventArgs e)
