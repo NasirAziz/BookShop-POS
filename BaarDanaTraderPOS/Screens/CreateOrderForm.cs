@@ -14,12 +14,13 @@ namespace BaarDanaTraderPOS.Screens
     public partial class CreateOrderForm : Form
     {
         private DataTable order = new DataTable();
+        
         SqlConnection con = new SqlConnection();
 
 
         private String productName;
         private String customerName;
-        private int price;
+        private int price, id;
         private int quantity;
         private int totalPrice;
         private int grandTotal=0;
@@ -52,23 +53,58 @@ namespace BaarDanaTraderPOS.Screens
 
             if (e.KeyCode == Keys.Enter)
             {
-                int id = int.Parse(tbOrderProductID.Text);
+                /*  int id = int.Parse(tbOrderProductID.Text);
+                  SqlCommand cmd = new SqlCommand();
+                  cmd.Connection = con;
+                  cmd.CommandText = "Select * from Add_item where Item_id=@id";
+                  cmd.CommandType = CommandType.Text;
+                  cmd.Parameters.AddWithValue("@id", id);
+                  SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                  sda.Fill(order);
+                  dgvOrderItems.DataSource = order;
+                  cmd.ExecuteNonQuery();
+                  //MessageBox.Show("key");
+                  */
+                ///get id
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "Select * from Add_item where Item_id=@id";
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@id", id);
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                sda.Fill(order);
-                dgvOrderItems.DataSource = order;
-                cmd.ExecuteNonQuery();
-                //MessageBox.Show("key");
+                cmd.CommandText = "select Item_id from Add_item where Item_id=@id";
+                cmd.Parameters.AddWithValue("@id", tbOrderProductID.Text);
+                id = (int)cmd.ExecuteScalar();
+
+                ///  Name
+                SqlCommand cmd1 = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "select Name from Add_item where Item_id=@id1";
+                cmd.Parameters.AddWithValue("@id1", tbOrderProductID.Text);
+                productName = (String)cmd.ExecuteScalar();
+                tbOrderProductName.Text = productName;
+                ////// Price
+                SqlCommand cmd2 = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "select Price from Add_item where Item_id=@id2";
+                cmd.Parameters.AddWithValue("@id2", tbOrderProductID.Text);
+                price = (int)cmd.ExecuteScalar();
+                tbOrderProductPrice.Text = price.ToString();
+                ///quantity
+                SqlCommand cmd3 = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "select Quantity from Add_item where Item_id=@id3";
+                cmd.Parameters.AddWithValue("@id3", tbOrderProductID.Text);
+                 quantity = (int)cmd.ExecuteScalar();
+                tbOrderProductQuantity.Text = quantity.ToString();
+                //
             }
 
         }
 
         private void btnCOAddProduct_Click(object sender, EventArgs e)
         {
+           
+
+
+
+
             try {
                 productName = tbOrderProductName.Text;
                 customerName = tbOrderCustomerName.Text;
@@ -84,7 +120,7 @@ namespace BaarDanaTraderPOS.Screens
                 grandTotal += int.Parse(row["Total"].ToString());
             }
             lblGrandTotal.Text = grandTotal.ToString();
-            order.Rows.Add(1, productName, price, quantity, totalPrice);
+            order.Rows.Add(1, productName, quantity, price, totalPrice);
 
         }
 
