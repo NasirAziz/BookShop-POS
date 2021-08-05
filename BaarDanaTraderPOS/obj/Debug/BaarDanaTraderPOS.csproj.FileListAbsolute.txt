@@ -20,7 +20,6 @@ C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDa
 C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.CreateOrderForm.resources
 C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Form1.resources
 C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.ViewHistoryForm.resources
-C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.ViewItemsForm.resources
 C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.csproj.GenerateResource.cache
 C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.csproj.CoreCompileInputs.cache
 C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.exe
