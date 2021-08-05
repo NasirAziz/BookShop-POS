@@ -24,6 +24,7 @@ namespace BaarDanaTraderPOS.Screens
         private int quantity;
         private int totalPrice;
         private int grandTotal=0;
+        public bool flag = false;
 
         public CreateOrderForm()
         {
@@ -37,8 +38,37 @@ namespace BaarDanaTraderPOS.Screens
             order.Columns.Add("Quantity", typeof(int));
             order.Columns.Add("Price", typeof(int));
             order.Columns.Add("Total", typeof(int));
+            order.Columns.Add("Date");
+            loaddataincategory();
+            flag = true;
+            dgvOrderItems.DataSource = order;
+            dgvOrderItems.Columns["Date"].Visible = false;
         }
+        public void loaddataincategory()
+        {
 
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select * from Add_customer";
+            //Fill the DataTable with records from Table.
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            //Insert the Default Item to DataTable.
+            DataRow row = dt.NewRow();
+            row[0] = 0;
+            row[1] = "Walkin Customer";
+            dt.Rows.InsertAt(row, 0);
+            cbCustomername.DataSource = dt;
+            cbCustomername.DisplayMember = "Name";
+            cbCustomername.ValueMember = "Customer_id";
+            cbCustomername.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cbCustomername.AutoCompleteSource = AutoCompleteSource.ListItems;
+            ///////////////////////////////
+            ///
+
+        }
         private void CreateOrderForm_Load(object sender, EventArgs e)
         {
             dgvOrderItems.DataSource = order;
@@ -112,7 +142,7 @@ namespace BaarDanaTraderPOS.Screens
            
             try {
                 productName = tbOrderProductName.Text;
-                customerName = tbOrderCustomerName.Text;
+                customerName = cbCustomername.GetItemText(cbCustomername.SelectedItem);
                 price = int.Parse(tbOrderProductPrice.Text);
                 quantity = int.Parse(tbOrderProductQuantity.Text);
                 totalPrice = price * quantity;
@@ -126,6 +156,9 @@ namespace BaarDanaTraderPOS.Screens
                 grandTotal += int.Parse(row["Total"].ToString());
             }
             lblGrandTotal.Text = grandTotal.ToString();
+
+            String currentdate = dateTimePicker1.Value.Date.ToString();
+
             order.Rows.Add(1, productName, quantity, price, totalPrice);
 
         }
@@ -201,12 +234,12 @@ namespace BaarDanaTraderPOS.Screens
             try
             {
                 productName = tbOrderProductName.Text;
-                customerName = tbOrderCustomerName.Text;
+                customerName = cbCustomername.GetItemText(cbCustomername.SelectedItem);
                 price = int.Parse(tbOrderProductPrice.Text);
                 quantity = int.Parse(tbOrderProductQuantity.Text);
                 totalPrice = price * quantity;
-
-                order.Rows.Add(id, productName, quantity, price, totalPrice);
+                String currentdate = dateTimePicker1.Value.Date.ToString("dd-MM-yyyy");
+                order.Rows.Add(id, productName, quantity, price, totalPrice,currentdate);
 
                 //calculate total price
                 CalculateTotalPrice();
@@ -250,6 +283,32 @@ namespace BaarDanaTraderPOS.Screens
             order.Rows[rowIndex]["Total"] = totalPrice;
             CalculateTotalPrice();
            // MessageBox.Show(productPriceAtIndex.ToString() + rowIndex.ToString());
+        }
+
+        private void cbCustomername_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cbCustomername_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (flag && cbCustomername.GetItemText(cbCustomername.SelectedItem) != "Walkin Customer") {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "select Balance from Add_customer where Name=@name";
+                cmd.Parameters.AddWithValue("@name", cbCustomername.GetItemText(cbCustomername.SelectedItem));
+                int Balance = (int)cmd.ExecuteScalar();
+                lblBalance.Text = Balance.ToString();
+            }
+            else
+            {
+
+            }
+        }
+
+        private void btn_Confirm_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void btnCOConfirm_Click(object sender, EventArgs e)
