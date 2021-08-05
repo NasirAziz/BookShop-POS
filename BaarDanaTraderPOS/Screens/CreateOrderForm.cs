@@ -43,8 +43,8 @@ namespace BaarDanaTraderPOS.Screens
         {
             dgvOrderItems.DataSource = order;
 
-
-
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "dd-MMM-yyyy";
 
 
             this.tbOrderProductID.KeyDown += new KeyEventHandler(this.OnKeyDownHandler);
@@ -68,46 +68,48 @@ namespace BaarDanaTraderPOS.Screens
                   cmd.ExecuteNonQuery();
                   //MessageBox.Show("key");
                   */
-                ///get id
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = con;
-                cmd.CommandText = "select Item_id from Add_item where Item_id=@id";
-                cmd.Parameters.AddWithValue("@id", tbOrderProductID.Text);
-                id = (int)cmd.ExecuteScalar();
 
-                ///  Name
-                SqlCommand cmd1 = new SqlCommand();
-                cmd.Connection = con;
-                cmd.CommandText = "select Name from Add_item where Item_id=@id1";
-                cmd.Parameters.AddWithValue("@id1", tbOrderProductID.Text);
-                productName = (String)cmd.ExecuteScalar();
-                tbOrderProductName.Text = productName;
-                ////// Price
-                SqlCommand cmd2 = new SqlCommand();
-                cmd.Connection = con;
-                cmd.CommandText = "select Price from Add_item where Item_id=@id2";
-                cmd.Parameters.AddWithValue("@id2", tbOrderProductID.Text);
-                price = (int)cmd.ExecuteScalar();
-                tbOrderProductPrice.Text = price.ToString();
-                ///quantity
-                SqlCommand cmd3 = new SqlCommand();
-                cmd.Connection = con;
-                cmd.CommandText = "select Quantity from Add_item where Item_id=@id3";
-                cmd.Parameters.AddWithValue("@id3", tbOrderProductID.Text);
-                 quantity = (int)cmd.ExecuteScalar();
-                tbOrderProductQuantity.Text = quantity.ToString();
-                //
+                GetValuesFromDatabase();
+
             }
 
+        }
+
+        private void GetValuesFromDatabase()
+        {
+            ///get id
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select Item_id from Add_item where Item_id=@id";
+            cmd.Parameters.AddWithValue("@id", tbOrderProductID.Text);
+            id = (int)cmd.ExecuteScalar();
+
+            ///  Name
+            SqlCommand cmd1 = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select Name from Add_item where Item_id=@id1";
+            cmd.Parameters.AddWithValue("@id1", tbOrderProductID.Text);
+            productName = (String)cmd.ExecuteScalar();
+            tbOrderProductName.Text = productName;
+            ////// Price
+            SqlCommand cmd2 = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select Price from Add_item where Item_id=@id2";
+            cmd.Parameters.AddWithValue("@id2", tbOrderProductID.Text);
+            price = (int)cmd.ExecuteScalar();
+            tbOrderProductPrice.Text = price.ToString();
+            ///quantity
+            SqlCommand cmd3 = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select Quantity from Add_item where Item_id=@id3";
+            cmd.Parameters.AddWithValue("@id3", tbOrderProductID.Text);
+            quantity = (int)cmd.ExecuteScalar();
+            tbOrderProductQuantity.Text = quantity.ToString();
         }
 
         private void btnCOAddProduct_Click(object sender, EventArgs e)
         {
            
-
-
-
-
             try {
                 productName = tbOrderProductName.Text;
                 customerName = tbOrderCustomerName.Text;
@@ -118,6 +120,7 @@ namespace BaarDanaTraderPOS.Screens
             catch {
                 MessageBox.Show("Please enter valid data");
             }
+
             foreach (DataRow row in order.Rows)
             {
                 grandTotal += int.Parse(row["Total"].ToString());
@@ -202,25 +205,51 @@ namespace BaarDanaTraderPOS.Screens
                 price = int.Parse(tbOrderProductPrice.Text);
                 quantity = int.Parse(tbOrderProductQuantity.Text);
                 totalPrice = price * quantity;
+
+                order.Rows.Add(id, productName, quantity, price, totalPrice);
+
+                //calculate total price
+                CalculateTotalPrice();
+
+
             }
             catch
             {
                 MessageBox.Show("Please enter valid data");
             }
+        }
+
+        private void CalculateTotalPrice()
+        {
             grandTotal = 0;
             foreach (DataRow row in order.Rows)
             {
-                
                 grandTotal += int.Parse(row["Total"].ToString());
             }
             lblGrandTotal.Text = grandTotal.ToString();
-            order.Rows.Add(1, productName, quantity, price, totalPrice);
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
             ControlPaint.DrawBorder(e.Graphics, this.panel4.ClientRectangle, Color.Black, ButtonBorderStyle.Solid);
 
+        }
+
+        private void dgvOrderItems_Validated(object sender, EventArgs e)
+        {
+           // MessageBox.Show(e.ToString());
+        }
+
+        private void dgvOrderItems_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+           // int columnIndex = e.ColumnIndex;
+            int productPriceAtIndex = int.Parse(order.Rows[rowIndex]["Price"].ToString());
+            int productQuantityAtIndex = int.Parse(order.Rows[rowIndex]["Quantity"].ToString());
+            totalPrice = productPriceAtIndex * productQuantityAtIndex;
+            order.Rows[rowIndex]["Total"] = totalPrice;
+            CalculateTotalPrice();
+           // MessageBox.Show(productPriceAtIndex.ToString() + rowIndex.ToString());
         }
 
         private void btnCOConfirm_Click(object sender, EventArgs e)
