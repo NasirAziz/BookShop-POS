@@ -31,11 +31,11 @@ namespace BaarDanaTraderPOS.Screens
             con.ConnectionString = Connection.c;
             con.Open();
 
-            order.Columns.Add("ID", typeof(int)); 
-            order.Columns.Add("Product");
-            order.Columns.Add("Quantity", typeof(int));
-            order.Columns.Add("Price", typeof(int));
-            order.Columns.Add("Total", typeof(int));
+            //order.Columns.Add("ID", typeof(int)); 
+            //order.Columns.Add("Product");
+            //order.Columns.Add("Quantity", typeof(int));
+            //order.Columns.Add("Price", typeof(int));
+            //order.Columns.Add("Total", typeof(int));
         }
 
         private void CreateOrderForm_Load(object sender, EventArgs e)
