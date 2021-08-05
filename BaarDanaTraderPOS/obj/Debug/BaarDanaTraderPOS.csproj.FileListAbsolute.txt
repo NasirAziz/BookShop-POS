@@ -1,7 +1,6 @@
 C:\Users\hp\source\repos\BaarDanaTraderPOS\BaarDanaTraderPOS\bin\Debug\BaarDanaTraderPOS.exe.config
 C:\Users\hp\source\repos\BaarDanaTraderPOS\BaarDanaTraderPOS\bin\Debug\BaarDanaTraderPOS.exe
 C:\Users\hp\source\repos\BaarDanaTraderPOS\BaarDanaTraderPOS\bin\Debug\BaarDanaTraderPOS.pdb
-C:\Users\hp\source\repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.csproj.AssemblyReference.cache
 C:\Users\hp\source\repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Properties.Resources.resources
 C:\Users\hp\source\repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.csproj.GenerateResource.cache
 C:\Users\hp\source\repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.csproj.CoreCompileInputs.cache
