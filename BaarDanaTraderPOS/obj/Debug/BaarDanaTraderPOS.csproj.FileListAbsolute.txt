@@ -25,3 +25,4 @@ C:\Users\hp\source\repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaT
 C:\Users\hp\source\repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.csproj.CoreCompileInputs.cache
 C:\Users\hp\source\repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.exe
 C:\Users\hp\source\repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.pdb
+C:\Users\hp\source\repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.csproj.AssemblyReference.cache

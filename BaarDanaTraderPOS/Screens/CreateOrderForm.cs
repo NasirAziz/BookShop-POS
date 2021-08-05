@@ -44,9 +44,6 @@ namespace BaarDanaTraderPOS.Screens
             dgvOrderItems.DataSource = order;
 
 
-
-
-
             this.tbOrderProductID.KeyDown += new KeyEventHandler(this.OnKeyDownHandler);
 
         }
