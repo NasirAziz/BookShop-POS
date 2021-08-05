@@ -13,6 +13,8 @@ namespace BaarDanaTraderPOS.Screens
     public partial class AddCustomerForm : Form
     {
        
+
+
         SqlConnection con = new SqlConnection();
        
 
