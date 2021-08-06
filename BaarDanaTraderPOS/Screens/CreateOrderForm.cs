@@ -311,6 +311,12 @@ namespace BaarDanaTraderPOS.Screens
 
         private void btn_Confirm_Click(object sender, EventArgs e)
         {
+            InvoiceViewer a = new InvoiceViewer();
+            a.Show();
+        }
+
+        private void btnCOConfirm_Click(object sender, EventArgs e)
+        {
             int paymentAmount = int.Parse(tbPaidAmount.Text);
             
 
