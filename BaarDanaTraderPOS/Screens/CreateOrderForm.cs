@@ -82,7 +82,7 @@ namespace BaarDanaTraderPOS.Screens
 
 
             this.tbOrderProductID.KeyDown += new KeyEventHandler(this.OnKeyDownHandler);
-           // Invoice_id = InvoiceIdGenerator();
+            Invoice_id = InvoiceIdGenerator();
            // MessageBox.Show(Invoice_id.ToString());
         }
 
