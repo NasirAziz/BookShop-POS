@@ -86,11 +86,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaarDanaTradersDataSet12.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BaarDanaTradersDataSet12.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Connection.cs" />
     <Compile Include="Database\ProductClass.cs" />
     <Compile Include="DataSet1.Designer.cs">
@@ -167,17 +162,6 @@
     <EmbeddedResource Include="Screens\ViewHistoryForm.resx">
       <DependentUpon>ViewHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="BaarDanaTradersDataSet12.xsc">
-      <DependentUpon>BaarDanaTradersDataSet12.xsd</DependentUpon>
-    </None>
-    <None Include="BaarDanaTradersDataSet12.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BaarDanaTradersDataSet12.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="BaarDanaTradersDataSet12.xss">
-      <DependentUpon>BaarDanaTradersDataSet12.xsd</DependentUpon>
-    </None>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>

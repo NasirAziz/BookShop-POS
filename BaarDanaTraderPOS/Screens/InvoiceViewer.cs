@@ -23,7 +23,7 @@ namespace BaarDanaTraderPOS.Screens
         private void InvoiceViewer_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'baarDanaTradersDataSet12.Sales_report' table. You can move, or remove it, as needed.
-            this.sales_reportTableAdapter.Fill(this.baarDanaTradersDataSet12.Sales_report);
+            
 
             this.reportViewer1.RefreshReport();
             con.ConnectionString = Connection.c;
@@ -42,13 +42,17 @@ namespace BaarDanaTraderPOS.Screens
             cmd.CommandText = "select * from Sales_report where Invoice_id=@a";
             cmd.Parameters.AddWithValue("@a",CreateOrderForm.Invoice_id);
             SqlDataAdapter adapter= new SqlDataAdapter(cmd);
-            DataSet1 a = new DataSet1();
+            DataTable a = new DataTable();
 
-            adapter.Fill(a, "Sales_report");
+            adapter.Fill(a);
 
-            ReportDataSource datasource = new ReportDataSource("DataSet1", a.Tables[0]);
-            this.reportViewer1.LocalReport.DataSources.Add(datasource);
+            ReportDataSource datasource = new ReportDataSource("DataSet1", a);
             this.reportViewer1.LocalReport.DataSources.Clear();
+            this.reportViewer1.LocalReport.DataSources.Add(datasource);
+            ReportParameterCollection reportParameters = new ReportParameterCollection();
+            reportParameters.Add(new ReportParameter("ReportParameter1", CreateOrderForm.FinalPrice.ToString()));
+            reportViewer1.LocalReport.SetParameters(reportParameters);
+
             this.reportViewer1.RefreshReport();
 
 
