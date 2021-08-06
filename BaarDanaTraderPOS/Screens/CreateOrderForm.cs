@@ -22,7 +22,11 @@ namespace BaarDanaTraderPOS.Screens
         private String customerName;
         private int price, id;
         int Balance=0;
+
         private int quantity, Invoice_id;
+
+        private int quantity;
+
         private int totalPrice;
         private int grandTotal=0;
         public bool flag = false;
