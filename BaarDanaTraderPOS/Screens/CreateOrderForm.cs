@@ -21,6 +21,7 @@ namespace BaarDanaTraderPOS.Screens
         private String productName;
         private String customerName;
         private int price, id;
+        int Balance=0;
         private int quantity;
         private int totalPrice;
         private int grandTotal=0;
@@ -260,6 +261,7 @@ namespace BaarDanaTraderPOS.Screens
                 grandTotal += int.Parse(row["Total"].ToString());
             }
             lblGrandTotal.Text = grandTotal.ToString();
+            lblTotal.Text = (grandTotal + Balance).ToString();
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
@@ -297,8 +299,9 @@ namespace BaarDanaTraderPOS.Screens
                 cmd.Connection = con;
                 cmd.CommandText = "select Balance from Add_customer where Name=@name";
                 cmd.Parameters.AddWithValue("@name", cbCustomername.GetItemText(cbCustomername.SelectedItem));
-                int Balance = (int)cmd.ExecuteScalar();
+                Balance = (int)cmd.ExecuteScalar();
                 lblBalance.Text = Balance.ToString();
+                lblTotal.Text = (grandTotal + Balance).ToString();
             }
             else
             {
@@ -308,11 +311,8 @@ namespace BaarDanaTraderPOS.Screens
 
         private void btn_Confirm_Click(object sender, EventArgs e)
         {
+            int paymentAmount = int.Parse(tbPaidAmount.Text);
             
-        }
-
-        private void btnCOConfirm_Click(object sender, EventArgs e)
-        {
 
         }
     }
