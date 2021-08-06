@@ -86,13 +86,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaarDanaTradersDataSet.Designer.cs">
+    <Compile Include="BaarDanaTradersDataSet12.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BaarDanaTradersDataSet.xsd</DependentUpon>
+      <DependentUpon>BaarDanaTradersDataSet12.xsd</DependentUpon>
     </Compile>
     <Compile Include="Connection.cs" />
     <Compile Include="Database\ProductClass.cs" />
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Screens\AddCustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,16 +167,27 @@
     <EmbeddedResource Include="Screens\ViewHistoryForm.resx">
       <DependentUpon>ViewHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="BaarDanaTradersDataSet.xsc">
-      <DependentUpon>BaarDanaTradersDataSet.xsd</DependentUpon>
+    <None Include="BaarDanaTradersDataSet12.xsc">
+      <DependentUpon>BaarDanaTradersDataSet12.xsd</DependentUpon>
     </None>
-    <None Include="BaarDanaTradersDataSet.xsd">
+    <None Include="BaarDanaTradersDataSet12.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BaarDanaTradersDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>BaarDanaTradersDataSet12.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="BaarDanaTradersDataSet.xss">
-      <DependentUpon>BaarDanaTradersDataSet.xsd</DependentUpon>
+    <None Include="BaarDanaTradersDataSet12.xss">
+      <DependentUpon>BaarDanaTradersDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="packages.config" />

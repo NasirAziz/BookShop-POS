@@ -20,7 +20,8 @@ namespace BaarDanaTraderPOS.Screens
 
         private String productName;
         private String customerName;
-        private int price, id,Invoice_id=0;
+        private int price, id;
+        public static int Invoice_id = 0;
         private int quantity;
         int timesEnterPressed = 0;
         int Balance;
