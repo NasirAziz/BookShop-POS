@@ -361,8 +361,8 @@ namespace BaarDanaTraderPOS.Screens
             this.btn_Confirm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Confirm.Font = new System.Drawing.Font("Microsoft Tai Le", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Confirm.ForeColor = System.Drawing.Color.White;
-            this.btn_Confirm.Location = new System.Drawing.Point(32, 206);
-            this.btn_Confirm.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btn_Confirm.Location = new System.Drawing.Point(196, 340);
+            this.btn_Confirm.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Confirm.Name = "btn_Confirm";
             this.btn_Confirm.Size = new System.Drawing.Size(279, 44);
             this.btn_Confirm.TabIndex = 27;
@@ -373,8 +373,8 @@ namespace BaarDanaTraderPOS.Screens
             // tbPaidAmount
             // 
             this.tbPaidAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPaidAmount.Location = new System.Drawing.Point(150, 132);
-            this.tbPaidAmount.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tbPaidAmount.Location = new System.Drawing.Point(184, 200);
+            this.tbPaidAmount.Margin = new System.Windows.Forms.Padding(2);
             this.tbPaidAmount.MaxLength = 0;
             this.tbPaidAmount.Name = "tbPaidAmount";
             this.tbPaidAmount.Size = new System.Drawing.Size(140, 29);
@@ -384,8 +384,8 @@ namespace BaarDanaTraderPOS.Screens
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 135);
-            this.label9.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label9.Location = new System.Drawing.Point(-6, 187);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(123, 24);
             this.label9.TabIndex = 28;
@@ -401,10 +401,10 @@ namespace BaarDanaTraderPOS.Screens
             this.panel4.Controls.Add(this.tbPaidAmount);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.lblGrandTotal);
-            this.panel4.Location = new System.Drawing.Point(760, 349);
-            this.panel4.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel4.Location = new System.Drawing.Point(930, 247);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(337, 263);
+            this.panel4.Size = new System.Drawing.Size(663, 396);
             this.panel4.TabIndex = 30;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
@@ -413,8 +413,7 @@ namespace BaarDanaTraderPOS.Screens
             this.lblBalance.AutoSize = true;
             this.lblBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBalance.ForeColor = System.Drawing.Color.Red;
-            this.lblBalance.Location = new System.Drawing.Point(161, 82);
-            this.lblBalance.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBalance.Location = new System.Drawing.Point(242, 85);
             this.lblBalance.Name = "lblBalance";
             this.lblBalance.Size = new System.Drawing.Size(20, 24);
             this.lblBalance.TabIndex = 31;
