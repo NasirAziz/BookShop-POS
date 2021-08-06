@@ -20,7 +20,8 @@ namespace BaarDanaTraderPOS.Screens
 
         private String productName;
         private String customerName;
-        private int price, id,Invoice_id=0;
+        private int price, id;
+        public static int Invoice_id = 0;
         private int quantity;
         int timesEnterPressed = 0;
         int Balance;
@@ -82,7 +83,7 @@ namespace BaarDanaTraderPOS.Screens
 
 
             this.tbOrderProductID.KeyDown += new KeyEventHandler(this.OnKeyDownHandler);
-           // Invoice_id = InvoiceIdGenerator();
+             Invoice_id = InvoiceIdGenerator();
            // MessageBox.Show(Invoice_id.ToString());
         }
 

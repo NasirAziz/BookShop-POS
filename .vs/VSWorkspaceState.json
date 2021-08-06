@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\BaarDanaTraderPOS"
+    "\\BaarDanaTraderPOS",
+    "\\BaarDanaTraderPOS\\Screens"
   ],
   "SelectedNode": "\\BaarDanaTraderPOS.sln",
   "PreviewInSolutionExplorer": false
