@@ -1,9 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\BaarDanaTraderPOS",
-    "\\BaarDanaTraderPOS\\Screens"
+    "\\BaarDanaTraderPOS"
   ],
-  "SelectedNode": "\\BaarDanaTraderPOS\\Screens\\CreateOrderForm.cs",
+  "SelectedNode": "\\BaarDanaTraderPOS.sln",
   "PreviewInSolutionExplorer": false
 }
