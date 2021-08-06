@@ -100,7 +100,7 @@ namespace BaarDanaTraderPOS.Screens
             this.dgvOrderItems.Name = "dgvOrderItems";
             this.dgvOrderItems.RowHeadersWidth = 62;
             this.dgvOrderItems.RowTemplate.Height = 28;
-            this.dgvOrderItems.Size = new System.Drawing.Size(619, 285);
+            this.dgvOrderItems.Size = new System.Drawing.Size(1179, 387);
             this.dgvOrderItems.TabIndex = 6;
             this.dgvOrderItems.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderItems_CellValueChanged);
             this.dgvOrderItems.Validated += new System.EventHandler(this.dgvOrderItems_Validated);
@@ -113,7 +113,7 @@ namespace BaarDanaTraderPOS.Screens
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(822, 18);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(430, 35);
+            this.dateTimePicker1.Size = new System.Drawing.Size(990, 35);
             this.dateTimePicker1.TabIndex = 12;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -124,7 +124,7 @@ namespace BaarDanaTraderPOS.Screens
             this.btnCOConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCOConfirm.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCOConfirm.ForeColor = System.Drawing.Color.White;
-            this.btnCOConfirm.Location = new System.Drawing.Point(3156, 575);
+            this.btnCOConfirm.Location = new System.Drawing.Point(3716, 575);
             this.btnCOConfirm.Name = "btnCOConfirm";
             this.btnCOConfirm.Size = new System.Drawing.Size(186, 120);
             this.btnCOConfirm.TabIndex = 16;
@@ -218,7 +218,7 @@ namespace BaarDanaTraderPOS.Screens
             this.btnCOAddProduct.Location = new System.Drawing.Point(292, 355);
             this.btnCOAddProduct.Name = "btnCOAddProduct";
             this.btnCOAddProduct.Size = new System.Drawing.Size(120, 80);
-            this.btnCOAddProduct.TabIndex = 25;
+            this.btnCOAddProduct.TabIndex = 5;
             this.btnCOAddProduct.Text = "Add Product";
             this.btnCOAddProduct.UseVisualStyleBackColor = false;
             this.btnCOAddProduct.Click += new System.EventHandler(this.btnCOAddProduct_Click_1);
@@ -318,7 +318,7 @@ namespace BaarDanaTraderPOS.Screens
             this.panel3.Controls.Add(this.dateTimePicker1);
             this.panel3.Location = new System.Drawing.Point(568, 28);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1294, 78);
+            this.panel3.Size = new System.Drawing.Size(1854, 78);
             this.panel3.TabIndex = 21;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -380,7 +380,7 @@ namespace BaarDanaTraderPOS.Screens
             this.panel4.Controls.Add(this.tbPaidAmount);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.lblGrandTotal);
-            this.panel4.Location = new System.Drawing.Point(688, 367);
+            this.panel4.Location = new System.Drawing.Point(1248, 469);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(345, 174);
@@ -414,7 +414,7 @@ namespace BaarDanaTraderPOS.Screens
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.CausesValidation = false;
-            this.ClientSize = new System.Drawing.Size(1069, 552);
+            this.ClientSize = new System.Drawing.Size(1629, 654);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);

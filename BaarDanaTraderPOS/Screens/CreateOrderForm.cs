@@ -20,9 +20,10 @@ namespace BaarDanaTraderPOS.Screens
 
         private String productName;
         private String customerName;
-        private int price, id;
+        private int price, id,Invoice_id=0;
         private int quantity;
-
+        int timesEnterPressed = 0;
+        int Balance;
         private int totalPrice;
         private int grandTotal=0;
         public bool flag = false;
@@ -81,31 +82,43 @@ namespace BaarDanaTraderPOS.Screens
 
 
             this.tbOrderProductID.KeyDown += new KeyEventHandler(this.OnKeyDownHandler);
-            Invoice_id = InvoiceIdGenerator();
-            MessageBox.Show(Invoice_id.ToString());
+           // Invoice_id = InvoiceIdGenerator();
+           // MessageBox.Show(Invoice_id.ToString());
         }
 
         private void OnKeyDownHandler(object sender, KeyEventArgs e)
         {
-
             if (e.KeyCode == Keys.Enter)
-            {
-                /*  int id = int.Parse(tbOrderProductID.Text);
-                  SqlCommand cmd = new SqlCommand();
-                  cmd.Connection = con;
-                  cmd.CommandText = "Select * from Add_item where Item_id=@id";
-                  cmd.CommandType = CommandType.Text;
-                  cmd.Parameters.AddWithValue("@id", id);
-                  SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                  sda.Fill(order);
-                  dgvOrderItems.DataSource = order;
-                  cmd.ExecuteNonQuery();
-                  //MessageBox.Show("key");
-                  */
+            {  
+                timesEnterPressed++;
 
-                GetValuesFromDatabase();
+                if (timesEnterPressed != 2)
+                {
+                  Console.WriteLine("Enter Key if" + timesEnterPressed.ToString());
 
+                 /*  int id = int.Parse(tbOrderProductID.Text);
+                   SqlCommand cmd = new SqlCommand();
+                   cmd.Connection = con;
+                   cmd.CommandText = "Select * from Add_item where Item_id=@id";
+                   cmd.CommandType = CommandType.Text;
+                   cmd.Parameters.AddWithValue("@id", id);
+                   SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                   sda.Fill(order);
+                   dgvOrderItems.DataSource = order;
+                   cmd.ExecuteNonQuery();
+                   //MessageBox.Show("key");
+                   */
+
+                 GetValuesFromDatabase();
+                }else if (e.KeyCode == Keys.Enter && timesEnterPressed == 2) 
+                {
+                    Console.WriteLine("Enter Key else if" + timesEnterPressed.ToString());
+
+                    AddItemToDatatable();
+                    timesEnterPressed = 0;
+                }
             }
+           
 
         }
 
@@ -141,31 +154,6 @@ namespace BaarDanaTraderPOS.Screens
             tbOrderProductQuantity.Text = quantity.ToString();
         }
 
-        private void btnCOAddProduct_Click(object sender, EventArgs e)
-        {
-           
-            try {
-                productName = tbOrderProductName.Text;
-                customerName = cbCustomername.GetItemText(cbCustomername.SelectedItem);
-                price = int.Parse(tbOrderProductPrice.Text);
-                quantity = int.Parse(tbOrderProductQuantity.Text);
-                totalPrice = price * quantity;
-            } 
-            catch {
-                MessageBox.Show("Please enter valid data");
-            }
-
-            foreach (DataRow row in order.Rows)
-            {
-                grandTotal += int.Parse(row["Total"].ToString());
-            }
-            lblGrandTotal.Text = grandTotal.ToString();
-
-            String currentdate = dateTimePicker1.Value.Date.ToString();
-
-            order.Rows.Add(id, productName, quantity, price, totalPrice);
-
-        }
 
         private void btnCORemoveProduct_Click(object sender, EventArgs e)
         {
@@ -234,21 +222,36 @@ namespace BaarDanaTraderPOS.Screens
 
         private void btnCOAddProduct_Click_1(object sender, EventArgs e)
         {
+            timesEnterPressed = 0;
+            AddItemToDatatable();
+        }
 
+        private void AddItemToDatatable()
+        {
             try
             {
+                timesEnterPressed = 0;
+
                 productName = tbOrderProductName.Text;
                 customerName = cbCustomername.GetItemText(cbCustomername.SelectedItem);
                 price = int.Parse(tbOrderProductPrice.Text);
                 quantity = int.Parse(tbOrderProductQuantity.Text);
                 totalPrice = price * quantity;
                 String currentdate = dateTimePicker1.Value.Date.ToString("dd-MM-yyyy");
-                order.Rows.Add(id, productName, quantity, price, totalPrice,currentdate,customerName,Invoice_id);
+
+                bool contains = order.AsEnumerable().Any(row => productName == row.Field<String>("Product"));
+
+                if (!contains)
+                {
+                    order.Rows.Add(id, productName, quantity, price, totalPrice, currentdate, customerName, Invoice_id);
+                }
+                else
+                {
+                    MessageBox.Show("Product already exists! Please change its values using the Grid.");
+                }
 
                 //calculate total price
                 CalculateTotalPrice();
-
-
 
             }
             catch
@@ -265,7 +268,7 @@ namespace BaarDanaTraderPOS.Screens
                 grandTotal += int.Parse(row["Total"].ToString());
             }
             lblGrandTotal.Text = grandTotal.ToString();
-            lblTotal.Text = (grandTotal + Balance).ToString();
+            label10.Text = (grandTotal + Balance).ToString();
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
@@ -282,13 +285,37 @@ namespace BaarDanaTraderPOS.Screens
         private void dgvOrderItems_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             int rowIndex = e.RowIndex;
-           // int columnIndex = e.ColumnIndex;
-            int productPriceAtIndex = int.Parse(order.Rows[rowIndex]["Price"].ToString());
-            int productQuantityAtIndex = int.Parse(order.Rows[rowIndex]["Quantity"].ToString());
-            totalPrice = productPriceAtIndex * productQuantityAtIndex;
+            //int columnIndex = e.ColumnIndex;
+            int? productQuantityAtIndex = null;
+            int? productPriceAtIndex = null;
+
+
+            if (dgvOrderItems.Rows[rowIndex].Cells["Price"].Value.ToString().Length != 0)
+            {
+                productPriceAtIndex = int.Parse(order.Rows[rowIndex]["Price"].ToString());
+            }
+            if (dgvOrderItems.Rows[rowIndex].Cells["Quantity"].Value.ToString().Length != 0 )
+            {
+                productQuantityAtIndex = int.Parse(order.Rows[rowIndex]["Quantity"].ToString());
+            }
+            if(productPriceAtIndex!=null && productQuantityAtIndex !=null)
+            {
+            totalPrice = (int)(productPriceAtIndex * productQuantityAtIndex);
+            }
+            else
+            {
+                MessageBox.Show("Please Enter valid values in cells");
+                return;
+            }
+            //update datatable with new values from grid view
             order.Rows[rowIndex]["Total"] = totalPrice;
+            order.Rows[rowIndex]["Price"] = productPriceAtIndex;
+            order.Rows[rowIndex]["Quantity"] = productQuantityAtIndex;
             CalculateTotalPrice();
-            
+
+           // MessageBox.Show(order.Rows[rowIndex]["Product"].ToString() + order.Rows[rowIndex]["Quantity"].ToString() + order.Rows[rowIndex]["Total"].ToString());
+           // String value = dgvOrderItems.Rows[rowIndex].Cells["Quantity"].Value.ToString();
+           // MessageBox.Show(value);
            // MessageBox.Show(productPriceAtIndex.ToString() + rowIndex.ToString());
         }
 
@@ -306,7 +333,8 @@ namespace BaarDanaTraderPOS.Screens
                 cmd.Parameters.AddWithValue("@name", cbCustomername.GetItemText(cbCustomername.SelectedItem));
                 Balance = (int)cmd.ExecuteScalar();
                 lblBalance.Text = Balance.ToString();
-                lblTotal.Text = (grandTotal + Balance).ToString();
+                label10.Text = (grandTotal + Balance).ToString();
+
             }
             else
             {
@@ -343,17 +371,28 @@ namespace BaarDanaTraderPOS.Screens
 
         private void btn_Confirm_Click(object sender, EventArgs e)
         {
+            int paymentAmount;
+            if (tbPaidAmount.Text.Length != 0)
+            {
+                try
+                {
+                paymentAmount = int.Parse(tbPaidAmount.Text);
+                }
+                catch
+                {
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please Enter Amount to Continue");
+                return;
+            }
+
+            MoveOrdersToSaleTable();
             InvoiceViewer a = new InvoiceViewer();
             a.Show();
-            MoveOrdersToSaleTable();
             
-        }
-
-        private void btnCOConfirm_Click(object sender, EventArgs e)
-        {
-            int paymentAmount = int.Parse(tbPaidAmount.Text);
-            
-
         }
     }
 }
