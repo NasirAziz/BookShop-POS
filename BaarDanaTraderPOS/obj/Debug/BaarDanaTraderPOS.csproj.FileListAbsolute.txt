@@ -166,3 +166,6 @@ C:\Users\hp\source\repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaT
 =======
 C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.InvoiceViewer.resources
 >>>>>>> 09c051eb9b5cee46bfcb3c4e3ed1fe51412cdd01
+C:\Users\hp\source\repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.InvoiceViewer.resources
+C:\Users\hp\source\repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\RdlCompile.cache
+C:\Users\hp\source\repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\RdlCompile.compiled
