@@ -22,7 +22,7 @@ namespace BaarDanaTraderPOS.Screens
         private String customerName;
         private int price, id;
         int Balance=0;
-        private int quantity;
+        private int quantity, Invoice_id;
         private int totalPrice;
         private int grandTotal=0;
         public bool flag = false;
@@ -40,6 +40,8 @@ namespace BaarDanaTraderPOS.Screens
             order.Columns.Add("Price", typeof(int));
             order.Columns.Add("Total", typeof(int));
             order.Columns.Add("Date");
+            order.Columns.Add("Customer_name");
+            order.Columns.Add("Invoice_id", typeof(int));
             loaddataincategory();
             flag = true;
             dgvOrderItems.DataSource = order;
@@ -79,7 +81,8 @@ namespace BaarDanaTraderPOS.Screens
 
 
             this.tbOrderProductID.KeyDown += new KeyEventHandler(this.OnKeyDownHandler);
-
+            Invoice_id = InvoiceIdGenerator();
+            MessageBox.Show(Invoice_id.ToString());
         }
 
         private void OnKeyDownHandler(object sender, KeyEventArgs e)
@@ -116,21 +119,21 @@ namespace BaarDanaTraderPOS.Screens
             id = (int)cmd.ExecuteScalar();
 
             ///  Name
-            SqlCommand cmd1 = new SqlCommand();
+            
             cmd.Connection = con;
             cmd.CommandText = "select Name from Add_item where Item_id=@id1";
             cmd.Parameters.AddWithValue("@id1", tbOrderProductID.Text);
             productName = (String)cmd.ExecuteScalar();
             tbOrderProductName.Text = productName;
             ////// Price
-            SqlCommand cmd2 = new SqlCommand();
+            
             cmd.Connection = con;
             cmd.CommandText = "select Price from Add_item where Item_id=@id2";
             cmd.Parameters.AddWithValue("@id2", tbOrderProductID.Text);
             price = (int)cmd.ExecuteScalar();
             tbOrderProductPrice.Text = price.ToString();
             ///quantity
-            SqlCommand cmd3 = new SqlCommand();
+            
             cmd.Connection = con;
             cmd.CommandText = "select Quantity from Add_item where Item_id=@id3";
             cmd.Parameters.AddWithValue("@id3", tbOrderProductID.Text);
@@ -160,7 +163,7 @@ namespace BaarDanaTraderPOS.Screens
 
             String currentdate = dateTimePicker1.Value.Date.ToString();
 
-            order.Rows.Add(1, productName, quantity, price, totalPrice);
+            order.Rows.Add(id, productName, quantity, price, totalPrice);
 
         }
 
@@ -240,10 +243,11 @@ namespace BaarDanaTraderPOS.Screens
                 quantity = int.Parse(tbOrderProductQuantity.Text);
                 totalPrice = price * quantity;
                 String currentdate = dateTimePicker1.Value.Date.ToString("dd-MM-yyyy");
-                order.Rows.Add(id, productName, quantity, price, totalPrice,currentdate);
+                order.Rows.Add(id, productName, quantity, price, totalPrice,currentdate,customerName,Invoice_id);
 
                 //calculate total price
                 CalculateTotalPrice();
+
 
 
             }
@@ -284,6 +288,7 @@ namespace BaarDanaTraderPOS.Screens
             totalPrice = productPriceAtIndex * productQuantityAtIndex;
             order.Rows[rowIndex]["Total"] = totalPrice;
             CalculateTotalPrice();
+            
            // MessageBox.Show(productPriceAtIndex.ToString() + rowIndex.ToString());
         }
 
@@ -308,11 +313,40 @@ namespace BaarDanaTraderPOS.Screens
 
             }
         }
+        public void MoveOrdersToSaleTable()
+        {
+            SqlBulkCopy objbulk = new SqlBulkCopy(con);
+            objbulk.DestinationTableName = "Sales_report";
+            objbulk.ColumnMappings.Add("Date", "Date");
+            objbulk.ColumnMappings.Add("Product", "Product");
+            objbulk.ColumnMappings.Add("Quantity", "Quantity");
+            objbulk.ColumnMappings.Add("Total", "Total");
+            objbulk.ColumnMappings.Add("Price", "Price");
+            objbulk.ColumnMappings.Add("Customer_name", "Customer_name");
+            objbulk.ColumnMappings.Add("Invoice_id", "Invoice_id");
+            objbulk.WriteToServer(order);
+
+        }
+        public int InvoiceIdGenerator()
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select Invoice_id from Invoice_id";
+            int Invoice_id = (int)cmd.ExecuteScalar();
+            Invoice_id++;
+            cmd.CommandText = "update Invoice_id set Invoice_id = @invoiceid where id = @id ";
+            cmd.Parameters.AddWithValue("@invoiceid", Invoice_id);
+            cmd.Parameters.AddWithValue("@id", 1);
+            cmd.ExecuteNonQuery();
+            return Invoice_id;
+        } 
 
         private void btn_Confirm_Click(object sender, EventArgs e)
         {
             InvoiceViewer a = new InvoiceViewer();
             a.Show();
+            MoveOrdersToSaleTable();
+            
         }
 
         private void btnCOConfirm_Click(object sender, EventArgs e)
