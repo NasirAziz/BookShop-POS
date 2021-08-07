@@ -14,7 +14,9 @@ namespace BaarDanaTraderPOS.Screens
     {
         SqlConnection con = new SqlConnection();
         public string fromdate, todate;
-        
+        bool isFromDateChanged=false, isToDateChanged = false;
+
+
         public ViewHistoryForm()
         {
             InitializeComponent();
@@ -25,7 +27,7 @@ namespace BaarDanaTraderPOS.Screens
             con.ConnectionString = Connection.c;
             con.Open();
             from.Format = DateTimePickerFormat.Custom;
-           from.CustomFormat = " ";
+            from.CustomFormat = " ";
             to.Format = DateTimePickerFormat.Custom;
             to.CustomFormat = " ";
 
@@ -37,24 +39,7 @@ namespace BaarDanaTraderPOS.Screens
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            try
-            {
-                
-                cmd.CommandText = "select * from Sales_report where Customer_name=@name or Date between @first And @second";
-                cmd.Parameters.AddWithValue("@name", tbCustomerSearch.Text);
-                cmd.Parameters.AddWithValue("@first", Convert.ToDateTime(fromdate));
-                cmd.Parameters.AddWithValue("@second", Convert.ToDateTime(todate));
-                SqlDataAdapter ad = new SqlDataAdapter(cmd);
-                DataTable viewhistory = new DataTable();
-                ad.Fill(viewhistory);
-                dgvViewHistory.DataSource = viewhistory;
-                cmd.ExecuteNonQuery();
-            }
-            catch
-            {
-               
 
-            }
             try
             {
                 cmd.CommandText = "select * from Sales_report where Invoice_id=@id";
@@ -62,14 +47,56 @@ namespace BaarDanaTraderPOS.Screens
                 SqlDataAdapter ad = new SqlDataAdapter(cmd);
                 DataTable viewhistory = new DataTable();
                 ad.Fill(viewhistory);
-                cmd.ExecuteNonQuery();
                 dgvViewHistory.DataSource = viewhistory;
-                
+                cmd.ExecuteNonQuery();
+
             }
             catch
             {
+                MessageBox.Show("try");
+            }
+            try
+            {
+                if(isFromDateChanged && isToDateChanged)
+                {
+                    try
+                    {
+
+                        cmd.CommandText = "select * from Sales_report where Customer_name=@name AND Date between @first And @second";
+                        cmd.Parameters.AddWithValue("@name", tbCustomerSearch.Text);
+                        cmd.Parameters.AddWithValue("@first", Convert.ToDateTime(fromdate));
+                        cmd.Parameters.AddWithValue("@second", Convert.ToDateTime(todate));
+                        SqlDataAdapter ad2 = new SqlDataAdapter(cmd);
+                        DataTable viewhistory2 = new DataTable();
+                        ad2.Fill(viewhistory2);
+                        dgvViewHistory.DataSource = viewhistory2;
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("try 2");
+
+                    }
+                }
+                else
+                {
+                 cmd.CommandText = "select * from Sales_report where Customer_name=@name";
+                  cmd.Parameters.AddWithValue("@name",tbCustomerSearch.Text);
+                  SqlDataAdapter ad = new SqlDataAdapter(cmd);
+                  DataTable viewhistory = new DataTable();
+                  ad.Fill(viewhistory);
+                  cmd.ExecuteNonQuery();
+                  dgvViewHistory.DataSource = viewhistory;
+                }
+
+               
 
             }
+            catch
+            {
+                MessageBox.Show("try 3");
+            }
+           
            
            
 
@@ -78,12 +105,18 @@ namespace BaarDanaTraderPOS.Screens
 
         private void from_ValueChanged(object sender, EventArgs e)
         {
-            fromdate = from.Value.ToString("yyyy-dd-MM");
+            isFromDateChanged = true;
+            from.Format = DateTimePickerFormat.Custom;
+            from.CustomFormat = "dd-MMM-yyyy";
+            fromdate = from.Value.ToString("dd-MM-yyyy");
         }
 
         private void to_ValueChanged(object sender, EventArgs e)
         {
-            todate = to.Value.ToString("yyyy-dd-MM");
+            isToDateChanged = true;
+            to.Format = DateTimePickerFormat.Custom;
+            to.CustomFormat = "dd-MMM-yyyy";
+            todate = to.Value.ToString("dd-MM-yyyy");
         }
     }
 }
