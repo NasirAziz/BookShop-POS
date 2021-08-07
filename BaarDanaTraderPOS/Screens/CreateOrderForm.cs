@@ -271,7 +271,7 @@ namespace BaarDanaTraderPOS.Screens
             }
             lblGrandTotal.Text = grandTotal.ToString();
             FinalPrice = (grandTotal + Balance);
-            label10.Text = FinalPrice.ToString();
+            lblBalance.Text = FinalPrice.ToString();
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
