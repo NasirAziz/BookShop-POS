@@ -93,13 +93,14 @@ namespace BaarDanaTraderPOS.Screens
             // 
             this.btn_print.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_print.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btn_print.Location = new System.Drawing.Point(818, 510);
+            this.btn_print.Location = new System.Drawing.Point(11, 52);
             this.btn_print.Margin = new System.Windows.Forms.Padding(2);
             this.btn_print.Name = "btn_print";
             this.btn_print.Size = new System.Drawing.Size(93, 25);
             this.btn_print.TabIndex = 4;
             this.btn_print.Text = "Print ";
             this.btn_print.UseVisualStyleBackColor = true;
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
             // 
             // panel1
             // 
