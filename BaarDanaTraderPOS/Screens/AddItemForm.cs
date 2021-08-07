@@ -22,6 +22,9 @@ namespace BaarDanaTraderPOS.Screens
 
         private void btnItemAdd_Click(object sender, EventArgs e)
         {
+            if(tbItemName.Text.Length !=0 && tbItemPrice.Text.Length != 0 && tbItemQuantity.Text.Length != 0)
+            {
+
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandText = "insert into Add_item values(@name,@price,@quantity)";
@@ -40,13 +43,20 @@ namespace BaarDanaTraderPOS.Screens
                 }
                 else
                 {
-                    MessageBox.Show("Not Added");
+                    MessageBox.Show("Item Not Added");
                 }
             }
             catch
             {
+                MessageBox.Show("Please add valid data!");
+            }
+            LoadItems();
+            }
+            else
+            {
                 MessageBox.Show("Please Fill the required fields!");
             }
+
         }
         private void UpdateItem(int id, String name, int price, int quantity)
         {
@@ -112,17 +122,25 @@ namespace BaarDanaTraderPOS.Screens
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();
-            LoadItems();
+           // LoadItems();
 
 
         }
         private void btnItemUpdate_Click(object sender, EventArgs e)
         {
+            try
+            {
             name = tbItemName.Text;
             price = Convert.ToInt32(tbItemPrice.Text);
             quantity = Convert.ToInt32(tbItemQuantity.Text);
             UpdateItem(id, name, price, quantity);
             LoadItems();
+
+            }
+            catch
+            {
+               
+            }
         }
 
         private void btnItemDelete_Click(object sender, EventArgs e)
@@ -131,7 +149,7 @@ namespace BaarDanaTraderPOS.Screens
             tbItemName.Text = "";
             tbItemPrice.Text = ""; 
             tbItemQuantity.Text = "";
-            //LoadItems();
+            LoadItems();
         }
 
         private void btnItemCancel_Click(object sender, EventArgs e)

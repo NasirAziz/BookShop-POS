@@ -22,9 +22,6 @@ namespace BaarDanaTraderPOS.Screens
 
         private void InvoiceViewer_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'baarDanaTradersDataSet12.Sales_report' table. You can move, or remove it, as needed.
-           // this.sales_reportTableAdapter.Fill(this.baarDanaTradersDataSet12.Sales_report);
-
             this.reportViewer1.RefreshReport();
             con.ConnectionString = Connection.c;
             con.Open();
@@ -50,6 +47,13 @@ namespace BaarDanaTraderPOS.Screens
             this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(datasource);
             
+            this.reportViewer1.RefreshReport();
+
+            ReportParameterCollection reportParameters = new ReportParameterCollection();
+            reportParameters.Add(new ReportParameter("Total", CreateOrderForm.FinalPrice.ToString()));
+            reportParameters.Add(new ReportParameter("Paid", CreateOrderForm.Paid.ToString()));
+            reportParameters.Add(new ReportParameter("Balance", CreateOrderForm.Balance.ToString()));
+            this.reportViewer1.LocalReport.SetParameters(reportParameters);
             this.reportViewer1.RefreshReport();
 
 

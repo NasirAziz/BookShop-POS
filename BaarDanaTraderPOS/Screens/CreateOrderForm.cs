@@ -17,18 +17,17 @@ namespace BaarDanaTraderPOS.Screens
         
         SqlConnection con = new SqlConnection();
 
-
         private String productName;
         private String customerName;
         private int price, id;
         public static int Invoice_id = 0;
-        private int quantity;
+        private int quantity, chagne;
         int timesEnterPressed = 0;
-        int Balance;
+        public static int Balance, Paid;
         public int totalPrice;
         public static int FinalPrice;
         public int grandTotal=0;
-        public bool flag = false;
+        public bool flag = false, invoiceFlag = false;
 
         public CreateOrderForm()
         {
@@ -49,7 +48,30 @@ namespace BaarDanaTraderPOS.Screens
             flag = true;
             dgvOrderItems.DataSource = order;
             dgvOrderItems.Columns["Date"].Visible = false;
+            dgvOrderItems.Columns["Invoice_id"].Visible = false;
+            dgvOrderItems.Columns["Customer_name"].Visible = false;
         }
+
+        void ResetTextBoxes()
+        {
+            tbOrderProductID.Text = String.Empty;
+            tbOrderProductName.Text = String.Empty;
+            tbOrderProductPrice.Text = String.Empty;
+            tbOrderProductQuantity.Text = String.Empty;
+           /* id = new int();
+            price = new int();
+            Balance
+            quantity
+            chagne
+                FinalPrice
+                grandTotal
+            MessageBox.Show(id.ToString());
+            productName = "";
+            customerName = "";*/
+
+
+        }
+
         public void loaddataincategory()
         {
 
@@ -72,7 +94,7 @@ namespace BaarDanaTraderPOS.Screens
             cbCustomername.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cbCustomername.AutoCompleteSource = AutoCompleteSource.ListItems;
             ///////////////////////////////
-            ///
+            
 
         }
         private void CreateOrderForm_Load(object sender, EventArgs e)
@@ -83,7 +105,8 @@ namespace BaarDanaTraderPOS.Screens
             dateTimePicker1.CustomFormat = "dd-MMM-yyyy";
 
 
-            this.tbOrderProductID.KeyDown += new KeyEventHandler(this.OnKeyDownHandler);
+            this.tbOrderProductID.KeyDown += new KeyEventHandler(this.OnKeyDownHandler); 
+            this.tbOrderProductName.KeyDown += new KeyEventHandler(this.OnKeyDownHandler);
             Invoice_id = InvoiceIdGenerator();
            // MessageBox.Show(Invoice_id.ToString());
         }
@@ -96,26 +119,10 @@ namespace BaarDanaTraderPOS.Screens
 
                 if (timesEnterPressed != 2)
                 {
-                  Console.WriteLine("Enter Key if" + timesEnterPressed.ToString());
-
-                 /*  int id = int.Parse(tbOrderProductID.Text);
-                   SqlCommand cmd = new SqlCommand();
-                   cmd.Connection = con;
-                   cmd.CommandText = "Select * from Add_item where Item_id=@id";
-                   cmd.CommandType = CommandType.Text;
-                   cmd.Parameters.AddWithValue("@id", id);
-                   SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                   sda.Fill(order);
-                   dgvOrderItems.DataSource = order;
-                   cmd.ExecuteNonQuery();
-                   //MessageBox.Show("key");
-                   */
-
                  GetValuesFromDatabase();
-                }else if (e.KeyCode == Keys.Enter && timesEnterPressed == 2) 
+                }
+                else if (timesEnterPressed == 2) 
                 {
-                    Console.WriteLine("Enter Key else if" + timesEnterPressed.ToString());
-
                     AddItemToDatatable();
                     timesEnterPressed = 0;
                 }
@@ -126,32 +133,54 @@ namespace BaarDanaTraderPOS.Screens
 
         private void GetValuesFromDatabase()
         {
-            ///get id
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "select Item_id from Add_item where Item_id=@id";
-            cmd.Parameters.AddWithValue("@id", tbOrderProductID.Text);
-            id = (int)cmd.ExecuteScalar();
+            try
+            {
+                ///get id
+                cmd.CommandText = "select Item_id from Add_item where Item_id=@id OR Name=@name"; //OR Name LIKE @name +'%'
+                cmd.Parameters.AddWithValue("@id", tbOrderProductID.Text);
+                cmd.Parameters.AddWithValue("@name", tbOrderProductName.Text);
+                int? id2 = (int?)cmd.ExecuteScalar();
+                if(id2 != null)
+                {
+                    id = (int)id2;
+                    tbOrderProductID.Text = id.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Product ID does not exist");
+                    return;
+                }
 
-            ///  Name
-            
-            cmd.Connection = con;
-            cmd.CommandText = "select Name from Add_item where Item_id=@id1";
+            }
+            catch
+            {
+                MessageBox.Show("Product ID does not exist");
+                return;
+            }
+           
+
+            ///  NameOR Name=@name
+            cmd.CommandText = "select Name from Add_item where Item_id=@id1 OR Name=@name1";
             cmd.Parameters.AddWithValue("@id1", tbOrderProductID.Text);
+            cmd.Parameters.AddWithValue("@name1", tbOrderProductName.Text);
             productName = (String)cmd.ExecuteScalar();
             tbOrderProductName.Text = productName;
+
             ////// Price
-            
-            cmd.Connection = con;
-            cmd.CommandText = "select Price from Add_item where Item_id=@id2";
+            cmd.CommandText = "select Price from Add_item where Item_id=@id2 OR Name=@name2";
             cmd.Parameters.AddWithValue("@id2", tbOrderProductID.Text);
+            cmd.Parameters.AddWithValue("@name2", tbOrderProductName.Text);
+
             price = (int)cmd.ExecuteScalar();
             tbOrderProductPrice.Text = price.ToString();
-            ///quantity
-            
-            cmd.Connection = con;
-            cmd.CommandText = "select Quantity from Add_item where Item_id=@id3";
-            cmd.Parameters.AddWithValue("@id3", tbOrderProductID.Text);
+
+            ///quantity   
+            cmd.CommandText = "select Quantity from Add_item where Item_id=@id3 OR Name=@name3";
+             cmd.Parameters.AddWithValue("@id3", tbOrderProductID.Text);
+            cmd.Parameters.AddWithValue("@name3", tbOrderProductName.Text);
+
             quantity = (int)cmd.ExecuteScalar();
             tbOrderProductQuantity.Text = quantity.ToString();
         }
@@ -168,6 +197,7 @@ namespace BaarDanaTraderPOS.Screens
             }
 
             dgvOrderItems.DataSource = order;
+            ResetTextBoxes();
         }
 
         private void btnCOCancel_Click(object sender, EventArgs e)
@@ -225,6 +255,7 @@ namespace BaarDanaTraderPOS.Screens
         private void btnCOAddProduct_Click_1(object sender, EventArgs e)
         {
             timesEnterPressed = 0;
+            GetValuesFromDatabase();
             AddItemToDatatable();
         }
 
@@ -242,7 +273,12 @@ namespace BaarDanaTraderPOS.Screens
                 String currentdate = dateTimePicker1.Value.Date.ToString("dd-MM-yyyy");
 
                 bool contains = order.AsEnumerable().Any(row => productName == row.Field<String>("Product"));
-
+                if(quantity == 0)
+                {
+                    MessageBox.Show("Product is out of stock!");
+                    ResetTextBoxes();
+                    return;
+                }
                 if (!contains)
                 {
                     order.Rows.Add(id, productName, quantity, price, totalPrice, currentdate, customerName, Invoice_id);
@@ -254,6 +290,7 @@ namespace BaarDanaTraderPOS.Screens
 
                 //calculate total price
                 CalculateTotalPrice();
+                ResetTextBoxes();
 
             }
             catch
@@ -271,7 +308,7 @@ namespace BaarDanaTraderPOS.Screens
             }
             lblGrandTotal.Text = grandTotal.ToString();
             FinalPrice = (grandTotal + Balance);
-            lblBalance.Text = FinalPrice.ToString();
+            lblFinal.Text = FinalPrice.ToString();
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
@@ -287,6 +324,8 @@ namespace BaarDanaTraderPOS.Screens
 
         private void dgvOrderItems_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
+
+
             int rowIndex = e.RowIndex;
             //int columnIndex = e.ColumnIndex;
             int? productQuantityAtIndex = null;
@@ -310,6 +349,12 @@ namespace BaarDanaTraderPOS.Screens
                 MessageBox.Show("Please Enter valid values in cells");
                 return;
             }
+            if (productQuantityAtIndex > quantity) 
+            {
+                dgvOrderItems.Rows[rowIndex].Cells["Quantity"].Value = quantity;
+                MessageBox.Show("Entered Quantity is greater than product in stock!\nCurrent Stock: " + quantity);
+                return;
+            }
             //update datatable with new values from grid view
             order.Rows[rowIndex]["Total"] = totalPrice;
             order.Rows[rowIndex]["Price"] = productPriceAtIndex;
@@ -329,6 +374,7 @@ namespace BaarDanaTraderPOS.Screens
 
         private void cbCustomername_SelectedValueChanged(object sender, EventArgs e)
         {
+            
             if (flag && cbCustomername.GetItemText(cbCustomername.SelectedItem) != "Walkin Customer") {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
@@ -336,13 +382,22 @@ namespace BaarDanaTraderPOS.Screens
                 cmd.Parameters.AddWithValue("@name", cbCustomername.GetItemText(cbCustomername.SelectedItem));
                 Balance = (int)cmd.ExecuteScalar();
                 lblBalance.Text = Balance.ToString();
-                label10.Text = (grandTotal + Balance).ToString();
+                CalculateTotalPrice();
+               // label10.Text = (grandTotal + Balance).ToString();
 
             }
-            else
+            else if(cbCustomername.GetItemText(cbCustomername.SelectedItem) == "Walkin Customer")
             {
-
+                Balance = 0;
+                lblBalance.Text = Balance.ToString();
+                CalculateTotalPrice();
             }
+
+            for (int i = 0; i < order.Rows.Count; i++)
+            {
+                order.Rows[i]["Customer_name"] = cbCustomername.GetItemText(cbCustomername.SelectedItem);
+            }
+
         }
         public void MoveOrdersToSaleTable()
         {
@@ -370,32 +425,180 @@ namespace BaarDanaTraderPOS.Screens
             cmd.Parameters.AddWithValue("@id", 1);
             cmd.ExecuteNonQuery();
             return Invoice_id;
-        } 
+        }
+        public void InvoiceIdInverter()
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            Invoice_id--;
+            cmd.CommandText = "update Invoice_id set Invoice_id = @invoiceid where id = @id ";
+            cmd.Parameters.AddWithValue("@invoiceid", Invoice_id);
+            cmd.Parameters.AddWithValue("@id", 1);
+            cmd.ExecuteNonQuery();
+       
+        }
+
+        private void tbPaidAmount_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                chagne = - Convert.ToInt32(lblFinal.Text) + Convert.ToInt32(tbPaidAmount.Text);
+                lblChange.Text = (chagne).ToString();
+
+            }
+            catch
+            {
+                lblChange.Text = "0";
+            }
+           
+        }
+
+        private void btnCOCancel_Click_1(object sender, EventArgs e)
+        {
+            ResetTextBoxes();
+        }
+
+        private void btnCORemoveProduct_Click_1(object sender, EventArgs e)
+        {
+
+            for (int i = order.Rows.Count - 1; i >= 0; i--)
+            {
+                DataRow dr = order.Rows[i];
+                if (dr["ID"].ToString() == tbOrderProductID.Text)
+                    dr.Delete();
+            }
+            order.AcceptChanges();
+            ResetTextBoxes();
+        }
+
+        private void CreateOrderForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(invoiceFlag == false)
+            {
+                InvoiceIdInverter();
+            }
+        }
+
+        private void dgvOrderItems_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvOrderItems_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                id = Convert.ToInt32(dgvOrderItems.CurrentRow.Cells[0].Value.ToString());
+                productName = dgvOrderItems.CurrentRow.Cells[1].Value.ToString();
+                price = Convert.ToInt32(dgvOrderItems.CurrentRow.Cells[2].Value.ToString());
+                quantity = Convert.ToInt32(dgvOrderItems.CurrentRow.Cells[3].Value.ToString());
+                tbOrderProductID.Text = id.ToString();
+                tbOrderProductName.Text = productName;
+                tbOrderProductPrice.Text = price.ToString();
+                tbOrderProductQuantity.Text = quantity.ToString();
+
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void ReductProductQuantity(int id, int quantity,int size)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+
+            cmd.CommandText = "update Add_item set Quantity = Quantity - @a where Item_id = @b";
+            cmd.Parameters.AddWithValue("@a", quantity);
+            cmd.Parameters.AddWithValue("@b", id);
+            cmd.ExecuteNonQuery();        
+           
+        }
+
+        private void ChangeBalanceFromServer()
+        {
+            int newbalance = - Convert.ToInt32(tbPaidAmount.Text) + FinalPrice;
+            if (newbalance < 0)
+            { 
+                newbalance = 0;
+            }
+            SqlCommand cmd1 = new SqlCommand();
+            cmd1.Connection = con;
+            cmd1.CommandText = "update Add_customer set Balance=@b where Name=@c";
+            cmd1.Parameters.AddWithValue("@b", newbalance);
+            cmd1.Parameters.AddWithValue("@c", cbCustomername.GetItemText(cbCustomername.SelectedItem));
+            cmd1.ExecuteNonQuery();
+        }
 
         private void btn_Confirm_Click(object sender, EventArgs e)
         {
             int paymentAmount;
-            if (tbPaidAmount.Text.Length != 0)
+            if (order.Rows.Count == 0)
             {
-                try
-                {
-                paymentAmount = int.Parse(tbPaidAmount.Text);
-                }
-                catch
-                {
-                    return;
-                }
+                MessageBox.Show("Please Select Alteast One Item", "Empty Order",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+            else if (tbPaidAmount.Text.Length != 0 )
+            {      
+                if(int.Parse(tbPaidAmount.Text) < FinalPrice)
+                {
+                    DialogResult dialogResult = MessageBox.Show("Entered Amount is less than total bill!\nDo you want to add to Balance", "Payment Warning!", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            paymentAmount = int.Parse(tbPaidAmount.Text);
+                            ChangeBalanceFromServer();
+
+                            int[] ids = new int[order.Rows.Count];
+                            int[] quantity = new int[order.Rows.Count];
+
+                            for (int i = 0; i < order.Rows.Count; i++)
+                            {
+                                ids[i] = int.Parse(order.Rows[i]["ID"].ToString());
+                                quantity[i] = int.Parse(order.Rows[i]["Quantity"].ToString());
+                                ReductProductQuantity(ids[i], quantity[i], order.Rows.Count);
+
+                            }
+
+                            Paid = int.Parse(tbPaidAmount.Text);
+                            Balance = -Convert.ToInt32(tbPaidAmount.Text) + FinalPrice;
+                            invoiceFlag = true;
+                            MoveOrdersToSaleTable();
+                            ResetTextBoxes();
+                            dgvOrderItems.DataSource = null;
+
+
+                            InvoiceViewer a = new InvoiceViewer();
+                            a.Show();
+
+                            CreateOrderForm NewForm = new CreateOrderForm();
+                            NewForm.Show();
+
+                            a.BringToFront();
+
+                            this.Dispose(false);
+                        }
+                        catch
+                        {
+                            return;
+                        }
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        return;
+                    }
+                }
+               
+            }          
             else
             {
                 MessageBox.Show("Please Enter Amount to Continue");
                 return;
             }
 
-            MoveOrdersToSaleTable();
-            InvoiceViewer a = new InvoiceViewer();
-            a.Show();
-            
         }
     }
 }

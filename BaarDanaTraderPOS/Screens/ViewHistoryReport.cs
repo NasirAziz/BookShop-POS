@@ -31,20 +31,15 @@ namespace BaarDanaTraderPOS.Screens
         }
         private void load()
         {
-           /* SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
-            cmd.CommandText = "select * from Sales_report where Invoice_id=@a";
-            cmd.Parameters.AddWithValue("@a", CreateOrderForm.Invoice_id);
-            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            DataTable a = new DataTable();
-
-            adapter.Fill(a);
-           */
-          // ViewHistoryForm.viewhistory
             ReportDataSource datasource = new ReportDataSource("DataSet1", ViewHistoryForm.viewhistory);
             this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(datasource);
 
+            this.reportViewer1.RefreshReport();
+
+            ReportParameterCollection reportParameters = new ReportParameterCollection();
+            reportParameters.Add(new ReportParameter("Total", ViewHistoryForm.total.ToString()));
+            this.reportViewer1.LocalReport.SetParameters(reportParameters);
             this.reportViewer1.RefreshReport();
         }
     }
