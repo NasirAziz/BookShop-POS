@@ -25,8 +25,9 @@ namespace BaarDanaTraderPOS.Screens
         private int quantity;
         int timesEnterPressed = 0;
         int Balance;
-        private int totalPrice;
-        private int grandTotal=0;
+        public int totalPrice;
+        public static int FinalPrice;
+        public int grandTotal=0;
         public bool flag = false;
 
         public CreateOrderForm()
@@ -269,7 +270,8 @@ namespace BaarDanaTraderPOS.Screens
                 grandTotal += int.Parse(row["Total"].ToString());
             }
             lblGrandTotal.Text = grandTotal.ToString();
-            label10.Text = (grandTotal + Balance).ToString();
+            FinalPrice = (grandTotal + Balance);
+            lblBalance.Text = FinalPrice.ToString();
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
