@@ -171,3 +171,4 @@ C:\Users\hp\source\repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\BaarDanaT
 C:\Users\hp\source\repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\RdlCompile.cache
 C:\Users\hp\source\repos\BaarDanaTraderPOS\BaarDanaTraderPOS\obj\Debug\RdlCompile.compiled
 >>>>>>> af5a0a5b60f4a9659b3fb2737979cb1a317b1e85
+C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.ViewHistoryReport.resources
