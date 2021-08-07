@@ -533,7 +533,7 @@ namespace BaarDanaTraderPOS.Screens
 
         private void btn_Confirm_Click(object sender, EventArgs e)
         {
-            int paymentAmount;
+          
             if (order.Rows.Count == 0)
             {
                 MessageBox.Show("Please Select Alteast One Item", "Empty Order",
@@ -547,49 +547,15 @@ namespace BaarDanaTraderPOS.Screens
                     DialogResult dialogResult = MessageBox.Show("Entered Amount is less than total bill!\nDo you want to add to Balance", "Payment Warning!", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
-                        try
-                        {
-                            paymentAmount = int.Parse(tbPaidAmount.Text);
-                            ChangeBalanceFromServer();
-
-                            int[] ids = new int[order.Rows.Count];
-                            int[] quantity = new int[order.Rows.Count];
-
-                            for (int i = 0; i < order.Rows.Count; i++)
-                            {
-                                ids[i] = int.Parse(order.Rows[i]["ID"].ToString());
-                                quantity[i] = int.Parse(order.Rows[i]["Quantity"].ToString());
-                                ReductProductQuantity(ids[i], quantity[i], order.Rows.Count);
-
-                            }
-
-                            Paid = int.Parse(tbPaidAmount.Text);
-                            Balance = -Convert.ToInt32(tbPaidAmount.Text) + FinalPrice;
-                            invoiceFlag = true;
-                            MoveOrdersToSaleTable();
-                            ResetTextBoxes();
-                            dgvOrderItems.DataSource = null;
-
-
-                            InvoiceViewer a = new InvoiceViewer();
-                            a.Show();
-
-                            CreateOrderForm NewForm = new CreateOrderForm();
-                            NewForm.Show();
-
-                            a.BringToFront();
-
-                            this.Dispose(false);
-                        }
-                        catch
-                        {
-                            return;
-                        }
+                        startCheckoutFlow();
                     }
                     else if (dialogResult == DialogResult.No)
                     {
                         return;
                     }
+                }else if(int.Parse(tbPaidAmount.Text) >= FinalPrice)
+                {
+                    startCheckoutFlow();
                 }
                
             }          
@@ -599,6 +565,49 @@ namespace BaarDanaTraderPOS.Screens
                 return;
             }
 
+        }
+
+        void startCheckoutFlow()
+        {
+            int paymentAmount;
+            try
+            {
+                paymentAmount = int.Parse(tbPaidAmount.Text);
+                ChangeBalanceFromServer();
+
+                int[] ids = new int[order.Rows.Count];
+                int[] quantity = new int[order.Rows.Count];
+
+                for (int i = 0; i < order.Rows.Count; i++)
+                {
+                    ids[i] = int.Parse(order.Rows[i]["ID"].ToString());
+                    quantity[i] = int.Parse(order.Rows[i]["Quantity"].ToString());
+                    ReductProductQuantity(ids[i], quantity[i], order.Rows.Count);
+
+                }
+
+                Paid = int.Parse(tbPaidAmount.Text);
+                Balance = -Convert.ToInt32(tbPaidAmount.Text) + FinalPrice;
+                invoiceFlag = true;
+                MoveOrdersToSaleTable();
+                ResetTextBoxes();
+                dgvOrderItems.DataSource = null;
+
+
+                InvoiceViewer a = new InvoiceViewer();
+                a.Show();
+
+                CreateOrderForm NewForm = new CreateOrderForm();
+                NewForm.Show();
+
+                a.BringToFront();
+
+                this.Dispose(false);
+            }
+            catch
+            {
+                return;
+            }
         }
     }
 }
