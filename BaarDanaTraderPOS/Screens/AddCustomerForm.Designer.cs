@@ -55,9 +55,10 @@ namespace BaarDanaTraderPOS.Screens
             this.btnCustomerAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCustomerAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnCustomerAdd.ForeColor = System.Drawing.Color.White;
-            this.btnCustomerAdd.Location = new System.Drawing.Point(284, 449);
+            this.btnCustomerAdd.Location = new System.Drawing.Point(190, 304);
+            this.btnCustomerAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCustomerAdd.Name = "btnCustomerAdd";
-            this.btnCustomerAdd.Size = new System.Drawing.Size(110, 69);
+            this.btnCustomerAdd.Size = new System.Drawing.Size(73, 45);
             this.btnCustomerAdd.TabIndex = 0;
             this.btnCustomerAdd.Text = "Add";
             this.btnCustomerAdd.UseVisualStyleBackColor = false;
@@ -68,9 +69,10 @@ namespace BaarDanaTraderPOS.Screens
             this.btnCustomerCancel.BackColor = System.Drawing.Color.White;
             this.btnCustomerCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCustomerCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnCustomerCancel.Location = new System.Drawing.Point(52, 449);
+            this.btnCustomerCancel.Location = new System.Drawing.Point(35, 304);
+            this.btnCustomerCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCustomerCancel.Name = "btnCustomerCancel";
-            this.btnCustomerCancel.Size = new System.Drawing.Size(110, 69);
+            this.btnCustomerCancel.Size = new System.Drawing.Size(73, 45);
             this.btnCustomerCancel.TabIndex = 1;
             this.btnCustomerCancel.Text = "Cancel";
             this.btnCustomerCancel.UseVisualStyleBackColor = false;
@@ -80,9 +82,10 @@ namespace BaarDanaTraderPOS.Screens
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(50, 169);
+            this.label2.Location = new System.Drawing.Point(33, 110);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 25);
+            this.label2.Size = new System.Drawing.Size(58, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Name: *";
             // 
@@ -90,9 +93,10 @@ namespace BaarDanaTraderPOS.Screens
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(50, 248);
+            this.label3.Location = new System.Drawing.Point(33, 161);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 25);
+            this.label3.Size = new System.Drawing.Size(84, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "Phone No. *";
             // 
@@ -100,35 +104,39 @@ namespace BaarDanaTraderPOS.Screens
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(48, 329);
+            this.label4.Location = new System.Drawing.Point(32, 214);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 25);
+            this.label4.Size = new System.Drawing.Size(64, 17);
             this.label4.TabIndex = 5;
             this.label4.Text = "Address:";
             // 
             // tbCustomerName
             // 
             this.tbCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCustomerName.Location = new System.Drawing.Point(244, 169);
+            this.tbCustomerName.Location = new System.Drawing.Point(163, 110);
+            this.tbCustomerName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbCustomerName.Name = "tbCustomerName";
-            this.tbCustomerName.Size = new System.Drawing.Size(266, 30);
+            this.tbCustomerName.Size = new System.Drawing.Size(179, 23);
             this.tbCustomerName.TabIndex = 7;
             // 
             // tbCustomerPhone
             // 
             this.tbCustomerPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCustomerPhone.Location = new System.Drawing.Point(244, 248);
+            this.tbCustomerPhone.Location = new System.Drawing.Point(163, 161);
+            this.tbCustomerPhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbCustomerPhone.Name = "tbCustomerPhone";
-            this.tbCustomerPhone.Size = new System.Drawing.Size(266, 30);
+            this.tbCustomerPhone.Size = new System.Drawing.Size(179, 23);
             this.tbCustomerPhone.TabIndex = 8;
             // 
             // tbCustomerAddress
             // 
             this.tbCustomerAddress.AcceptsTab = true;
             this.tbCustomerAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCustomerAddress.Location = new System.Drawing.Point(244, 325);
+            this.tbCustomerAddress.Location = new System.Drawing.Point(163, 211);
+            this.tbCustomerAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbCustomerAddress.Name = "tbCustomerAddress";
-            this.tbCustomerAddress.Size = new System.Drawing.Size(266, 30);
+            this.tbCustomerAddress.Size = new System.Drawing.Size(179, 23);
             this.tbCustomerAddress.TabIndex = 9;
             // 
             // dgvAddCustomers
@@ -140,11 +148,12 @@ namespace BaarDanaTraderPOS.Screens
             this.dgvAddCustomers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvAddCustomers.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvAddCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAddCustomers.Location = new System.Drawing.Point(550, 145);
+            this.dgvAddCustomers.Location = new System.Drawing.Point(367, 94);
+            this.dgvAddCustomers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvAddCustomers.Name = "dgvAddCustomers";
             this.dgvAddCustomers.RowHeadersWidth = 62;
             this.dgvAddCustomers.RowTemplate.Height = 28;
-            this.dgvAddCustomers.Size = new System.Drawing.Size(719, 502);
+            this.dgvAddCustomers.Size = new System.Drawing.Size(479, 326);
             this.dgvAddCustomers.TabIndex = 10;
             this.dgvAddCustomers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAddCustomers_CellDoubleClick);
             // 
@@ -154,9 +163,10 @@ namespace BaarDanaTraderPOS.Screens
             this.btnCustomerUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCustomerUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnCustomerUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnCustomerUpdate.Location = new System.Drawing.Point(168, 449);
+            this.btnCustomerUpdate.Location = new System.Drawing.Point(113, 304);
+            this.btnCustomerUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCustomerUpdate.Name = "btnCustomerUpdate";
-            this.btnCustomerUpdate.Size = new System.Drawing.Size(110, 69);
+            this.btnCustomerUpdate.Size = new System.Drawing.Size(73, 45);
             this.btnCustomerUpdate.TabIndex = 11;
             this.btnCustomerUpdate.Text = "Update";
             this.btnCustomerUpdate.UseVisualStyleBackColor = false;
@@ -168,9 +178,10 @@ namespace BaarDanaTraderPOS.Screens
             this.btnCustomerDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCustomerDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnCustomerDelete.ForeColor = System.Drawing.Color.White;
-            this.btnCustomerDelete.Location = new System.Drawing.Point(400, 449);
+            this.btnCustomerDelete.Location = new System.Drawing.Point(268, 304);
+            this.btnCustomerDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCustomerDelete.Name = "btnCustomerDelete";
-            this.btnCustomerDelete.Size = new System.Drawing.Size(110, 69);
+            this.btnCustomerDelete.Size = new System.Drawing.Size(73, 45);
             this.btnCustomerDelete.TabIndex = 12;
             this.btnCustomerDelete.Text = "Delete";
             this.btnCustomerDelete.UseVisualStyleBackColor = false;
@@ -179,9 +190,10 @@ namespace BaarDanaTraderPOS.Screens
             // btnACSearch
             // 
             this.btnACSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnACSearch.Location = new System.Drawing.Point(1083, 91);
+            this.btnACSearch.Location = new System.Drawing.Point(722, 59);
+            this.btnACSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnACSearch.Name = "btnACSearch";
-            this.btnACSearch.Size = new System.Drawing.Size(90, 35);
+            this.btnACSearch.Size = new System.Drawing.Size(60, 23);
             this.btnACSearch.TabIndex = 13;
             this.btnACSearch.Text = "Search";
             this.btnACSearch.UseVisualStyleBackColor = true;
@@ -192,9 +204,10 @@ namespace BaarDanaTraderPOS.Screens
             this.tbACSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbACSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbACSearch.Location = new System.Drawing.Point(715, 91);
+            this.tbACSearch.Location = new System.Drawing.Point(477, 59);
+            this.tbACSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbACSearch.Name = "tbACSearch";
-            this.tbACSearch.Size = new System.Drawing.Size(346, 30);
+            this.tbACSearch.Size = new System.Drawing.Size(232, 23);
             this.tbACSearch.TabIndex = 15;
             this.tbACSearch.TextChanged += new System.EventHandler(this.tbACSearch_TextChanged);
             // 
@@ -204,36 +217,40 @@ namespace BaarDanaTraderPOS.Screens
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(545, 94);
+            this.label5.Location = new System.Drawing.Point(363, 61);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(164, 25);
+            this.label5.Size = new System.Drawing.Size(117, 17);
             this.label5.TabIndex = 14;
             this.label5.Text = "Search by Name:";
             // 
             // tbCustomerBalance
             // 
             this.tbCustomerBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCustomerBalance.Location = new System.Drawing.Point(244, 388);
+            this.tbCustomerBalance.Location = new System.Drawing.Point(163, 252);
+            this.tbCustomerBalance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbCustomerBalance.Name = "tbCustomerBalance";
-            this.tbCustomerBalance.Size = new System.Drawing.Size(266, 30);
+            this.tbCustomerBalance.Size = new System.Drawing.Size(179, 23);
             this.tbCustomerBalance.TabIndex = 17;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(48, 391);
+            this.label6.Location = new System.Drawing.Point(32, 254);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(172, 25);
+            this.label6.Size = new System.Drawing.Size(123, 17);
             this.label6.TabIndex = 16;
             this.label6.Text = "Current Balance: *";
             // 
             // btnShowAll
             // 
             this.btnShowAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShowAll.Location = new System.Drawing.Point(1179, 91);
+            this.btnShowAll.Location = new System.Drawing.Point(786, 59);
+            this.btnShowAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnShowAll.Name = "btnShowAll";
-            this.btnShowAll.Size = new System.Drawing.Size(90, 35);
+            this.btnShowAll.Size = new System.Drawing.Size(60, 23);
             this.btnShowAll.TabIndex = 20;
             this.btnShowAll.Text = "Show All";
             this.btnShowAll.UseVisualStyleBackColor = true;
@@ -241,9 +258,9 @@ namespace BaarDanaTraderPOS.Screens
             // 
             // AddCustomerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1422, 689);
+            this.ClientSize = new System.Drawing.Size(856, 448);
             this.Controls.Add(this.btnShowAll);
             this.Controls.Add(this.tbCustomerBalance);
             this.Controls.Add(this.label6);
@@ -261,6 +278,7 @@ namespace BaarDanaTraderPOS.Screens
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCustomerCancel);
             this.Controls.Add(this.btnCustomerAdd);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AddCustomerForm";
             this.Text = "AddCustomerForm";
             this.Load += new System.EventHandler(this.AddCustomerForm_Load);

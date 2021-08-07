@@ -13,7 +13,7 @@ namespace BaarDanaTraderPOS.Screens
     public partial class AddCustomerForm : Form
     {
         SqlConnection con = new SqlConnection();
-        public int id, phno, balance;
+        public double id, phno, balance;
         public String name, address;
 
         public AddCustomerForm()
@@ -108,7 +108,7 @@ namespace BaarDanaTraderPOS.Screens
             DeleteCustomer(id);
         }
 
-        private void DeleteCustomer(int id)
+        private void DeleteCustomer(double id)
         {
             
             
@@ -131,10 +131,10 @@ namespace BaarDanaTraderPOS.Screens
             try
             {
                 name = tbCustomerName.Text;
-                phno = Convert.ToInt32(tbCustomerPhone.Text);
+                phno = Convert.ToDouble(tbCustomerPhone.Text);
                 try
                 {
-                    balance = Convert.ToInt32(tbCustomerBalance.Text);
+                    balance = Convert.ToDouble(tbCustomerBalance.Text);
                 }
                 catch
                 {
@@ -164,7 +164,7 @@ namespace BaarDanaTraderPOS.Screens
             tbACSearch.Text = "";
         }
 
-        private void UpdateCustomer(int id, String name, String address, int phone,int balance)
+        private void UpdateCustomer(double id, String name, String address, double phone, double balance)
         {
 
          SqlCommand cmd = new SqlCommand();
@@ -206,11 +206,11 @@ namespace BaarDanaTraderPOS.Screens
         {
             try
             {
-                id = Convert.ToInt32(dgvAddCustomers.CurrentRow.Cells[0].Value.ToString());
+                id = Convert.ToDouble(dgvAddCustomers.CurrentRow.Cells[0].Value.ToString());
                 name = dgvAddCustomers.CurrentRow.Cells[1].Value.ToString();
-                phno = Convert.ToInt32(dgvAddCustomers.CurrentRow.Cells[2].Value.ToString());
+                phno = Convert.ToDouble(dgvAddCustomers.CurrentRow.Cells[2].Value.ToString());
                 address = dgvAddCustomers.CurrentRow.Cells[3].Value.ToString();
-                balance = Convert.ToInt32(dgvAddCustomers.CurrentRow.Cells[4].Value.ToString());
+                balance = Convert.ToDouble(dgvAddCustomers.CurrentRow.Cells[4].Value.ToString());
                 tbCustomerName.Text = name;
                 tbCustomerPhone.Text = phno.ToString();
                 tbCustomerBalance.Text = balance.ToString();
