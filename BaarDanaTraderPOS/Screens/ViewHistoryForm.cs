@@ -73,7 +73,7 @@ namespace BaarDanaTraderPOS.Screens
 
 
                     dgvViewHistory.Refresh();
-                    cmd.CommandText = "select * from Sales_report where Customer_name=@name and Date between @first And @second";
+                    cmd.CommandText = "select * from Sales_report where Customer_name Like @name + '%' and Date between @first And @second";
                     cmd.Parameters.AddWithValue("@name", tbCustomerSearch.Text);
                     cmd.Parameters.AddWithValue("@first", Convert.ToDateTime(fromdate));
                     cmd.Parameters.AddWithValue("@second", Convert.ToDateTime(todate));
@@ -96,7 +96,7 @@ namespace BaarDanaTraderPOS.Screens
             {
 
                 dgvViewHistory.Refresh();
-                cmd.CommandText = "select * from Sales_report where Customer_name=@name";
+                cmd.CommandText = "select * from Sales_report where Customer_name Like @name + '%'";
                 cmd.Parameters.AddWithValue("@name", tbCustomerSearch.Text);
                 SqlDataAdapter ad = new SqlDataAdapter(cmd);
                 //DataTable viewhistory = new DataTable();

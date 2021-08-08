@@ -102,7 +102,7 @@ namespace BaarDanaTraderPOS.Screens
             this.dgvOrderItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOrderItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrderItems.Location = new System.Drawing.Point(413, 110);
-            this.dgvOrderItems.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvOrderItems.Margin = new System.Windows.Forms.Padding(2);
             this.dgvOrderItems.Name = "dgvOrderItems";
             this.dgvOrderItems.RowHeadersWidth = 62;
             this.dgvOrderItems.RowTemplate.Height = 28;
@@ -120,7 +120,7 @@ namespace BaarDanaTraderPOS.Screens
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(467, 30);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(306, 26);
             this.dateTimePicker1.TabIndex = 12;
@@ -134,7 +134,7 @@ namespace BaarDanaTraderPOS.Screens
             this.btnCOConfirm.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCOConfirm.ForeColor = System.Drawing.Color.White;
             this.btnCOConfirm.Location = new System.Drawing.Point(3093, 374);
-            this.btnCOConfirm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCOConfirm.Margin = new System.Windows.Forms.Padding(2);
             this.btnCOConfirm.Name = "btnCOConfirm";
             this.btnCOConfirm.Size = new System.Drawing.Size(124, 78);
             this.btnCOConfirm.TabIndex = 16;
@@ -162,12 +162,12 @@ namespace BaarDanaTraderPOS.Screens
             this.lblGrandTotal.AutoSize = true;
             this.lblGrandTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGrandTotal.ForeColor = System.Drawing.Color.Red;
-            this.lblGrandTotal.Location = new System.Drawing.Point(161, 15);
+            this.lblGrandTotal.Location = new System.Drawing.Point(171, 15);
             this.lblGrandTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGrandTotal.Name = "lblGrandTotal";
-            this.lblGrandTotal.Size = new System.Drawing.Size(50, 24);
+            this.lblGrandTotal.Size = new System.Drawing.Size(20, 24);
             this.lblGrandTotal.TabIndex = 18;
-            this.lblGrandTotal.Text = "1500";
+            this.lblGrandTotal.Text = "0";
             this.lblGrandTotal.Click += new System.EventHandler(this.lblGrandTotal_Click);
             // 
             // label8
@@ -185,7 +185,7 @@ namespace BaarDanaTraderPOS.Screens
             // 
             this.panel1.Controls.Add(this.label8);
             this.panel1.Location = new System.Drawing.Point(25, 15);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(311, 78);
             this.panel1.TabIndex = 20;
@@ -205,7 +205,7 @@ namespace BaarDanaTraderPOS.Screens
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(25, 110);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(311, 311);
             this.panel2.TabIndex = 0;
@@ -218,7 +218,7 @@ namespace BaarDanaTraderPOS.Screens
             this.btnCORemoveProduct.Font = new System.Drawing.Font("Microsoft Tai Le", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCORemoveProduct.ForeColor = System.Drawing.Color.White;
             this.btnCORemoveProduct.Location = new System.Drawing.Point(116, 231);
-            this.btnCORemoveProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCORemoveProduct.Margin = new System.Windows.Forms.Padding(2);
             this.btnCORemoveProduct.Name = "btnCORemoveProduct";
             this.btnCORemoveProduct.Size = new System.Drawing.Size(80, 52);
             this.btnCORemoveProduct.TabIndex = 26;
@@ -233,7 +233,7 @@ namespace BaarDanaTraderPOS.Screens
             this.btnCOAddProduct.Font = new System.Drawing.Font("Microsoft Tai Le", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCOAddProduct.ForeColor = System.Drawing.Color.White;
             this.btnCOAddProduct.Location = new System.Drawing.Point(214, 231);
-            this.btnCOAddProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCOAddProduct.Margin = new System.Windows.Forms.Padding(2);
             this.btnCOAddProduct.Name = "btnCOAddProduct";
             this.btnCOAddProduct.Size = new System.Drawing.Size(80, 52);
             this.btnCOAddProduct.TabIndex = 5;
@@ -247,7 +247,7 @@ namespace BaarDanaTraderPOS.Screens
             this.btnCOCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCOCancel.Font = new System.Drawing.Font("Microsoft Tai Le", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCOCancel.Location = new System.Drawing.Point(16, 231);
-            this.btnCOCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCOCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCOCancel.Name = "btnCOCancel";
             this.btnCOCancel.Size = new System.Drawing.Size(80, 52);
             this.btnCOCancel.TabIndex = 24;
@@ -260,7 +260,7 @@ namespace BaarDanaTraderPOS.Screens
             this.tbOrderProductQuantity.Enabled = false;
             this.tbOrderProductQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbOrderProductQuantity.Location = new System.Drawing.Point(154, 166);
-            this.tbOrderProductQuantity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbOrderProductQuantity.Margin = new System.Windows.Forms.Padding(2);
             this.tbOrderProductQuantity.Name = "tbOrderProductQuantity";
             this.tbOrderProductQuantity.Size = new System.Drawing.Size(140, 22);
             this.tbOrderProductQuantity.TabIndex = 23;
@@ -270,7 +270,7 @@ namespace BaarDanaTraderPOS.Screens
             this.tbOrderProductPrice.Enabled = false;
             this.tbOrderProductPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbOrderProductPrice.Location = new System.Drawing.Point(154, 117);
-            this.tbOrderProductPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbOrderProductPrice.Margin = new System.Windows.Forms.Padding(2);
             this.tbOrderProductPrice.Name = "tbOrderProductPrice";
             this.tbOrderProductPrice.Size = new System.Drawing.Size(140, 22);
             this.tbOrderProductPrice.TabIndex = 22;
@@ -279,7 +279,7 @@ namespace BaarDanaTraderPOS.Screens
             // 
             this.tbOrderProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbOrderProductName.Location = new System.Drawing.Point(154, 70);
-            this.tbOrderProductName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbOrderProductName.Margin = new System.Windows.Forms.Padding(2);
             this.tbOrderProductName.Name = "tbOrderProductName";
             this.tbOrderProductName.Size = new System.Drawing.Size(140, 22);
             this.tbOrderProductName.TabIndex = 21;
@@ -288,7 +288,7 @@ namespace BaarDanaTraderPOS.Screens
             // 
             this.tbOrderProductID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbOrderProductID.Location = new System.Drawing.Point(154, 21);
-            this.tbOrderProductID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbOrderProductID.Margin = new System.Windows.Forms.Padding(2);
             this.tbOrderProductID.MaxLength = 4;
             this.tbOrderProductID.Name = "tbOrderProductID";
             this.tbOrderProductID.Size = new System.Drawing.Size(140, 22);
@@ -347,7 +347,7 @@ namespace BaarDanaTraderPOS.Screens
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.dateTimePicker1);
             this.panel3.Location = new System.Drawing.Point(413, 20);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(814, 73);
             this.panel3.TabIndex = 21;
@@ -372,7 +372,7 @@ namespace BaarDanaTraderPOS.Screens
             this.btn_Confirm.Font = new System.Drawing.Font("Microsoft Tai Le", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Confirm.ForeColor = System.Drawing.Color.White;
             this.btn_Confirm.Location = new System.Drawing.Point(859, 531);
-            this.btn_Confirm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Confirm.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Confirm.Name = "btn_Confirm";
             this.btn_Confirm.Size = new System.Drawing.Size(289, 38);
             this.btn_Confirm.TabIndex = 27;
@@ -385,7 +385,7 @@ namespace BaarDanaTraderPOS.Screens
             this.tbPaidAmount.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbPaidAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPaidAmount.Location = new System.Drawing.Point(983, 478);
-            this.tbPaidAmount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbPaidAmount.Margin = new System.Windows.Forms.Padding(2);
             this.tbPaidAmount.MaxLength = 0;
             this.tbPaidAmount.Name = "tbPaidAmount";
             this.tbPaidAmount.Size = new System.Drawing.Size(166, 29);
@@ -416,9 +416,9 @@ namespace BaarDanaTraderPOS.Screens
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.lblGrandTotal);
             this.panel4.Location = new System.Drawing.Point(491, 435);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(269, 175);
+            this.panel4.Size = new System.Drawing.Size(291, 175);
             this.panel4.TabIndex = 30;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
@@ -504,7 +504,7 @@ namespace BaarDanaTraderPOS.Screens
             this.Controls.Add(this.dgvOrderItems);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.tbPaidAmount);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(1278, 454);
             this.Name = "CreateOrderForm";
             this.Text = "CreateOrderForm";

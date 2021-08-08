@@ -84,7 +84,7 @@ namespace BaarDanaTraderPOS.Screens
             // 
             this.tbItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.tbItemName.Location = new System.Drawing.Point(145, 92);
-            this.tbItemName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbItemName.Margin = new System.Windows.Forms.Padding(2);
             this.tbItemName.Name = "tbItemName";
             this.tbItemName.Size = new System.Drawing.Size(137, 26);
             this.tbItemName.TabIndex = 5;
@@ -93,7 +93,7 @@ namespace BaarDanaTraderPOS.Screens
             // 
             this.tbItemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.tbItemPrice.Location = new System.Drawing.Point(145, 142);
-            this.tbItemPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbItemPrice.Margin = new System.Windows.Forms.Padding(2);
             this.tbItemPrice.Name = "tbItemPrice";
             this.tbItemPrice.Size = new System.Drawing.Size(137, 26);
             this.tbItemPrice.TabIndex = 6;
@@ -102,7 +102,7 @@ namespace BaarDanaTraderPOS.Screens
             // 
             this.tbItemQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.tbItemQuantity.Location = new System.Drawing.Point(145, 195);
-            this.tbItemQuantity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbItemQuantity.Margin = new System.Windows.Forms.Padding(2);
             this.tbItemQuantity.Name = "tbItemQuantity";
             this.tbItemQuantity.Size = new System.Drawing.Size(137, 26);
             this.tbItemQuantity.TabIndex = 7;
@@ -114,7 +114,7 @@ namespace BaarDanaTraderPOS.Screens
             this.btnItemAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnItemAdd.ForeColor = System.Drawing.Color.White;
             this.btnItemAdd.Location = new System.Drawing.Point(178, 283);
-            this.btnItemAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnItemAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnItemAdd.Name = "btnItemAdd";
             this.btnItemAdd.Size = new System.Drawing.Size(73, 45);
             this.btnItemAdd.TabIndex = 8;
@@ -128,11 +128,11 @@ namespace BaarDanaTraderPOS.Screens
             this.btnItemCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnItemCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnItemCancel.Location = new System.Drawing.Point(15, 283);
-            this.btnItemCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnItemCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnItemCancel.Name = "btnItemCancel";
             this.btnItemCancel.Size = new System.Drawing.Size(73, 45);
             this.btnItemCancel.TabIndex = 9;
-            this.btnItemCancel.Text = "Cancel";
+            this.btnItemCancel.Text = "Close";
             this.btnItemCancel.UseVisualStyleBackColor = false;
             this.btnItemCancel.Click += new System.EventHandler(this.btnItemCancel_Click);
             // 
@@ -143,7 +143,7 @@ namespace BaarDanaTraderPOS.Screens
             this.btnItemUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnItemUpdate.ForeColor = System.Drawing.Color.Black;
             this.btnItemUpdate.Location = new System.Drawing.Point(96, 283);
-            this.btnItemUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnItemUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnItemUpdate.Name = "btnItemUpdate";
             this.btnItemUpdate.Size = new System.Drawing.Size(73, 45);
             this.btnItemUpdate.TabIndex = 10;
@@ -158,7 +158,7 @@ namespace BaarDanaTraderPOS.Screens
             this.btnItemDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnItemDelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnItemDelete.Location = new System.Drawing.Point(259, 283);
-            this.btnItemDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnItemDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnItemDelete.Name = "btnItemDelete";
             this.btnItemDelete.Size = new System.Drawing.Size(73, 45);
             this.btnItemDelete.TabIndex = 11;
@@ -175,7 +175,7 @@ namespace BaarDanaTraderPOS.Screens
             this.dgvItems.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvItems.Location = new System.Drawing.Point(353, 79);
-            this.dgvItems.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvItems.Margin = new System.Windows.Forms.Padding(2);
             this.dgvItems.Name = "dgvItems";
             this.dgvItems.RowHeadersWidth = 62;
             this.dgvItems.RowTemplate.Height = 28;
@@ -189,7 +189,7 @@ namespace BaarDanaTraderPOS.Screens
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbAISearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbAISearch.Location = new System.Drawing.Point(463, 40);
-            this.tbAISearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbAISearch.Margin = new System.Windows.Forms.Padding(2);
             this.tbAISearch.Name = "tbAISearch";
             this.tbAISearch.Size = new System.Drawing.Size(233, 23);
             this.tbAISearch.TabIndex = 18;
@@ -213,7 +213,7 @@ namespace BaarDanaTraderPOS.Screens
             this.btnAISearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAISearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.btnAISearch.Location = new System.Drawing.Point(699, 40);
-            this.btnAISearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAISearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnAISearch.Name = "btnAISearch";
             this.btnAISearch.Size = new System.Drawing.Size(60, 23);
             this.btnAISearch.TabIndex = 16;
@@ -226,7 +226,7 @@ namespace BaarDanaTraderPOS.Screens
             this.btnShowAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnShowAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.btnShowAll.Location = new System.Drawing.Point(763, 40);
-            this.btnShowAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnShowAll.Margin = new System.Windows.Forms.Padding(2);
             this.btnShowAll.Name = "btnShowAll";
             this.btnShowAll.Size = new System.Drawing.Size(70, 23);
             this.btnShowAll.TabIndex = 19;
@@ -255,7 +255,7 @@ namespace BaarDanaTraderPOS.Screens
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddItemForm";
             this.Text = "AddItemForm";
             this.Load += new System.EventHandler(this.AddItemForm_Load);

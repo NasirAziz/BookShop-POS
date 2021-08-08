@@ -705,7 +705,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Sale Report</Value>
+                      <Value>Sales Report</Value>
                       <Style>
                         <FontFamily>cambria</FontFamily>
                         <FontSize>24pt</FontSize>
@@ -717,10 +717,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox4</rd:DefaultName>
-              <Top>0.97098in</Top>
+              <Top>0.95709in</Top>
               <Left>0.14458in</Left>
               <Height>0.43402in</Height>
-              <Width>1.71875in</Width>
+              <Width>1.99347in</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -770,19 +770,21 @@
                       <Value>Thank You For Your Purchase</Value>
                       <Style>
                         <FontFamily>cambria</FontFamily>
-                        <FontSize>24pt</FontSize>
+                        <FontSize>11pt</FontSize>
                         <Color>White</Color>
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox4</rd:DefaultName>
-              <Top>0.06771in</Top>
-              <Left>0.96349in</Left>
-              <Height>0.43402in</Height>
-              <Width>4.42708in</Width>
+              <Top>0.06944in</Top>
+              <Left>1.97138in</Left>
+              <Height>0.2361in</Height>
+              <Width>2.125in</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
