@@ -56,7 +56,7 @@ namespace BaarDanaTraderPOS.Screens
             this.btnCustomerAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnCustomerAdd.ForeColor = System.Drawing.Color.White;
             this.btnCustomerAdd.Location = new System.Drawing.Point(190, 304);
-            this.btnCustomerAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCustomerAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnCustomerAdd.Name = "btnCustomerAdd";
             this.btnCustomerAdd.Size = new System.Drawing.Size(73, 45);
             this.btnCustomerAdd.TabIndex = 0;
@@ -70,11 +70,11 @@ namespace BaarDanaTraderPOS.Screens
             this.btnCustomerCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCustomerCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnCustomerCancel.Location = new System.Drawing.Point(35, 304);
-            this.btnCustomerCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCustomerCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCustomerCancel.Name = "btnCustomerCancel";
             this.btnCustomerCancel.Size = new System.Drawing.Size(73, 45);
             this.btnCustomerCancel.TabIndex = 1;
-            this.btnCustomerCancel.Text = "Cancel";
+            this.btnCustomerCancel.Text = "Close";
             this.btnCustomerCancel.UseVisualStyleBackColor = false;
             this.btnCustomerCancel.Click += new System.EventHandler(this.btnCustomerCancel_Click);
             // 
@@ -115,7 +115,7 @@ namespace BaarDanaTraderPOS.Screens
             // 
             this.tbCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCustomerName.Location = new System.Drawing.Point(163, 110);
-            this.tbCustomerName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbCustomerName.Margin = new System.Windows.Forms.Padding(2);
             this.tbCustomerName.Name = "tbCustomerName";
             this.tbCustomerName.Size = new System.Drawing.Size(179, 23);
             this.tbCustomerName.TabIndex = 7;
@@ -124,7 +124,7 @@ namespace BaarDanaTraderPOS.Screens
             // 
             this.tbCustomerPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCustomerPhone.Location = new System.Drawing.Point(163, 161);
-            this.tbCustomerPhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbCustomerPhone.Margin = new System.Windows.Forms.Padding(2);
             this.tbCustomerPhone.Name = "tbCustomerPhone";
             this.tbCustomerPhone.Size = new System.Drawing.Size(179, 23);
             this.tbCustomerPhone.TabIndex = 8;
@@ -134,7 +134,7 @@ namespace BaarDanaTraderPOS.Screens
             this.tbCustomerAddress.AcceptsTab = true;
             this.tbCustomerAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCustomerAddress.Location = new System.Drawing.Point(163, 211);
-            this.tbCustomerAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbCustomerAddress.Margin = new System.Windows.Forms.Padding(2);
             this.tbCustomerAddress.Name = "tbCustomerAddress";
             this.tbCustomerAddress.Size = new System.Drawing.Size(179, 23);
             this.tbCustomerAddress.TabIndex = 9;
@@ -149,7 +149,7 @@ namespace BaarDanaTraderPOS.Screens
             this.dgvAddCustomers.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvAddCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAddCustomers.Location = new System.Drawing.Point(367, 94);
-            this.dgvAddCustomers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvAddCustomers.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAddCustomers.Name = "dgvAddCustomers";
             this.dgvAddCustomers.RowHeadersWidth = 62;
             this.dgvAddCustomers.RowTemplate.Height = 28;
@@ -164,7 +164,7 @@ namespace BaarDanaTraderPOS.Screens
             this.btnCustomerUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnCustomerUpdate.ForeColor = System.Drawing.Color.Black;
             this.btnCustomerUpdate.Location = new System.Drawing.Point(113, 304);
-            this.btnCustomerUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCustomerUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnCustomerUpdate.Name = "btnCustomerUpdate";
             this.btnCustomerUpdate.Size = new System.Drawing.Size(73, 45);
             this.btnCustomerUpdate.TabIndex = 11;
@@ -179,7 +179,7 @@ namespace BaarDanaTraderPOS.Screens
             this.btnCustomerDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnCustomerDelete.ForeColor = System.Drawing.Color.White;
             this.btnCustomerDelete.Location = new System.Drawing.Point(268, 304);
-            this.btnCustomerDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCustomerDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnCustomerDelete.Name = "btnCustomerDelete";
             this.btnCustomerDelete.Size = new System.Drawing.Size(73, 45);
             this.btnCustomerDelete.TabIndex = 12;
@@ -191,7 +191,7 @@ namespace BaarDanaTraderPOS.Screens
             // 
             this.btnACSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnACSearch.Location = new System.Drawing.Point(722, 59);
-            this.btnACSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnACSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnACSearch.Name = "btnACSearch";
             this.btnACSearch.Size = new System.Drawing.Size(60, 23);
             this.btnACSearch.TabIndex = 13;
@@ -205,7 +205,7 @@ namespace BaarDanaTraderPOS.Screens
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbACSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbACSearch.Location = new System.Drawing.Point(477, 59);
-            this.tbACSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbACSearch.Margin = new System.Windows.Forms.Padding(2);
             this.tbACSearch.Name = "tbACSearch";
             this.tbACSearch.Size = new System.Drawing.Size(232, 23);
             this.tbACSearch.TabIndex = 15;
@@ -228,7 +228,7 @@ namespace BaarDanaTraderPOS.Screens
             // 
             this.tbCustomerBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCustomerBalance.Location = new System.Drawing.Point(163, 252);
-            this.tbCustomerBalance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbCustomerBalance.Margin = new System.Windows.Forms.Padding(2);
             this.tbCustomerBalance.Name = "tbCustomerBalance";
             this.tbCustomerBalance.Size = new System.Drawing.Size(179, 23);
             this.tbCustomerBalance.TabIndex = 17;
@@ -248,7 +248,7 @@ namespace BaarDanaTraderPOS.Screens
             // 
             this.btnShowAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnShowAll.Location = new System.Drawing.Point(786, 59);
-            this.btnShowAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnShowAll.Margin = new System.Windows.Forms.Padding(2);
             this.btnShowAll.Name = "btnShowAll";
             this.btnShowAll.Size = new System.Drawing.Size(60, 23);
             this.btnShowAll.TabIndex = 20;
@@ -278,7 +278,7 @@ namespace BaarDanaTraderPOS.Screens
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCustomerCancel);
             this.Controls.Add(this.btnCustomerAdd);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddCustomerForm";
             this.Text = "AddCustomerForm";
             this.Load += new System.EventHandler(this.AddCustomerForm_Load);

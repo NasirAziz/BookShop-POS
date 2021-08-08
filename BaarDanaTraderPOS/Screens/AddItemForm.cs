@@ -39,6 +39,7 @@ namespace BaarDanaTraderPOS.Screens
                 if (r > 0)
                 {
                     MessageBox.Show("Item Added Successfully");
+                        Resettext();
                     
                 }
                 else
@@ -122,7 +123,7 @@ namespace BaarDanaTraderPOS.Screens
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();
-           // LoadItems();
+            //LoadItems();
 
 
         }
@@ -135,12 +136,20 @@ namespace BaarDanaTraderPOS.Screens
             quantity = Convert.ToInt32(tbItemQuantity.Text);
             UpdateItem(id, name, price, quantity);
             LoadItems();
+            Resettext();
+            
 
             }
             catch
             {
                
             }
+        }
+        private void  Resettext()
+        {
+            tbItemName.Text = "";
+            tbItemPrice.Text = "";
+            tbItemQuantity.Text = "";
         }
 
         private void btnItemDelete_Click(object sender, EventArgs e)

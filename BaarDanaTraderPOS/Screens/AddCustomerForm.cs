@@ -27,7 +27,13 @@ namespace BaarDanaTraderPOS.Screens
             con.Open();
             LoadCustomers();
         }
-
+        public void ResetTextFields()
+        {
+            tbCustomerAddress.Text = "";
+            tbCustomerBalance.Text = "";
+            tbCustomerName.Text = "";
+            tbCustomerPhone.Text = "";
+        }
         private void btnCustomerAdd_Click(object sender, EventArgs e)
         {
             SqlCommand cmd = new SqlCommand();
@@ -45,6 +51,7 @@ namespace BaarDanaTraderPOS.Screens
                 {
                     MessageBox.Show("Customer Added Successfully");
                     LoadCustomers();
+                    ResetTextFields();
                 }
                 else
                 {
@@ -76,7 +83,7 @@ namespace BaarDanaTraderPOS.Screens
                 DataTable customer = new DataTable();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "Select * from Add_customer where Name=@name";
+                cmd.CommandText = "Select * from Add_customer where Name Like @name +'%'";
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@name", name);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -106,6 +113,7 @@ namespace BaarDanaTraderPOS.Screens
         {
             String name = tbCustomerName.Text;
             DeleteCustomer(id);
+            
         }
 
         private void DeleteCustomer(double id)
@@ -119,10 +127,7 @@ namespace BaarDanaTraderPOS.Screens
             cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();
             LoadCustomers();
-            tbCustomerName.Text = "";
-            tbCustomerPhone.Text = "";
-            tbCustomerBalance.Text = "";
-            tbCustomerAddress.Text = "";
+            ResetTextFields();
 
         }
 
@@ -150,6 +155,8 @@ namespace BaarDanaTraderPOS.Screens
             
             UpdateCustomer(id, name, address, phno,balance);
             
+
+
         }
 
         private void btnCustomerCancel_Click(object sender, EventArgs e)
@@ -180,6 +187,7 @@ namespace BaarDanaTraderPOS.Screens
         if (r > 0)
             {
                 MessageBox.Show("Updated");
+                ResetTextFields();
             }
          LoadCustomers();
           

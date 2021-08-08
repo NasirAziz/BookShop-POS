@@ -14,7 +14,7 @@ namespace BaarDanaTraderPOS.Screens
     public partial class CreateOrderForm : Form
     {
         private DataTable order = new DataTable();
-        
+
         SqlConnection con = new SqlConnection();
 
         private String productName;
@@ -26,7 +26,7 @@ namespace BaarDanaTraderPOS.Screens
         public static int Balance, Paid;
         public int totalPrice;
         public static int FinalPrice;
-        public int grandTotal=0;
+        public int grandTotal = 0;
         public bool flag = false, invoiceFlag = false;
 
         public CreateOrderForm()
@@ -36,7 +36,7 @@ namespace BaarDanaTraderPOS.Screens
             con.ConnectionString = Connection.c;
             con.Open();
 
-            order.Columns.Add("ID", typeof(int)); 
+            order.Columns.Add("ID", typeof(int));
             order.Columns.Add("Product");
             order.Columns.Add("Quantity", typeof(int));
             order.Columns.Add("Price", typeof(int));
@@ -58,16 +58,16 @@ namespace BaarDanaTraderPOS.Screens
             tbOrderProductName.Text = String.Empty;
             tbOrderProductPrice.Text = String.Empty;
             tbOrderProductQuantity.Text = String.Empty;
-           /* id = new int();
-            price = new int();
-            Balance
-            quantity
-            chagne
-                FinalPrice
-                grandTotal
-            MessageBox.Show(id.ToString());
-            productName = "";
-            customerName = "";*/
+            /* id = new int();
+             price = new int();
+             Balance
+             quantity
+             chagne
+                 FinalPrice
+                 grandTotal
+             MessageBox.Show(id.ToString());
+             productName = "";
+             customerName = "";*/
 
 
         }
@@ -94,7 +94,7 @@ namespace BaarDanaTraderPOS.Screens
             cbCustomername.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cbCustomername.AutoCompleteSource = AutoCompleteSource.ListItems;
             ///////////////////////////////
-            
+
 
         }
         private void CreateOrderForm_Load(object sender, EventArgs e)
@@ -105,10 +105,10 @@ namespace BaarDanaTraderPOS.Screens
             dateTimePicker1.CustomFormat = "dd-MMM-yyyy";
 
 
-            this.tbOrderProductID.KeyDown += new KeyEventHandler(this.OnKeyDownHandler); 
+            this.tbOrderProductID.KeyDown += new KeyEventHandler(this.OnKeyDownHandler);
             this.tbOrderProductName.KeyDown += new KeyEventHandler(this.OnKeyDownHandler);
             Invoice_id = InvoiceIdGenerator();
-           // MessageBox.Show(Invoice_id.ToString());
+            // MessageBox.Show(Invoice_id.ToString());
         }
 
         private void OnKeyDownHandler(object sender, KeyEventArgs e)
@@ -147,7 +147,7 @@ namespace BaarDanaTraderPOS.Screens
                 cmd.Parameters.AddWithValue("@id", tbOrderProductID.Text);
                 cmd.Parameters.AddWithValue("@name", tbOrderProductName.Text);
                 int? id2 = (int?)cmd.ExecuteScalar();
-                if(id2 != null)
+                if (id2 != null)
                 {
                     id = (int)id2;
                     tbOrderProductID.Text = id.ToString();
@@ -169,7 +169,7 @@ namespace BaarDanaTraderPOS.Screens
                 timesEnterPressed = 0;
                 return;
             }
-           
+
 
             ///  NameOR Name=@name
             cmd.CommandText = "select Name from Add_item where Item_id=@id1 OR Name=@name1";
@@ -188,7 +188,7 @@ namespace BaarDanaTraderPOS.Screens
 
             ///quantity   
             cmd.CommandText = "select Quantity from Add_item where Item_id=@id3 OR Name=@name3";
-             cmd.Parameters.AddWithValue("@id3", tbOrderProductID.Text);
+            cmd.Parameters.AddWithValue("@id3", tbOrderProductID.Text);
             cmd.Parameters.AddWithValue("@name3", tbOrderProductName.Text);
 
             quantity = (int)cmd.ExecuteScalar();
@@ -199,8 +199,9 @@ namespace BaarDanaTraderPOS.Screens
         private void btnCORemoveProduct_Click(object sender, EventArgs e)
         {
             String name = tbOrderProductName.Text;
-            foreach (DataRow row in order.Rows) {
-                if(name == row["Product"].ToString())
+            foreach (DataRow row in order.Rows)
+            {
+                if (name == row["Product"].ToString())
                 {
                     order.Rows.Remove(row);
                 }
@@ -262,7 +263,7 @@ namespace BaarDanaTraderPOS.Screens
             // timesEnterPressed = 0;
             // GetValuesFromDatabase();
             // AddItemToDatatable();
-            AddProductFlow();           
+            AddProductFlow();
         }
 
         private void AddItemToDatatable()
@@ -279,7 +280,7 @@ namespace BaarDanaTraderPOS.Screens
                 String currentdate = dateTimePicker1.Value.Date.ToString("dd-MM-yyyy");
 
                 bool contains = order.AsEnumerable().Any(row => productName == row.Field<String>("Product"));
-                if(quantity == 0)
+                if (quantity == 0)
                 {
                     MessageBox.Show("Product is out of stock!");
                     ResetTextBoxes();
@@ -325,7 +326,7 @@ namespace BaarDanaTraderPOS.Screens
 
         private void dgvOrderItems_Validated(object sender, EventArgs e)
         {
-           // MessageBox.Show(e.ToString());
+            // MessageBox.Show(e.ToString());
         }
 
         private void dgvOrderItems_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -342,20 +343,20 @@ namespace BaarDanaTraderPOS.Screens
             {
                 productPriceAtIndex = int.Parse(order.Rows[rowIndex]["Price"].ToString());
             }
-            if (dgvOrderItems.Rows[rowIndex].Cells["Quantity"].Value.ToString().Length != 0 )
+            if (dgvOrderItems.Rows[rowIndex].Cells["Quantity"].Value.ToString().Length != 0)
             {
                 productQuantityAtIndex = int.Parse(order.Rows[rowIndex]["Quantity"].ToString());
             }
-            if(productPriceAtIndex!=null && productQuantityAtIndex !=null)
+            if (productPriceAtIndex != null && productQuantityAtIndex != null)
             {
-            totalPrice = (int)(productPriceAtIndex * productQuantityAtIndex);
+                totalPrice = (int)(productPriceAtIndex * productQuantityAtIndex);
             }
             else
             {
                 MessageBox.Show("Please Enter valid values in cells");
                 return;
             }
-            if (productQuantityAtIndex > quantity) 
+            if (productQuantityAtIndex > quantity)
             {
                 dgvOrderItems.Rows[rowIndex].Cells["Quantity"].Value = quantity;
                 MessageBox.Show("Entered Quantity is greater than product in stock!\nCurrent Stock: " + quantity);
@@ -367,21 +368,22 @@ namespace BaarDanaTraderPOS.Screens
             order.Rows[rowIndex]["Quantity"] = productQuantityAtIndex;
             CalculateTotalPrice();
 
-           // MessageBox.Show(order.Rows[rowIndex]["Product"].ToString() + order.Rows[rowIndex]["Quantity"].ToString() + order.Rows[rowIndex]["Total"].ToString());
-           // String value = dgvOrderItems.Rows[rowIndex].Cells["Quantity"].Value.ToString();
-           // MessageBox.Show(value);
-           // MessageBox.Show(productPriceAtIndex.ToString() + rowIndex.ToString());
+            // MessageBox.Show(order.Rows[rowIndex]["Product"].ToString() + order.Rows[rowIndex]["Quantity"].ToString() + order.Rows[rowIndex]["Total"].ToString());
+            // String value = dgvOrderItems.Rows[rowIndex].Cells["Quantity"].Value.ToString();
+            // MessageBox.Show(value);
+            // MessageBox.Show(productPriceAtIndex.ToString() + rowIndex.ToString());
         }
 
         private void cbCustomername_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void cbCustomername_SelectedValueChanged(object sender, EventArgs e)
         {
-            
-            if (flag && cbCustomername.GetItemText(cbCustomername.SelectedItem) != "Walkin Customer") {
+
+            if (flag && cbCustomername.GetItemText(cbCustomername.SelectedItem) != "Walkin Customer")
+            {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
                 cmd.CommandText = "select Balance from Add_customer where Name=@name";
@@ -389,10 +391,10 @@ namespace BaarDanaTraderPOS.Screens
                 Balance = (int)cmd.ExecuteScalar();
                 lblBalance.Text = Balance.ToString();
                 CalculateTotalPrice();
-               // label10.Text = (grandTotal + Balance).ToString();
+                // label10.Text = (grandTotal + Balance).ToString();
 
             }
-            else if(cbCustomername.GetItemText(cbCustomername.SelectedItem) == "Walkin Customer")
+            else if (cbCustomername.GetItemText(cbCustomername.SelectedItem) == "Walkin Customer")
             {
                 Balance = 0;
                 lblBalance.Text = Balance.ToString();
@@ -441,14 +443,14 @@ namespace BaarDanaTraderPOS.Screens
             cmd.Parameters.AddWithValue("@invoiceid", Invoice_id);
             cmd.Parameters.AddWithValue("@id", 1);
             cmd.ExecuteNonQuery();
-       
+
         }
 
         private void tbPaidAmount_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                chagne = - Convert.ToInt32(lblFinal.Text) + Convert.ToInt32(tbPaidAmount.Text);
+                chagne = -Convert.ToInt32(lblFinal.Text) + Convert.ToInt32(tbPaidAmount.Text);
                 lblChange.Text = (chagne).ToString();
 
             }
@@ -456,7 +458,7 @@ namespace BaarDanaTraderPOS.Screens
             {
                 lblChange.Text = "0";
             }
-           
+
         }
 
         private void btnCOCancel_Click_1(object sender, EventArgs e)
@@ -480,7 +482,7 @@ namespace BaarDanaTraderPOS.Screens
 
         private void CreateOrderForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(invoiceFlag == false)
+            if (invoiceFlag == false)
             {
                 InvoiceIdInverter();
             }
@@ -511,7 +513,7 @@ namespace BaarDanaTraderPOS.Screens
             }
         }
 
-        private void ReductProductQuantity(int id, int quantity,int size)
+        private void ReductProductQuantity(int id, int quantity, int size)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
@@ -519,15 +521,15 @@ namespace BaarDanaTraderPOS.Screens
             cmd.CommandText = "update Add_item set Quantity = Quantity - @a where Item_id = @b";
             cmd.Parameters.AddWithValue("@a", quantity);
             cmd.Parameters.AddWithValue("@b", id);
-            cmd.ExecuteNonQuery();        
-           
+            cmd.ExecuteNonQuery();
+
         }
 
         private void ChangeBalanceFromServer()
         {
-            int newbalance = - Convert.ToInt32(tbPaidAmount.Text) + FinalPrice;
+            int newbalance = -Convert.ToInt32(tbPaidAmount.Text) + FinalPrice;
             if (newbalance < 0)
-            { 
+            {
                 newbalance = 0;
             }
             SqlCommand cmd1 = new SqlCommand();
@@ -540,16 +542,16 @@ namespace BaarDanaTraderPOS.Screens
 
         private void btn_Confirm_Click(object sender, EventArgs e)
         {
-          
+
             if (order.Rows.Count == 0)
             {
                 MessageBox.Show("Please Select Alteast One Item", "Empty Order",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            else if (tbPaidAmount.Text.Length != 0 )
-            {      
-                if(int.Parse(tbPaidAmount.Text) < FinalPrice)
+            else if (tbPaidAmount.Text.Length != 0)
+            {
+                if (int.Parse(tbPaidAmount.Text) < FinalPrice)
                 {
                     DialogResult dialogResult = MessageBox.Show("Entered Amount is less than total bill!\nDo you want to add to Balance", "Payment Warning!", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
@@ -560,12 +562,13 @@ namespace BaarDanaTraderPOS.Screens
                     {
                         return;
                     }
-                }else if(int.Parse(tbPaidAmount.Text) >= FinalPrice)
+                }
+                else if (int.Parse(tbPaidAmount.Text) >= FinalPrice)
                 {
                     startCheckoutFlow();
                 }
-               
-            }          
+
+            }
             else
             {
                 MessageBox.Show("Please Enter Amount to Continue");
