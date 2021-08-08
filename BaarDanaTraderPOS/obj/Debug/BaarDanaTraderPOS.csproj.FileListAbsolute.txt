@@ -75,3 +75,4 @@ C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\obj\Debug\BaarD
 C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.csproj.CopyComplete
 C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.exe
 C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.pdb
+C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.csprojAssemblyReference.cache
