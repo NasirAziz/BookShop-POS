@@ -486,7 +486,7 @@ namespace BaarDanaTraderPOS.Screens
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PaleGreen;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(1893, 952);
             this.Controls.Add(this.panel4);
