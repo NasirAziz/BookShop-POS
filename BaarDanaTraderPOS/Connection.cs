@@ -8,6 +8,6 @@ namespace BaarDanaTraderPOS
 {
     class Connection
     {
-        public static String c = @"Data Source=.;Initial Catalog=BaarDanaTraders;Integrated Security=True";
+        public static String c = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\db\BaarDanaTraders.mdf;Integrated Security=True;Connect Timeout=30";
     }
 }
