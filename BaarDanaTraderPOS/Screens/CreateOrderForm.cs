@@ -114,21 +114,26 @@ namespace BaarDanaTraderPOS.Screens
         private void OnKeyDownHandler(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-            {  
-                timesEnterPressed++;
-
-                if (timesEnterPressed != 2)
-                {
-                 GetValuesFromDatabase();
-                }
-                else if (timesEnterPressed == 2) 
-                {
-                    AddItemToDatatable();
-                    timesEnterPressed = 0;
-                }
+            {
+                AddProductFlow();
             }
-           
 
+
+        }
+
+        private void AddProductFlow()
+        {
+            timesEnterPressed++;
+
+            if (timesEnterPressed != 2)
+            {
+                GetValuesFromDatabase();
+            }
+            else if (timesEnterPressed == 2)
+            {
+                AddItemToDatatable();
+                timesEnterPressed = 0;
+            }
         }
 
         private void GetValuesFromDatabase()
@@ -149,14 +154,19 @@ namespace BaarDanaTraderPOS.Screens
                 }
                 else
                 {
-                    MessageBox.Show("Product ID does not exist");
+                    MessageBox.Show("Product does not exist!");
+                    ResetTextBoxes();
+                    timesEnterPressed = 0;
+
                     return;
                 }
 
             }
             catch
             {
-                MessageBox.Show("Product ID does not exist");
+                MessageBox.Show("Product does not exist!");
+                ResetTextBoxes();
+                timesEnterPressed = 0;
                 return;
             }
            
@@ -198,11 +208,6 @@ namespace BaarDanaTraderPOS.Screens
 
             dgvOrderItems.DataSource = order;
             ResetTextBoxes();
-        }
-
-        private void btnCOCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -254,9 +259,10 @@ namespace BaarDanaTraderPOS.Screens
 
         private void btnCOAddProduct_Click_1(object sender, EventArgs e)
         {
-            timesEnterPressed = 0;
-            GetValuesFromDatabase();
-            AddItemToDatatable();
+            // timesEnterPressed = 0;
+            // GetValuesFromDatabase();
+            // AddItemToDatatable();
+            AddProductFlow();           
         }
 
         private void AddItemToDatatable()
@@ -456,6 +462,7 @@ namespace BaarDanaTraderPOS.Screens
         private void btnCOCancel_Click_1(object sender, EventArgs e)
         {
             ResetTextBoxes();
+            timesEnterPressed = 0;
         }
 
         private void btnCORemoveProduct_Click_1(object sender, EventArgs e)
