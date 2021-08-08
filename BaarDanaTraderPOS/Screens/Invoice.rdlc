@@ -207,46 +207,6 @@
               </Border>
             </Style>
           </Line>
-          <Textbox Name="Textbox5">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Balance:  </Value>
-                    <Style>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=Parameters!Balance.Value</Value>
-                    <Style>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>1.5243in</Top>
-            <Left>4.47259in</Left>
-            <Height>0.375in</Height>
-            <Width>1.87011in</Width>
-            <ZIndex>5</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
           <Tablix Name="Tablix1">
             <TablixBody>
               <TablixColumns>
@@ -603,7 +563,7 @@
             <Left>0.14458in</Left>
             <Height>0.5in</Height>
             <Width>6.09075in</Width>
-            <ZIndex>6</ZIndex>
+            <ZIndex>5</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -636,10 +596,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
             <Top>1.5243in</Top>
-            <Left>2.19724in</Left>
+            <Left>3.47097in</Left>
             <Height>0.375in</Height>
             <Width>2.14021in</Width>
-            <ZIndex>7</ZIndex>
+            <ZIndex>6</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -676,10 +636,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
             <Top>1.5243in</Top>
-            <Left>0.14458in</Left>
+            <Left>1.41831in</Left>
             <Height>0.375in</Height>
             <Width>1.89021in</Width>
-            <ZIndex>8</ZIndex>
+            <ZIndex>7</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -691,7 +651,7 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>1.95486in</Height>
+        <Height>4.96534cm</Height>
         <Style>
           <Border>
             <Style>None</Style>
@@ -704,10 +664,10 @@
           </RightBorder>
         </Style>
       </Body>
-      <Width>6.58543in</Width>
+      <Width>16.72699cm</Width>
       <Page>
         <PageHeader>
-          <Height>1.58209in</Height>
+          <Height>4.01851cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -804,7 +764,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>0.56945in</Height>
+          <Height>1.4464cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -849,10 +809,13 @@
             <BackgroundColor>DimGray</BackgroundColor>
           </Style>
         </PageFooter>
-        <LeftMargin>1in</LeftMargin>
-        <RightMargin>1in</RightMargin>
-        <TopMargin>1in</TopMargin>
-        <BottomMargin>1in</BottomMargin>
+        <PageHeight>29.7cm</PageHeight>
+        <PageWidth>23cm</PageWidth>
+        <LeftMargin>0cm</LeftMargin>
+        <RightMargin>0cm</RightMargin>
+        <TopMargin>0cm</TopMargin>
+        <BottomMargin>0cm</BottomMargin>
+        <ColumnSpacing>1.27cm</ColumnSpacing>
         <Style />
       </Page>
     </ReportSection>
@@ -1036,6 +999,6 @@ rXbqOJdrGSQJySmskbbaqeNcrpMK+0ZuYY1Drm5CnMN1DJaE5BXWWG01E+JcrvcU9vV8pxtpq5UQ56gI
 YmGN1aqwvJqFlUlrGzsGyJsLVS6srIYc4gCsL7w1x9md+hzhy5nG7EonMjfZ77WNXEwUq9IJqzA2QRo9Q2tAWJm0Vo5bMgAsZ3r1C2tqyMWzguk8W+lEFMIXvUwtlhVMqw1hjbTFUUPCGodcDDXjihMYqy2UFUznmUonohiMtIWxvNaEhRCvSjv2QgSzfrOol7zvBqUvUHWShyZAnSQFdZIr2YTy9CTLznKH53po5XeSvnowI6VrmVFrwsL/A4f8rsGcUGJAAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIxLTAzLTEyVDA0OjM0OjA5LTA4OjAwbiFIdwAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMS0wMy0xMlQwNDozNDowOS0wODowMB988MsAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwaAAAAAElFTkSuQmCC</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
-  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>80a3e8b6-7ad9-4ac0-a9cc-3e25c38b3157</rd:ReportID>
 </Report>
