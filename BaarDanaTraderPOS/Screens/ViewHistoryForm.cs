@@ -39,6 +39,7 @@ namespace BaarDanaTraderPOS.Screens
             con.ConnectionString = Connection.c;
             con.Open();
 
+            viewhistory.Rows.Clear();
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
