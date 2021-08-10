@@ -104,6 +104,11 @@ namespace BaarDanaTraderPOS.Screens
              this.dgvOrderItems.Columns["Product"].ReadOnly = true;
              this.dgvOrderItems.Columns["Total"].ReadOnly = true;
 
+          //  this.dgvOrderItems.Columns["Product"].HeaderText = "آئٹم";
+          //  this.dgvOrderItems.Columns["Quantity"].HeaderText = "مقدار";
+          //  this.dgvOrderItems.Columns["Price"].HeaderText = "قیمت";
+          //  this.dgvOrderItems.Columns["Total"].HeaderText = "کل";
+
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "dd-MMM-yyyy";
 

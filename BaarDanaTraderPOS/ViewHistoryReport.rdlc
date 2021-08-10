@@ -82,17 +82,24 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Customer Name:  </Value>
+                    <Value xml:space="preserve"> </Value>
                     <Style>
                       <FontFamily>cambria</FontFamily>
-                      <FontSize>8pt</FontSize>
+                      <FontSize>12pt</FontSize>
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=Fields!Customer_name.Value</Value>
+                    <Value>=First(Fields!Customer_name.Value, "DataSet1")</Value>
                     <Style>
                       <FontFamily>cambria</FontFamily>
-                      <FontSize>8pt</FontSize>
+                      <FontSize>12pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>   گاہک کا نام </Value>
+                    <Style>
+                      <FontFamily>cambria</FontFamily>
+                      <FontSize>12pt</FontSize>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -100,9 +107,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox6</rd:DefaultName>
-            <Top>0.14236in</Top>
-            <Left>1.06592in</Left>
-            <Height>0.23611in</Height>
+            <Top>0.06944in</Top>
+            <Left>0.55967in</Left>
+            <Height>0.34722in</Height>
             <Width>2.35417in</Width>
             <ZIndex>1</ZIndex>
             <Style>
@@ -122,17 +129,24 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Date:  </Value>
+                    <Value xml:space="preserve"> </Value>
                     <Style>
                       <FontFamily>cambria</FontFamily>
-                      <FontSize>8pt</FontSize>
+                      <FontSize>12pt</FontSize>
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=Fields!Date.Value</Value>
+                    <Value>=First(Fields!Date.Value, "DataSet1")</Value>
                     <Style>
                       <FontFamily>cambria</FontFamily>
-                      <FontSize>8pt</FontSize>
+                      <FontSize>12pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>   تاریخ</Value>
+                    <Style>
+                      <FontFamily>cambria</FontFamily>
+                      <FontSize>12pt</FontSize>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -140,10 +154,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox6</rd:DefaultName>
-            <Top>0.14236in</Top>
-            <Left>3.60759in</Left>
-            <Height>0.23611in</Height>
-            <Width>1.83495in</Width>
+            <Top>0.06944in</Top>
+            <Left>2.98328in</Left>
+            <Height>0.34722in</Height>
+            <Width>2.99237in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -162,17 +176,17 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Invoice No #  </Value>
+                    <Value>=First(Fields!Invoice_id.Value, "DataSet1")</Value>
                     <Style>
                       <FontFamily>cambria</FontFamily>
-                      <FontSize>8pt</FontSize>
+                      <FontSize>12pt</FontSize>
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=Fields!Invoice_id.Value</Value>
+                    <Value>  #انوائس نمبر</Value>
                     <Style>
                       <FontFamily>cambria</FontFamily>
-                      <FontSize>8pt</FontSize>
+                      <FontSize>12pt</FontSize>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -180,9 +194,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox6</rd:DefaultName>
-            <Top>0.14236in</Top>
-            <Left>5.66315in</Left>
-            <Height>0.23611in</Height>
+            <Top>0.06944in</Top>
+            <Left>6.04509in</Left>
+            <Height>0.34722in</Height>
             <Width>1.64352in</Width>
             <ZIndex>3</ZIndex>
             <Style>
@@ -313,8 +327,9 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Product</Value>
+                                  <Value>آئٹم</Value>
                                   <Style>
+                                    <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -336,6 +351,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -347,8 +363,9 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Quantity</Value>
+                                  <Value>مقدار</Value>
                                   <Style>
+                                    <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -370,6 +387,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -381,8 +399,9 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Price</Value>
+                                  <Value>قیمت</Value>
                                   <Style>
+                                    <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -404,6 +423,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -415,8 +435,9 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Total</Value>
+                                  <Value>کل</Value>
                                   <Style>
+                                    <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -438,6 +459,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -706,24 +728,25 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>رسید</Value>
+                      <Value>فروخت کی رپورٹ</Value>
                       <Style>
                         <FontFamily>cambria</FontFamily>
-                        <FontSize>24pt</FontSize>
+                        <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                         <TextDecoration>None</TextDecoration>
                         <Color>White</Color>
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox4</rd:DefaultName>
               <Top>0.95709in</Top>
-              <Left>0.35291in</Left>
-              <Height>0.43402in</Height>
-              <Width>0.70486in</Width>
+              <Height>0.56596in</Height>
+              <Width>1.44092in</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -849,9 +872,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox3</rd:DefaultName>
               <Top>0.78472in</Top>
-              <Left>1.34346in</Left>
+              <Left>1.62818in</Left>
               <Height>0.44792in</Height>
-              <Width>5.96321in</Width>
+              <Width>5.40997in</Width>
               <ZIndex>4</ZIndex>
               <Style>
                 <Border>
