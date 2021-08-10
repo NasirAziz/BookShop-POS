@@ -595,7 +595,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Paid:  </Value>
+                    <Value>Paid: </Value>
                     <Style>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -609,7 +609,9 @@
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
@@ -635,7 +637,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Total:  </Value>
+                    <Value>Total: </Value>
                     <Style>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -649,7 +651,9 @@
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
@@ -685,7 +689,7 @@
       <Width>20.65228cm</Width>
       <Page>
         <PageHeader>
-          <Height>4.01851cm</Height>
+          <Height>5.20913cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -696,21 +700,24 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Baar Daana Traders</Value>
+                      <Value>بار ڈانا ڈیلرز</Value>
                       <MarkupType>HTML</MarkupType>
                       <Style>
                         <FontStyle>Italic</FontStyle>
                         <FontFamily>Cambria</FontFamily>
                         <FontSize>24pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
                         <Color>White</Color>
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox3</rd:DefaultName>
-              <Top>0.4675in</Top>
+              <Top>1.3807in</Top>
               <Left>5.05396in</Left>
               <Height>0.44792in</Height>
               <Width>2.94144in</Width>
@@ -731,19 +738,23 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Invoice</Value>
+                      <Value>رسید</Value>
                       <Style>
                         <FontFamily>cambria</FontFamily>
                         <FontSize>24pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <TextDecoration>None</TextDecoration>
                         <Color>White</Color>
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox4</rd:DefaultName>
-              <Top>0.97098in</Top>
+              <Top>1.33904in</Top>
               <Left>0.14458in</Left>
               <Height>0.43402in</Height>
               <Width>1.15625in</Width>
@@ -762,7 +773,7 @@
               <Source>Embedded</Source>
               <Value>invoiceiconvectorsvgmed</Value>
               <Sizing>FitProportional</Sizing>
-              <Top>0.13889in</Top>
+              <Top>0.50695in</Top>
               <Left>0.44319in</Left>
               <Height>0.77653in</Height>
               <Width>0.61458in</Width>
@@ -773,6 +784,120 @@
                 </Border>
               </Style>
             </Image>
+            <Textbox Name="Textbox5">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>حاجی محمد صادق اور عبدالباقی ناصر</Value>
+                      <MarkupType>HTML</MarkupType>
+                      <Style>
+                        <FontStyle>Italic</FontStyle>
+                        <FontFamily>Centaur</FontFamily>
+                        <FontSize>24pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>عبدالباقی ناصر</Value>
+                      <MarkupType>HTML</MarkupType>
+                      <Style>
+                        <FontStyle>Italic</FontStyle>
+                        <FontFamily>Centaur</FontFamily>
+                        <FontSize>18pt</FontSize>
+                        <Color>White</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>: 8090795-</Value>
+                      <MarkupType>HTML</MarkupType>
+                      <Style>
+                        <FontStyle>Italic</FontStyle>
+                        <FontFamily>Cambria</FontFamily>
+                        <FontSize>18pt</FontSize>
+                        <Color>White</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>0332</Value>
+                      <MarkupType>HTML</MarkupType>
+                      <Style>
+                        <FontStyle>Italic</FontStyle>
+                        <FontFamily>Cambria</FontFamily>
+                        <FontSize>16pt</FontSize>
+                        <Color>White</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox3</rd:DefaultName>
+              <Top>0.05084in</Top>
+              <Left>1.50094in</Left>
+              <Height>0.75694in</Height>
+              <Width>5.96321in</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox17">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>نیو اڈہ لورالائی</Value>
+                      <MarkupType>HTML</MarkupType>
+                      <Style>
+                        <FontStyle>Italic</FontStyle>
+                        <FontFamily>Cambria</FontFamily>
+                        <FontSize>20pt</FontSize>
+                        <Color>White</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox3</rd:DefaultName>
+              <Top>0.87722in</Top>
+              <Left>1.50094in</Left>
+              <Height>0.44792in</Height>
+              <Width>5.96321in</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
           </ReportItems>
           <Style>
             <Border>
@@ -793,7 +918,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Thanks For Your Purchase</Value>
+                      <Value>پ کی خریداری کا شکریہ</Value>
                       <Style>
                         <FontFamily>cambria</FontFamily>
                         <FontSize>12pt</FontSize>
@@ -828,7 +953,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Crafted by NHTECH (03305397642)</Value>
+                      <Value>کی طرف سے تیار (03305397642) NHTECH</Value>
                       <Style>
                         <FontFamily>cambria</FontFamily>
                         <FontSize>8pt</FontSize>

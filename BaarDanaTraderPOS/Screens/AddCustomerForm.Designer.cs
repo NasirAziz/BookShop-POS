@@ -151,6 +151,7 @@ namespace BaarDanaTraderPOS.Screens
             this.dgvAddCustomers.Location = new System.Drawing.Point(367, 94);
             this.dgvAddCustomers.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAddCustomers.Name = "dgvAddCustomers";
+            this.dgvAddCustomers.ReadOnly = true;
             this.dgvAddCustomers.RowHeadersWidth = 62;
             this.dgvAddCustomers.RowTemplate.Height = 28;
             this.dgvAddCustomers.Size = new System.Drawing.Size(479, 326);

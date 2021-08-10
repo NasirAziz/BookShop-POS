@@ -29,6 +29,7 @@ namespace BaarDanaTraderPOS.Screens
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddItemForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,197 +50,110 @@ namespace BaarDanaTraderPOS.Screens
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(20, 94);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Name: ";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(20, 144);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Price (Rs): ";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label4.Location = new System.Drawing.Point(20, 187);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 40);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Quantity \r\n(Creates): ";
             // 
             // tbItemName
             // 
-            this.tbItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tbItemName.Location = new System.Drawing.Point(145, 92);
-            this.tbItemName.Margin = new System.Windows.Forms.Padding(2);
+            resources.ApplyResources(this.tbItemName, "tbItemName");
             this.tbItemName.Name = "tbItemName";
-            this.tbItemName.Size = new System.Drawing.Size(137, 26);
-            this.tbItemName.TabIndex = 5;
             // 
             // tbItemPrice
             // 
-            this.tbItemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tbItemPrice.Location = new System.Drawing.Point(145, 142);
-            this.tbItemPrice.Margin = new System.Windows.Forms.Padding(2);
+            resources.ApplyResources(this.tbItemPrice, "tbItemPrice");
             this.tbItemPrice.Name = "tbItemPrice";
-            this.tbItemPrice.Size = new System.Drawing.Size(137, 26);
-            this.tbItemPrice.TabIndex = 6;
             // 
             // tbItemQuantity
             // 
-            this.tbItemQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tbItemQuantity.Location = new System.Drawing.Point(145, 195);
-            this.tbItemQuantity.Margin = new System.Windows.Forms.Padding(2);
+            resources.ApplyResources(this.tbItemQuantity, "tbItemQuantity");
             this.tbItemQuantity.Name = "tbItemQuantity";
-            this.tbItemQuantity.Size = new System.Drawing.Size(137, 26);
-            this.tbItemQuantity.TabIndex = 7;
             // 
             // btnItemAdd
             // 
             this.btnItemAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnItemAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnItemAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            resources.ApplyResources(this.btnItemAdd, "btnItemAdd");
             this.btnItemAdd.ForeColor = System.Drawing.Color.White;
-            this.btnItemAdd.Location = new System.Drawing.Point(178, 283);
-            this.btnItemAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnItemAdd.Name = "btnItemAdd";
-            this.btnItemAdd.Size = new System.Drawing.Size(73, 45);
-            this.btnItemAdd.TabIndex = 8;
-            this.btnItemAdd.Text = "Add";
             this.btnItemAdd.UseVisualStyleBackColor = false;
             this.btnItemAdd.Click += new System.EventHandler(this.btnItemAdd_Click);
             // 
             // btnItemCancel
             // 
             this.btnItemCancel.BackColor = System.Drawing.Color.White;
-            this.btnItemCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnItemCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnItemCancel.Location = new System.Drawing.Point(15, 283);
-            this.btnItemCancel.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.btnItemCancel, "btnItemCancel");
             this.btnItemCancel.Name = "btnItemCancel";
-            this.btnItemCancel.Size = new System.Drawing.Size(73, 45);
-            this.btnItemCancel.TabIndex = 9;
-            this.btnItemCancel.Text = "Close";
             this.btnItemCancel.UseVisualStyleBackColor = false;
             this.btnItemCancel.Click += new System.EventHandler(this.btnItemCancel_Click);
             // 
             // btnItemUpdate
             // 
             this.btnItemUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnItemUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnItemUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            resources.ApplyResources(this.btnItemUpdate, "btnItemUpdate");
             this.btnItemUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnItemUpdate.Location = new System.Drawing.Point(96, 283);
-            this.btnItemUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnItemUpdate.Name = "btnItemUpdate";
-            this.btnItemUpdate.Size = new System.Drawing.Size(73, 45);
-            this.btnItemUpdate.TabIndex = 10;
-            this.btnItemUpdate.Text = "Update";
             this.btnItemUpdate.UseVisualStyleBackColor = false;
             this.btnItemUpdate.Click += new System.EventHandler(this.btnItemUpdate_Click);
             // 
             // btnItemDelete
             // 
             this.btnItemDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnItemDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnItemDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            resources.ApplyResources(this.btnItemDelete, "btnItemDelete");
             this.btnItemDelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnItemDelete.Location = new System.Drawing.Point(259, 283);
-            this.btnItemDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnItemDelete.Name = "btnItemDelete";
-            this.btnItemDelete.Size = new System.Drawing.Size(73, 45);
-            this.btnItemDelete.TabIndex = 11;
-            this.btnItemDelete.Text = "Delete";
             this.btnItemDelete.UseVisualStyleBackColor = false;
             this.btnItemDelete.Click += new System.EventHandler(this.btnItemDelete_Click);
             // 
             // dgvItems
             // 
-            this.dgvItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.dgvItems, "dgvItems");
             this.dgvItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvItems.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvItems.Location = new System.Drawing.Point(353, 79);
-            this.dgvItems.Margin = new System.Windows.Forms.Padding(2);
             this.dgvItems.Name = "dgvItems";
-            this.dgvItems.RowHeadersWidth = 62;
+            this.dgvItems.ReadOnly = true;
             this.dgvItems.RowTemplate.Height = 28;
-            this.dgvItems.Size = new System.Drawing.Size(480, 302);
-            this.dgvItems.TabIndex = 12;
             this.dgvItems.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_CellDoubleClick);
             // 
             // tbAISearch
             // 
-            this.tbAISearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbAISearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAISearch.Location = new System.Drawing.Point(463, 40);
-            this.tbAISearch.Margin = new System.Windows.Forms.Padding(2);
+            resources.ApplyResources(this.tbAISearch, "tbAISearch");
             this.tbAISearch.Name = "tbAISearch";
-            this.tbAISearch.Size = new System.Drawing.Size(233, 23);
-            this.tbAISearch.TabIndex = 18;
             this.tbAISearch.TextChanged += new System.EventHandler(this.tbAISearch_TextChanged);
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(350, 42);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(117, 17);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Search by Name:";
             // 
             // btnAISearch
             // 
-            this.btnAISearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAISearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btnAISearch.Location = new System.Drawing.Point(699, 40);
-            this.btnAISearch.Margin = new System.Windows.Forms.Padding(2);
+            resources.ApplyResources(this.btnAISearch, "btnAISearch");
             this.btnAISearch.Name = "btnAISearch";
-            this.btnAISearch.Size = new System.Drawing.Size(60, 23);
-            this.btnAISearch.TabIndex = 16;
-            this.btnAISearch.Text = "Search";
             this.btnAISearch.UseVisualStyleBackColor = true;
             this.btnAISearch.Click += new System.EventHandler(this.btnAISearch_Click);
             // 
             // btnShowAll
             // 
-            this.btnShowAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShowAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btnShowAll.Location = new System.Drawing.Point(763, 40);
-            this.btnShowAll.Margin = new System.Windows.Forms.Padding(2);
+            resources.ApplyResources(this.btnShowAll, "btnShowAll");
             this.btnShowAll.Name = "btnShowAll";
-            this.btnShowAll.Size = new System.Drawing.Size(70, 23);
-            this.btnShowAll.TabIndex = 19;
-            this.btnShowAll.Text = "Show All";
             this.btnShowAll.UseVisualStyleBackColor = true;
             this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
             // 
             // AddItemForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(856, 421);
             this.Controls.Add(this.btnShowAll);
             this.Controls.Add(this.tbAISearch);
             this.Controls.Add(this.label5);
@@ -255,9 +169,7 @@ namespace BaarDanaTraderPOS.Screens
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddItemForm";
-            this.Text = "AddItemForm";
             this.Load += new System.EventHandler(this.AddItemForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
             this.ResumeLayout(false);

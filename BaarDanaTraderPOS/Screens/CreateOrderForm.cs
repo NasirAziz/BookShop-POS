@@ -100,6 +100,9 @@ namespace BaarDanaTraderPOS.Screens
         private void CreateOrderForm_Load(object sender, EventArgs e)
         {
             dgvOrderItems.DataSource = order;
+             this.dgvOrderItems.Columns["ID"].ReadOnly = true;
+             this.dgvOrderItems.Columns["Product"].ReadOnly = true;
+             this.dgvOrderItems.Columns["Total"].ReadOnly = true;
 
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "dd-MMM-yyyy";
@@ -182,7 +185,6 @@ namespace BaarDanaTraderPOS.Screens
             cmd.CommandText = "select Price from Add_item where Item_id=@id2 OR Name=@name2";
             cmd.Parameters.AddWithValue("@id2", tbOrderProductID.Text);
             cmd.Parameters.AddWithValue("@name2", tbOrderProductName.Text);
-
             price = (int)cmd.ExecuteScalar();
             tbOrderProductPrice.Text = price.ToString();
 
@@ -190,8 +192,8 @@ namespace BaarDanaTraderPOS.Screens
             cmd.CommandText = "select Quantity from Add_item where Item_id=@id3 OR Name=@name3";
             cmd.Parameters.AddWithValue("@id3", tbOrderProductID.Text);
             cmd.Parameters.AddWithValue("@name3", tbOrderProductName.Text);
-
             quantity = (int)cmd.ExecuteScalar();
+
             tbOrderProductQuantity.Text = quantity.ToString();
         }
 
@@ -271,15 +273,14 @@ namespace BaarDanaTraderPOS.Screens
             try
             {
                 timesEnterPressed = 0;
-
-                productName = tbOrderProductName.Text;
+                //productName = tbOrderProductName.Text;
                 customerName = cbCustomername.GetItemText(cbCustomername.SelectedItem);
                 price = int.Parse(tbOrderProductPrice.Text);
                 quantity = int.Parse(tbOrderProductQuantity.Text);
                 totalPrice = price * quantity;
                 String currentdate = dateTimePicker1.Value.Date.ToString("dd-MM-yyyy");
 
-                bool contains = order.AsEnumerable().Any(row => productName == row.Field<String>("Product"));
+                bool contains = order.AsEnumerable().Any( row => id == row.Field<Int32>("ID"));
                 if (quantity == 0)
                 {
                     MessageBox.Show("Product is out of stock!");
@@ -300,9 +301,9 @@ namespace BaarDanaTraderPOS.Screens
                 ResetTextBoxes();
 
             }
-            catch
+            catch(Exception e)
             {
-                MessageBox.Show("Please enter valid data");
+                MessageBox.Show(e.ToString());
             }
         }
 
@@ -499,8 +500,8 @@ namespace BaarDanaTraderPOS.Screens
             {
                 id = Convert.ToInt32(dgvOrderItems.CurrentRow.Cells[0].Value.ToString());
                 productName = dgvOrderItems.CurrentRow.Cells[1].Value.ToString();
-                price = Convert.ToInt32(dgvOrderItems.CurrentRow.Cells[2].Value.ToString());
-                quantity = Convert.ToInt32(dgvOrderItems.CurrentRow.Cells[3].Value.ToString());
+                price = Convert.ToInt32(dgvOrderItems.CurrentRow.Cells[3].Value.ToString());
+                quantity = Convert.ToInt32(dgvOrderItems.CurrentRow.Cells[2].Value.ToString());
                 tbOrderProductID.Text = id.ToString();
                 tbOrderProductName.Text = productName;
                 tbOrderProductPrice.Text = price.ToString();
