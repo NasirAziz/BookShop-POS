@@ -595,14 +595,14 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Paid: </Value>
+                    <Value>=Parameters!Paid.Value</Value>
                     <Style>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=Parameters!Paid.Value</Value>
+                    <Value>   ادائیگی</Value>
                     <Style>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -615,10 +615,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>1.95486in</Top>
-            <Left>6.60519in</Left>
+            <Top>2.09028in</Top>
+            <Left>0.44319in</Left>
             <Height>0.375in</Height>
-            <Width>1.52563in</Width>
+            <Width>7.55221in</Width>
             <ZIndex>6</ZIndex>
             <Style>
               <Border>
@@ -637,14 +637,14 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Total: </Value>
+                    <Value>=Parameters!Total.Value</Value>
                     <Style>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=Parameters!Total.Value</Value>
+                    <Value>   کل</Value>
                     <Style>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -657,10 +657,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>1.49653in</Top>
-            <Left>6.60519in</Left>
+            <Top>1.63195in</Top>
+            <Left>0.44319in</Left>
             <Height>0.375in</Height>
-            <Width>1.52563in</Width>
+            <Width>7.55221in</Width>
             <ZIndex>7</ZIndex>
             <Style>
               <Border>
@@ -700,7 +700,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>بار ڈانا ڈیلرز</Value>
+                      <Value>بار دانا ڈیلرز</Value>
                       <MarkupType>HTML</MarkupType>
                       <Style>
                         <FontStyle>Italic</FontStyle>
@@ -918,7 +918,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>پ کی خریداری کا شکریہ</Value>
+                      <Value>آپکی خریداری کا شکریہ</Value>
                       <Style>
                         <FontFamily>cambria</FontFamily>
                         <FontSize>12pt</FontSize>
@@ -934,7 +934,7 @@
               <rd:DefaultName>Textbox4</rd:DefaultName>
               <Top>0.06944in</Top>
               <Left>3.25744in</Left>
-              <Height>0.24305in</Height>
+              <Height>0.27085in</Height>
               <Width>2.38593in</Width>
               <Style>
                 <Border>

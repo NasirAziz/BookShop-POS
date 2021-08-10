@@ -140,6 +140,12 @@
       <DependentUpon>ViewHistoryReport.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Screens\AddItemForm.en-AS.resx">
+      <DependentUpon>AddItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\AddItemForm.ur-PK.resx">
+      <DependentUpon>AddItemForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\ViewHistoryReport.resx">
       <DependentUpon>ViewHistoryReport.cs</DependentUpon>
     </EmbeddedResource>

@@ -80,8 +80,8 @@ namespace BaarDanaTraderPOS.Screens
             // 
             // btnItemAdd
             // 
-            this.btnItemAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             resources.ApplyResources(this.btnItemAdd, "btnItemAdd");
+            this.btnItemAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnItemAdd.ForeColor = System.Drawing.Color.White;
             this.btnItemAdd.Name = "btnItemAdd";
             this.btnItemAdd.UseVisualStyleBackColor = false;
@@ -89,16 +89,16 @@ namespace BaarDanaTraderPOS.Screens
             // 
             // btnItemCancel
             // 
-            this.btnItemCancel.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.btnItemCancel, "btnItemCancel");
+            this.btnItemCancel.BackColor = System.Drawing.Color.White;
             this.btnItemCancel.Name = "btnItemCancel";
             this.btnItemCancel.UseVisualStyleBackColor = false;
             this.btnItemCancel.Click += new System.EventHandler(this.btnItemCancel_Click);
             // 
             // btnItemUpdate
             // 
-            this.btnItemUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             resources.ApplyResources(this.btnItemUpdate, "btnItemUpdate");
+            this.btnItemUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnItemUpdate.ForeColor = System.Drawing.Color.Black;
             this.btnItemUpdate.Name = "btnItemUpdate";
             this.btnItemUpdate.UseVisualStyleBackColor = false;
@@ -106,8 +106,8 @@ namespace BaarDanaTraderPOS.Screens
             // 
             // btnItemDelete
             // 
-            this.btnItemDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             resources.ApplyResources(this.btnItemDelete, "btnItemDelete");
+            this.btnItemDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnItemDelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnItemDelete.Name = "btnItemDelete";
             this.btnItemDelete.UseVisualStyleBackColor = false;

@@ -75,4 +75,9 @@ C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\obj\Debug\BaarD
 C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.csproj.CopyComplete
 C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.exe
 C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.pdb
-C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.csprojAssemblyReference.cache
+C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\bin\Debug\ur-PK\BaarDanaTraderPOS.resources.dll
+C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.AddItemForm.ur-PK.resources
+C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\obj\Debug\ur-PK\BaarDanaTraderPOS.resources.dll
+C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\bin\Debug\en-AS\BaarDanaTraderPOS.resources.dll
+C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.AddItemForm.en-AS.resources
+C:\Users\Abdul\Source\Repos\BaarDanaTraderPOS1\BaarDanaTraderPOS\obj\Debug\en-AS\BaarDanaTraderPOS.resources.dll

@@ -57,7 +57,7 @@ namespace BaarDanaTraderPOS
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(133, 65);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Create Order";
+            this.button1.Text = "آرڈر بنائیں";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btnCreateOrder);
             // 
@@ -73,7 +73,7 @@ namespace BaarDanaTraderPOS
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(133, 65);
             this.button2.TabIndex = 1;
-            this.button2.Text = "View History";
+            this.button2.Text = "سیلز دیکھیں";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.btnViewHistory);
             // 
@@ -89,7 +89,7 @@ namespace BaarDanaTraderPOS
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(133, 65);
             this.button3.TabIndex = 2;
-            this.button3.Text = "Products";
+            this.button3.Text = "اشیاء";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.btnAddItem);
             // 
@@ -105,7 +105,7 @@ namespace BaarDanaTraderPOS
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(133, 65);
             this.button4.TabIndex = 3;
-            this.button4.Text = "Customers";
+            this.button4.Text = "گاہک";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.btnAddCustomer);
             // 
