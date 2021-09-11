@@ -137,23 +137,29 @@ namespace BaarDanaTraderPOS.Screens
         }
         private void LoadCompany()
         {
-            DataTable company = new DataTable();
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
-            cmd.CommandText = "Select * from Company";
-            cmd.CommandType = CommandType.Text;
-            SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            
-            sda.Fill(company);
+            try
+            {
+                DataTable company = new DataTable();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "Select * from Company";
+                cmd.CommandType = CommandType.Text;
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
 
-            //Insert the Default Item to DataTable.
-            DataRow row = company.NewRow();
-            row[0] = 0;
-            row[1] = "Default";
-            company.Rows.InsertAt(row, 0);
-            cbCompany.DataSource = company;
-            cbCompany.DisplayMember = "CompanyName";
-            cbCompany.ValueMember = "id";
+                sda.Fill(company);
+
+                //Insert the Default Item to DataTable.
+                DataRow row = company.NewRow();
+                row[0] = 0;
+                row[1] = "Default";
+                company.Rows.InsertAt(row, 0);
+                cbCompany.DataSource = company;
+                cbCompany.DisplayMember = "CompanyName";
+                cbCompany.ValueMember = "id";
+            }
+            catch(Exception ) { 
+            }
+           
         }
         private void btnItemUpdate_Click(object sender, EventArgs e)
         {

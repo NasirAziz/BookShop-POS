@@ -239,3 +239,9 @@ C:\Users\Abdul\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTra
 C:\Users\Abdul\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.pdb
 C:\Users\Abdul\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.csprojAssemblyReference.cache
 >>>>>>> 11583e551182a02e7ea7904192cd9de96d391ee8
+C:\Users\hp\Source\Repos\BookShop-POS\BaarDanaTraderPOS\bin\Debug\ur-PK\BaarDanaTraderPOS.resources.dll
+C:\Users\hp\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.csproj.AssemblyReference.cache
+C:\Users\hp\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.Comapany.resources
+C:\Users\hp\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.OtherIncome.resources
+C:\Users\hp\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.AddItemForm.ur-PK.resources
+C:\Users\hp\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\ur-PK\BaarDanaTraderPOS.resources.dll
