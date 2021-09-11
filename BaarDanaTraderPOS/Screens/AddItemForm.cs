@@ -12,6 +12,7 @@ namespace BaarDanaTraderPOS.Screens
 {
     public partial class AddItemForm : Form
     {
+        DataTable Item = new DataTable();
         SqlConnection con = new SqlConnection();
         public int id, price, quantity;
         public String name;
@@ -27,13 +28,15 @@ namespace BaarDanaTraderPOS.Screens
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "insert into Add_item values(@name,@price,@quantity)";
+            cmd.CommandText = "insert into Add_item values(@name,@price,@quantity,@barcode,@company)";
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.AddWithValue("@name", tbItemName.Text);
             cmd.Parameters.AddWithValue("@price", tbItemPrice.Text);
             cmd.Parameters.AddWithValue("@quantity", tbItemQuantity.Text);
-            
-            try
+            cmd.Parameters.AddWithValue("@barcode", tbBarCode.Text);
+            cmd.Parameters.AddWithValue("@company", cbCompany.GetItemText(cbCompany.SelectedItem));
+
+                try
             {
                 int r = cmd.ExecuteNonQuery();
                 if (r > 0)
@@ -82,17 +85,20 @@ namespace BaarDanaTraderPOS.Screens
         }
         private void LoadItems()
         {
-            DataTable Item = new DataTable();
+           
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandText = "Select * from Add_item";
             cmd.CommandType = CommandType.Text;
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
-          //  sda.Fill(Item);
+            sda.Fill(Item);
+            
             dgvItems.DataSource = Item;
             cmd.ExecuteNonQuery();
 
         }
+       
+        
 
         private void AddItemForm_Load(object sender, EventArgs e)
         {
@@ -100,6 +106,8 @@ namespace BaarDanaTraderPOS.Screens
             con.Open();
 
             LoadItems();
+            LoadCompany();
+          
         }
 
         private void btnAISearch_Click(object sender, EventArgs e)
@@ -126,6 +134,26 @@ namespace BaarDanaTraderPOS.Screens
             //LoadItems();
 
 
+        }
+        private void LoadCompany()
+        {
+            DataTable company = new DataTable();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "Select * from Company";
+            cmd.CommandType = CommandType.Text;
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            
+            sda.Fill(company);
+
+            //Insert the Default Item to DataTable.
+            DataRow row = company.NewRow();
+            row[0] = 0;
+            row[1] = "Default";
+            company.Rows.InsertAt(row, 0);
+            cbCompany.DataSource = company;
+            cbCompany.DisplayMember = "CompanyName";
+            cbCompany.ValueMember = "id";
         }
         private void btnItemUpdate_Click(object sender, EventArgs e)
         {
@@ -170,6 +198,13 @@ namespace BaarDanaTraderPOS.Screens
         {
             LoadItems();
             tbAISearch.Text = "";
+        }
+
+        private void btnAddCompany_Click(object sender, EventArgs e)
+        {
+            Comapany cm = new Comapany
+                ();
+            cm.Show();
         }
 
         private void tbAISearch_TextChanged(object sender, EventArgs e)
