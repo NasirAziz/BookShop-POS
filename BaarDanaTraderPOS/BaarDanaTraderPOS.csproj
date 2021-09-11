@@ -107,6 +107,12 @@
     <Compile Include="Screens\AddItemForm.Designer.cs">
       <DependentUpon>AddItemForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Comapany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Comapany.Designer.cs">
+      <DependentUpon>Comapany.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\CreateOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,12 @@
     <Compile Include="Screens\InvoiceViewer.Designer.cs">
       <DependentUpon>InvoiceViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\OtherIncome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\OtherIncome.Designer.cs">
+      <DependentUpon>OtherIncome.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\ViewHistoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +152,15 @@
       <DependentUpon>ViewHistoryReport.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Screens\AddItemForm.ur-PK.resx">
+      <DependentUpon>AddItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Comapany.resx">
+      <DependentUpon>Comapany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\OtherIncome.resx">
+      <DependentUpon>OtherIncome.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\ViewHistoryReport.resx">
       <DependentUpon>ViewHistoryReport.cs</DependentUpon>
     </EmbeddedResource>

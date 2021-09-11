@@ -45,6 +45,13 @@ namespace BaarDanaTraderPOS.Screens
             this.label5 = new System.Windows.Forms.Label();
             this.btnAISearch = new System.Windows.Forms.Button();
             this.btnShowAll = new System.Windows.Forms.Button();
+            this.tbBarCode = new System.Windows.Forms.TextBox();
+            this.b = new System.Windows.Forms.Label();
+            this.Company = new System.Windows.Forms.Label();
+            this.cbCompany = new System.Windows.Forms.ComboBox();
+            this.btnAddCompany = new System.Windows.Forms.Button();
+            this.btnGenerateBarCode = new System.Windows.Forms.LinkLabel();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.SuspendLayout();
             // 
@@ -149,11 +156,57 @@ namespace BaarDanaTraderPOS.Screens
             this.btnShowAll.UseVisualStyleBackColor = true;
             this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
             // 
+            // tbBarCode
+            // 
+            resources.ApplyResources(this.tbBarCode, "tbBarCode");
+            this.tbBarCode.Name = "tbBarCode";
+            // 
+            // b
+            // 
+            resources.ApplyResources(this.b, "b");
+            this.b.Name = "b";
+            // 
+            // Company
+            // 
+            resources.ApplyResources(this.Company, "Company");
+            this.Company.Name = "Company";
+            // 
+            // cbCompany
+            // 
+            this.cbCompany.FormattingEnabled = true;
+            resources.ApplyResources(this.cbCompany, "cbCompany");
+            this.cbCompany.Name = "cbCompany";
+            // 
+            // btnAddCompany
+            // 
+            resources.ApplyResources(this.btnAddCompany, "btnAddCompany");
+            this.btnAddCompany.Name = "btnAddCompany";
+            this.btnAddCompany.UseVisualStyleBackColor = true;
+            this.btnAddCompany.Click += new System.EventHandler(this.btnAddCompany_Click);
+            // 
+            // btnGenerateBarCode
+            // 
+            resources.ApplyResources(this.btnGenerateBarCode, "btnGenerateBarCode");
+            this.btnGenerateBarCode.Name = "btnGenerateBarCode";
+            this.btnGenerateBarCode.TabStop = true;
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
+            // 
             // AddItemForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnGenerateBarCode);
+            this.Controls.Add(this.btnAddCompany);
+            this.Controls.Add(this.cbCompany);
+            this.Controls.Add(this.Company);
+            this.Controls.Add(this.tbBarCode);
+            this.Controls.Add(this.b);
             this.Controls.Add(this.btnShowAll);
             this.Controls.Add(this.tbAISearch);
             this.Controls.Add(this.label5);
@@ -194,5 +247,12 @@ namespace BaarDanaTraderPOS.Screens
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnAISearch;
         private System.Windows.Forms.Button btnShowAll;
+        private System.Windows.Forms.TextBox tbBarCode;
+        private System.Windows.Forms.Label b;
+        private System.Windows.Forms.Label Company;
+        private System.Windows.Forms.ComboBox cbCompany;
+        private System.Windows.Forms.Button btnAddCompany;
+        private System.Windows.Forms.LinkLabel btnGenerateBarCode;
+        private System.Windows.Forms.Label label3;
     }
 }
