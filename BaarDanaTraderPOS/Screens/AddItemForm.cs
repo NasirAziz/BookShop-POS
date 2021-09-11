@@ -135,7 +135,7 @@ namespace BaarDanaTraderPOS.Screens
 
 
         }
-        private void LoadCompany()
+        public void LoadCompany()
         {
             try
             {
@@ -157,7 +157,8 @@ namespace BaarDanaTraderPOS.Screens
                 cbCompany.DisplayMember = "CompanyName";
                 cbCompany.ValueMember = "id";
             }
-            catch(Exception ) { 
+            catch(Exception ) {
+                MessageBox.Show("");
             }
            
         }
@@ -211,6 +212,16 @@ namespace BaarDanaTraderPOS.Screens
             Comapany cm = new Comapany
                 ();
             cm.Show();
+        }
+
+        private void cbCompany_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbCompany_Click(object sender, EventArgs e)
+        {
+            LoadCompany();
         }
 
         private void tbAISearch_TextChanged(object sender, EventArgs e)

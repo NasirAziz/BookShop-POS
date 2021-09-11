@@ -34,7 +34,11 @@ namespace BaarDanaTraderPOS.Screens
             cmd.Parameters.AddWithValue("@name",tbCompanyName.Text);
             if(cmd.ExecuteNonQuery()>0)
             {
-                MessageBox.Show("Comapny Added");
+               // MessageBox.Show("Comapny Added");
+               // AddItemForm ad = new AddItemForm();
+               // ad.LoadCompany();
+                this.Close();
+
             }
             else
             {

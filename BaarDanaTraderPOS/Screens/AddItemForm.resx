@@ -676,7 +676,7 @@
     <value>3</value>
   </data>
   <data name="btnAddCompany.Location" type="System.Drawing.Point, System.Drawing">
-    <value>428, 381</value>
+    <value>434, 372</value>
   </data>
   <data name="btnAddCompany.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>

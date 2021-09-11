@@ -22,7 +22,7 @@ namespace BaarDanaTraderPOS.Screens
         private int price, id;
         public static int Invoice_id = 0;
         private int quantity, chagne;
-        int timesEnterPressed = 0;
+       // int timesEnterPressed = 0;
         public static int Balance, Paid;
         public int totalPrice;
         public static int FinalPrice;
@@ -161,7 +161,7 @@ namespace BaarDanaTraderPOS.Screens
                 {
                     MessageBox.Show("Product does not exist!");
                     ResetTextBoxes();
-                    timesEnterPressed = 0;
+                  //  timesEnterPressed = 0;
 
                     return;
                 }
@@ -171,7 +171,7 @@ namespace BaarDanaTraderPOS.Screens
             {
                 MessageBox.Show("Product does not exist!");
                 ResetTextBoxes();
-                timesEnterPressed = 0;
+                //timesEnterPressed = 0;
                 return;
             }
 
@@ -274,7 +274,7 @@ namespace BaarDanaTraderPOS.Screens
         {
             try
             {
-                timesEnterPressed = 0;
+              //  timesEnterPressed = 0;
                 //productName = tbOrderProductName.Text;
 /*                customerName = cbCustomername.GetItemText(cbCustomername.SelectedItem);
 */               /* price = int.Parse(tbOrderProductPrice.Text);
@@ -468,7 +468,7 @@ namespace BaarDanaTraderPOS.Screens
         private void btnCOCancel_Click_1(object sender, EventArgs e)
         {
             ResetTextBoxes();
-            timesEnterPressed = 0;
+           // timesEnterPressed = 0;
         }
 
         private void btnCORemoveProduct_Click_1(object sender, EventArgs e)
