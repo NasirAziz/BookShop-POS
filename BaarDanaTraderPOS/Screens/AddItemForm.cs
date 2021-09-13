@@ -85,12 +85,13 @@ namespace BaarDanaTraderPOS.Screens
         }
         private void LoadItems()
         {
-           
+          
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandText = "Select * from Add_item";
             cmd.CommandType = CommandType.Text;
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            Item.Clear();
             sda.Fill(Item);
             
             dgvItems.DataSource = Item;
