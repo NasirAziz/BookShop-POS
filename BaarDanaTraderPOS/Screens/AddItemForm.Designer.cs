@@ -176,6 +176,8 @@ namespace BaarDanaTraderPOS.Screens
             this.cbCompany.FormattingEnabled = true;
             resources.ApplyResources(this.cbCompany, "cbCompany");
             this.cbCompany.Name = "cbCompany";
+            this.cbCompany.SelectedIndexChanged += new System.EventHandler(this.cbCompany_SelectedIndexChanged);
+            this.cbCompany.Click += new System.EventHandler(this.cbCompany_Click);
             // 
             // btnAddCompany
             // 

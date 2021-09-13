@@ -135,25 +135,32 @@ namespace BaarDanaTraderPOS.Screens
 
 
         }
-        private void LoadCompany()
+        public void LoadCompany()
         {
-            DataTable company = new DataTable();
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
-            cmd.CommandText = "Select * from Company";
-            cmd.CommandType = CommandType.Text;
-            SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            
-            sda.Fill(company);
+            try
+            {
+                DataTable company = new DataTable();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "Select * from Company";
+                cmd.CommandType = CommandType.Text;
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
 
-            //Insert the Default Item to DataTable.
-            DataRow row = company.NewRow();
-            row[0] = 0;
-            row[1] = "Default";
-            company.Rows.InsertAt(row, 0);
-            cbCompany.DataSource = company;
-            cbCompany.DisplayMember = "CompanyName";
-            cbCompany.ValueMember = "id";
+                sda.Fill(company);
+
+                //Insert the Default Item to DataTable.
+                DataRow row = company.NewRow();
+                row[0] = 0;
+                row[1] = "Default";
+                company.Rows.InsertAt(row, 0);
+                cbCompany.DataSource = company;
+                cbCompany.DisplayMember = "CompanyName";
+                cbCompany.ValueMember = "id";
+            }
+            catch(Exception ) {
+                MessageBox.Show("");
+            }
+           
         }
         private void btnItemUpdate_Click(object sender, EventArgs e)
         {
@@ -205,6 +212,16 @@ namespace BaarDanaTraderPOS.Screens
             Comapany cm = new Comapany
                 ();
             cm.Show();
+        }
+
+        private void cbCompany_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbCompany_Click(object sender, EventArgs e)
+        {
+            LoadCompany();
         }
 
         private void tbAISearch_TextChanged(object sender, EventArgs e)
