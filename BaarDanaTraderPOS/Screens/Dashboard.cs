@@ -67,5 +67,11 @@ namespace BaarDanaTraderPOS
         {
 
         }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            Settings s = new Settings();
+            s.Show();
+        }
     }
 }

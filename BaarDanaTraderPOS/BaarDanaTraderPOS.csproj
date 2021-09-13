@@ -88,6 +88,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookShopDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookShopDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Connection.cs" />
     <Compile Include="Database\ProductClass.cs" />
     <Compile Include="DataSet1.Designer.cs">
@@ -145,6 +150,12 @@
     <Compile Include="Screens\OtherIncome.Designer.cs">
       <DependentUpon>OtherIncome.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\ViewHistoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\OtherIncome.resx">
       <DependentUpon>OtherIncome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\ViewHistoryReport.resx">
       <DependentUpon>ViewHistoryReport.cs</DependentUpon>
@@ -205,6 +219,17 @@
     <EmbeddedResource Include="Screens\ViewHistoryForm.resx">
       <DependentUpon>ViewHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="BookShopDataSet.xsc">
+      <DependentUpon>BookShopDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BookShopDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BookShopDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BookShopDataSet.xss">
+      <DependentUpon>BookShopDataSet.xsd</DependentUpon>
+    </None>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
