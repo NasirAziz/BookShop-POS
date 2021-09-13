@@ -60,9 +60,9 @@ namespace BaarDanaTraderPOS.Screens
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(635, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 39);
+            this.label1.Size = new System.Drawing.Size(165, 39);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Expanses";
+            this.label1.Text = "Expenses";
             // 
             // label3
             // 
@@ -233,7 +233,7 @@ namespace BaarDanaTraderPOS.Screens
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.lblTotalCashOut);
