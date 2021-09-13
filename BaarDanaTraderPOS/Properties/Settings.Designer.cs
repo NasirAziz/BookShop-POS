@@ -32,5 +32,15 @@ namespace BaarDanaTraderPOS.Properties {
                 return ((string)(this["BaarDanaTradersConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=BookShop;Integrated Security=True")]
+        public string BookShopConnectionString {
+            get {
+                return ((string)(this["BookShopConnectionString"]));
+            }
+        }
     }
 }

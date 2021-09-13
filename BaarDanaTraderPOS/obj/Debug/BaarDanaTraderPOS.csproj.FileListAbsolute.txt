@@ -158,3 +158,5 @@ C:\Users\Abdul\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTra
 C:\Users\Abdul\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.exe
 C:\Users\Abdul\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.pdb
 C:\Users\Abdul\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.csprojAssemblyReference.cache
+C:\Users\Abdul\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.OtherIncome.resources
+C:\Users\Abdul\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.Settings.resources
