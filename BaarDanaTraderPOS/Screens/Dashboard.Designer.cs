@@ -99,7 +99,7 @@ namespace BaarDanaTraderPOS
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(200, 100);
             this.button4.TabIndex = 3;
-            this.button4.Text = "Customers";
+            this.button4.Text = "Cash Report";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.btnAddCustomer);
             // 
@@ -112,7 +112,7 @@ namespace BaarDanaTraderPOS
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(262, 164);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1107, 560);
+            this.pictureBox1.Size = new System.Drawing.Size(1107, 746);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -129,7 +129,7 @@ namespace BaarDanaTraderPOS
             this.panel1.Controls.Add(this.button3);
             this.panel1.Location = new System.Drawing.Point(4, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(252, 848);
+            this.panel1.Size = new System.Drawing.Size(252, 1034);
             this.panel1.TabIndex = 5;
             // 
             // pictureBox2
@@ -148,7 +148,7 @@ namespace BaarDanaTraderPOS
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1370, 800);
+            this.ClientSize = new System.Drawing.Size(1370, 986);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";

@@ -245,3 +245,4 @@ C:\Users\hp\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTrader
 C:\Users\hp\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.OtherIncome.resources
 C:\Users\hp\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.AddItemForm.ur-PK.resources
 C:\Users\hp\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\ur-PK\BaarDanaTraderPOS.resources.dll
+C:\Users\hp\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.CashInCashOut.resources

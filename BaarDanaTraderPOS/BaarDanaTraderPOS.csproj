@@ -107,6 +107,12 @@
     <Compile Include="Screens\AddItemForm.Designer.cs">
       <DependentUpon>AddItemForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\CashInCashOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\CashInCashOut.Designer.cs">
+      <DependentUpon>CashInCashOut.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Comapany.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Screens\AddItemForm.ur-PK.resx">
       <DependentUpon>AddItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\CashInCashOut.resx">
+      <DependentUpon>CashInCashOut.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Comapany.resx">
       <DependentUpon>Comapany.cs</DependentUpon>

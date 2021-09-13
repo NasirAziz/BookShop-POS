@@ -58,8 +58,8 @@ namespace BaarDanaTraderPOS
 
         private void btnAddCustomer(object sender, EventArgs e)
         {
-            AddCustomerForm acf = new AddCustomerForm();
-            acf.Show();
+            CashInCashOut cash = new CashInCashOut();
+            cash.Show();
 
         }
 

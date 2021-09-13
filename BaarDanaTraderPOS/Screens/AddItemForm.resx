@@ -213,10 +213,10 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="tbItemName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>218, 142</value>
+    <value>212, 142</value>
   </data>
   <data name="tbItemName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 35</value>
+    <value>210, 35</value>
   </data>
   <data name="tbItemName.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -237,10 +237,10 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="tbItemPrice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>218, 218</value>
+    <value>212, 218</value>
   </data>
   <data name="tbItemPrice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 35</value>
+    <value>210, 35</value>
   </data>
   <data name="tbItemPrice.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -261,10 +261,10 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="tbItemQuantity.Location" type="System.Drawing.Point, System.Drawing">
-    <value>218, 300</value>
+    <value>212, 300</value>
   </data>
   <data name="tbItemQuantity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 35</value>
+    <value>210, 35</value>
   </data>
   <data name="tbItemQuantity.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -595,7 +595,7 @@
     <value>NoControl</value>
   </data>
   <data name="b.Location" type="System.Drawing.Point, System.Drawing">
-    <value>36, 464</value>
+    <value>30, 461</value>
   </data>
   <data name="b.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 29</value>
