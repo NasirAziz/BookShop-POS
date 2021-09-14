@@ -178,15 +178,9 @@
     <EmbeddedResource Include="Screens\Comapany.resx">
       <DependentUpon>Comapany.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-=======
     <EmbeddedResource Include="Screens\Expenses.resx">
       <DependentUpon>Expenses.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\OtherIncome.resx">
-      <DependentUpon>OtherIncome.cs</DependentUpon>
-    </EmbeddedResource>
->>>>>>> eeb95b052a0c76d9bd9b9614c2a40d227898eb20
     <EmbeddedResource Include="Screens\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>

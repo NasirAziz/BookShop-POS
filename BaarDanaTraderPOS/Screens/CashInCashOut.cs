@@ -35,13 +35,16 @@ namespace BaarDanaTraderPOS.Screens
             {
 
                 dgv.Refresh();
-                cmd.CommandText = "select * from Cash_report where Date between @first And @second";
+                cmd.CommandText = "select * from Expense where Date between @first And @second";
                 cmd.Parameters.AddWithValue("@first", fromDate);
                 cmd.Parameters.AddWithValue("@second", tillDate);
                 SqlDataAdapter ad = new SqlDataAdapter(cmd);
 
                 dt.Clear();
                 ad.Fill(dt);
+                dt.Columns[0].ColumnName = "ID";
+                dt.Columns[1].ColumnName = "Detail";
+                dt.Columns[2].ColumnName = "CashOUT";
                 dgv.DataSource = dt;
                 cmd.ExecuteNonQuery();
                 dgv.Refresh();
@@ -53,7 +56,22 @@ namespace BaarDanaTraderPOS.Screens
 
             }
         }
+        public void CashIn()
+        {
+            DateTime now = DateTime.Now;
+            
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "SELECT SUM(Total) FROM Sales_report where Date=@d";
+            cmd.Parameters.AddWithValue("@d", now.ToString("yyyy-MM-dd"));
+            int totalsales =(int)cmd.ExecuteScalar();
+            cmd.CommandText = "SELECT SUM(amount) FROM Expense where date=@date";
+            cmd.Parameters.AddWithValue("@date", now.ToString("yyyy-MM-dd"));
+            int totalotherincome = (int)cmd.ExecuteScalar();
+            double cashin = totalotherincome + totalsales;
+            MessageBox.Show(totalsales.ToString());
 
+        }
 
         public CashInCashOut()
         {
@@ -62,28 +80,11 @@ namespace BaarDanaTraderPOS.Screens
 
         private void CashInCashOut_Load(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
+            con.ConnectionString = Connection.c;
+            con.Open();
+            CashIn();
 
-            try
-            {
-
-                dgv.Refresh();
-                cmd.CommandText = "select * from Cash_report";
-                SqlDataAdapter ad = new SqlDataAdapter(cmd);
-
-                dt.Clear();
-                ad.Fill(dt);
-                dgv.DataSource = dt;
-                cmd.ExecuteNonQuery();
-                dgv.Refresh();
-
-            }
-            catch(Exception)
-            {
-                MessageBox.Show(e.ToString());
-
-            }
+            
         }
 
     }
