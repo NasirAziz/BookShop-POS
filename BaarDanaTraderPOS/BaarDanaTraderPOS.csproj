@@ -138,6 +138,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screens\Expenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Expenses.Designer.cs">
+      <DependentUpon>Expenses.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\InvoiceViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,15 @@
     <EmbeddedResource Include="Screens\Comapany.resx">
       <DependentUpon>Comapany.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
+=======
+    <EmbeddedResource Include="Screens\Expenses.resx">
+      <DependentUpon>Expenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\OtherIncome.resx">
+      <DependentUpon>OtherIncome.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> eeb95b052a0c76d9bd9b9614c2a40d227898eb20
     <EmbeddedResource Include="Screens\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>

@@ -73,5 +73,11 @@ namespace BaarDanaTraderPOS
             Settings s = new Settings();
             s.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Expenses exp = new Expenses();
+            exp.Show();
+        }
     }
 }
