@@ -220,7 +220,7 @@ namespace BaarDanaTraderPOS.Screens
             this.tbOrderProductID.MaxLength = 0;
             this.tbOrderProductID.Name = "tbOrderProductID";
             this.tbOrderProductID.Size = new System.Drawing.Size(208, 30);
-            this.tbOrderProductID.TabIndex = 20;
+            this.tbOrderProductID.TabIndex = 1;
             // 
             // label1
             // 
