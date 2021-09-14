@@ -93,7 +93,6 @@ namespace BaarDanaTraderPOS.Screens
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             Item.Clear();
             sda.Fill(Item);
-            
             dgvItems.DataSource = Item;
             cmd.ExecuteNonQuery();
 
