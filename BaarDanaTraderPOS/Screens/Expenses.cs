@@ -22,6 +22,10 @@ namespace BaarDanaTraderPOS.Screens
         {
             InitializeComponent();
         }
+        public void cashout()
+        {
+
+        }
 
         private void Expenses_Load(object sender, EventArgs e)
         {

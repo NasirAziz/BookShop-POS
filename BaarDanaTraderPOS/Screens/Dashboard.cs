@@ -79,5 +79,11 @@ namespace BaarDanaTraderPOS
             Expenses exp = new Expenses();
             exp.Show();
         }
+
+        private void btnCash_Click(object sender, EventArgs e)
+        {
+            CashInCashOut c = new CashInCashOut();
+            c.Show();
+        }
     }
 }

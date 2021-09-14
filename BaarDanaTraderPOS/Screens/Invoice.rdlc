@@ -765,8 +765,8 @@
               <rd:DefaultName>ShopName</rd:DefaultName>
               <Top>0.34078cm</Top>
               <Left>6.44826cm</Left>
-              <Height>0.81167cm</Height>
-              <Width>4.37854cm</Width>
+              <Height>1.04069cm</Height>
+              <Width>12.79229cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -797,8 +797,8 @@
               <rd:DefaultName>Phno</rd:DefaultName>
               <Top>1.55787cm</Top>
               <Left>6.44826cm</Left>
-              <Height>0.6cm</Height>
-              <Width>4.37854cm</Width>
+              <Height>0.83812cm</Height>
+              <Width>12.79229cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
@@ -876,9 +876,9 @@
               </Paragraphs>
               <rd:DefaultName>Footer</rd:DefaultName>
               <Top>0.22907cm</Top>
-              <Left>9.17787cm</Left>
+              <Left>8.2739cm</Left>
               <Height>0.6cm</Height>
-              <Width>2.5cm</Width>
+              <Width>6.06026cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
