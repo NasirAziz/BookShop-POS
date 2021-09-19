@@ -82,7 +82,7 @@ namespace BaarDanaTraderPOS
 
         private void btnCash_Click(object sender, EventArgs e)
         {
-            CashInCashOut c = new CashInCashOut();
+            OtherIncome c = new  OtherIncome();
             c.Show();
         }
     }

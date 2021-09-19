@@ -150,6 +150,12 @@
     <Compile Include="Screens\InvoiceViewer.Designer.cs">
       <DependentUpon>InvoiceViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\OtherIncome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\OtherIncome.Designer.cs">
+      <DependentUpon>OtherIncome.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Settings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Expenses.resx">
       <DependentUpon>Expenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\OtherIncome.resx">
+      <DependentUpon>OtherIncome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>

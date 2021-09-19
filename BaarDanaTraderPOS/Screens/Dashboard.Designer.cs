@@ -198,9 +198,9 @@ namespace BaarDanaTraderPOS
             this.btnCash.Location = new System.Drawing.Point(16, 671);
             this.btnCash.Margin = new System.Windows.Forms.Padding(2);
             this.btnCash.Name = "btnCash";
-            this.btnCash.Size = new System.Drawing.Size(133, 65);
+            this.btnCash.Size = new System.Drawing.Size(133, 34);
             this.btnCash.TabIndex = 9;
-            this.btnCash.Text = "CashReport";
+            this.btnCash.Text = "OtherIncome";
             this.btnCash.UseVisualStyleBackColor = false;
             this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
             // 
