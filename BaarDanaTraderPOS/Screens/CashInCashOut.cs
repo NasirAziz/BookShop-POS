@@ -65,11 +65,11 @@ namespace BaarDanaTraderPOS.Screens
             cmd.CommandText = "SELECT SUM(Total) FROM Sales_report where Date=@d";
             cmd.Parameters.AddWithValue("@d", now.ToString("yyyy-MM-dd"));
             int totalsales =(int)cmd.ExecuteScalar();
-            cmd.CommandText = "SELECT SUM(amount) FROM Expense where date=@date";
+            cmd.CommandText = "SELECT SUM(amount) FROM Other_income where date=@date";
             cmd.Parameters.AddWithValue("@date", now.ToString("yyyy-MM-dd"));
             int totalotherincome = (int)cmd.ExecuteScalar();
-            double cashin = totalotherincome + totalsales;
-            MessageBox.Show(totalsales.ToString());
+            int cashin = totalotherincome + totalsales;
+            MessageBox.Show(cashin.ToString()) ;
 
         }
 
