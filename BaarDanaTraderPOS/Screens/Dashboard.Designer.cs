@@ -36,10 +36,10 @@ namespace BaarDanaTraderPOS
             this.button4 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCash = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnCash = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -53,10 +53,9 @@ namespace BaarDanaTraderPOS
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.DimGray;
-            this.button1.Location = new System.Drawing.Point(16, 193);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(24, 297);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 65);
+            this.button1.Size = new System.Drawing.Size(200, 100);
             this.button1.TabIndex = 0;
             this.button1.Text = "Create Order";
             this.button1.UseVisualStyleBackColor = false;
@@ -69,10 +68,9 @@ namespace BaarDanaTraderPOS
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.DimGray;
-            this.button2.Location = new System.Drawing.Point(16, 278);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Location = new System.Drawing.Point(24, 428);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 65);
+            this.button2.Size = new System.Drawing.Size(200, 100);
             this.button2.TabIndex = 1;
             this.button2.Text = "View History";
             this.button2.UseVisualStyleBackColor = false;
@@ -85,10 +83,9 @@ namespace BaarDanaTraderPOS
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.DimGray;
-            this.button3.Location = new System.Drawing.Point(16, 361);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Location = new System.Drawing.Point(24, 555);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(133, 65);
+            this.button3.Size = new System.Drawing.Size(200, 100);
             this.button3.TabIndex = 2;
             this.button3.Text = "Products";
             this.button3.UseVisualStyleBackColor = false;
@@ -101,10 +98,9 @@ namespace BaarDanaTraderPOS
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.DimGray;
-            this.button4.Location = new System.Drawing.Point(16, 445);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Location = new System.Drawing.Point(24, 685);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(133, 65);
+            this.button4.Size = new System.Drawing.Size(200, 100);
             this.button4.TabIndex = 3;
             this.button4.Text = "Cash Report";
             this.button4.UseVisualStyleBackColor = false;
@@ -117,10 +113,9 @@ namespace BaarDanaTraderPOS
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.ErrorImage = null;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(175, 107);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(262, 165);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1102, 822);
+            this.pictureBox1.Size = new System.Drawing.Size(1653, 1265);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -138,11 +133,25 @@ namespace BaarDanaTraderPOS
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
-            this.panel1.Location = new System.Drawing.Point(3, 8);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(4, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(252, 1110);
+            this.panel1.Size = new System.Drawing.Size(378, 1708);
             this.panel1.TabIndex = 5;
+            // 
+            // btnCash
+            // 
+            this.btnCash.BackColor = System.Drawing.Color.White;
+            this.btnCash.FlatAppearance.BorderSize = 0;
+            this.btnCash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCash.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCash.ForeColor = System.Drawing.Color.DimGray;
+            this.btnCash.Location = new System.Drawing.Point(156, 623);
+            this.btnCash.Name = "btnCash";
+            this.btnCash.Size = new System.Drawing.Size(200, 91);
+            this.btnCash.TabIndex = 9;
+            this.btnCash.Text = "OtherIncome";
+            this.btnCash.UseVisualStyleBackColor = false;
+            this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
             // 
             // button5
             // 
@@ -151,10 +160,9 @@ namespace BaarDanaTraderPOS
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.DimGray;
-            this.button5.Location = new System.Drawing.Point(16, 523);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Location = new System.Drawing.Point(24, 805);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(133, 65);
+            this.button5.Size = new System.Drawing.Size(200, 100);
             this.button5.TabIndex = 8;
             this.button5.Text = "Add Expense";
             this.button5.UseVisualStyleBackColor = false;
@@ -167,10 +175,9 @@ namespace BaarDanaTraderPOS
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettings.ForeColor = System.Drawing.Color.DimGray;
-            this.btnSettings.Location = new System.Drawing.Point(16, 602);
-            this.btnSettings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSettings.Location = new System.Drawing.Point(24, 926);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(133, 65);
+            this.btnSettings.Size = new System.Drawing.Size(200, 100);
             this.btnSettings.TabIndex = 7;
             this.btnSettings.Text = "Settings";
             this.btnSettings.UseVisualStyleBackColor = false;
@@ -179,40 +186,22 @@ namespace BaarDanaTraderPOS
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(5, 13);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(8, 20);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(155, 130);
+            this.pictureBox2.Size = new System.Drawing.Size(232, 200);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // btnCash
-            // 
-            this.btnCash.BackColor = System.Drawing.Color.White;
-            this.btnCash.FlatAppearance.BorderSize = 0;
-            this.btnCash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCash.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCash.ForeColor = System.Drawing.Color.DimGray;
-            this.btnCash.Location = new System.Drawing.Point(16, 671);
-            this.btnCash.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCash.Name = "btnCash";
-            this.btnCash.Size = new System.Drawing.Size(133, 34);
-            this.btnCash.TabIndex = 9;
-            this.btnCash.Text = "OtherIncome";
-            this.btnCash.UseVisualStyleBackColor = false;
-            this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(908, 749);
+            this.ClientSize = new System.Drawing.Size(1362, 1050);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

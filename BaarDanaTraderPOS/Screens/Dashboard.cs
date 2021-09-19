@@ -24,14 +24,15 @@ namespace BaarDanaTraderPOS
         private void Form1_Load(object sender, EventArgs e)
         {
             con.ConnectionString = Connection.c;
-            try
+            con.Open();
+/*            try
             {
                 con.Open();
             }
             catch
             {
                 MessageBox.Show("Error! Database not found.");
-            }
+            }*/
             
         }
 

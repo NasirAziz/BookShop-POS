@@ -39,7 +39,7 @@ namespace BaarDanaTraderPOS.Screens
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "insert into Expense values(@desc,@amount,@date)";
+            cmd.CommandText = "insert into Expenses values(@desc,@amount,@date)";
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.AddWithValue("@desc", tbDesc.Text);
             cmd.Parameters.AddWithValue("@amount", tbExpense.Text);
