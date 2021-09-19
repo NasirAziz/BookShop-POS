@@ -15,7 +15,7 @@ namespace BaarDanaTraderPOS.Screens
     {
         DataTable dt = new DataTable();
         SqlConnection con = new SqlConnection();
-
+        DateTime now = DateTime.Now;
         DateTime fromDate, tillDate;
         double totalCashIn, totalCashOut, totalProfit, totalLoss;
 
@@ -34,20 +34,20 @@ namespace BaarDanaTraderPOS.Screens
             try
             {
 
-                dgv.Refresh();
-                cmd.CommandText = "select * from Expense where Date between @first And @second";
+                Salecash.Refresh();
+                cmd.CommandText = "select * from Expenses where Date between @first And @second";
                 cmd.Parameters.AddWithValue("@first", fromDate);
                 cmd.Parameters.AddWithValue("@second", tillDate);
                 SqlDataAdapter ad = new SqlDataAdapter(cmd);
 
                 dt.Clear();
                 ad.Fill(dt);
-                dt.Columns[0].ColumnName = "ID";
+              /*  dt.Columns[0].ColumnName = "ID";
                 dt.Columns[1].ColumnName = "Detail";
-                dt.Columns[2].ColumnName = "CashOUT";
-                dgv.DataSource = dt;
+                dt.Columns[2].ColumnName = "CashOUT";*/
+                cashoutexpg.DataSource = dt;
                 cmd.ExecuteNonQuery();
-                dgv.Refresh();
+                Salecash.Refresh();
 
             }
             catch ( Exception)
@@ -69,7 +69,7 @@ namespace BaarDanaTraderPOS.Screens
 
         public void CashIn()
         {
-            DateTime now = DateTime.Now;
+            
             int totalsales, totalotherincome;
 
 
@@ -130,13 +130,61 @@ namespace BaarDanaTraderPOS.Screens
         {
             InitializeComponent();
         }
+        public void cashthroughsale()
+        {
+            DataTable cashsale = new DataTable();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select * from Sales_report where Date=@date";
+            cmd.Parameters.AddWithValue("@date", now.ToString("yyyy-MMM-dd"));
+            cmd.ExecuteNonQuery();
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            sda.Fill(cashsale);
+            Salecash.DataSource = cashsale;
+           
+        }
+        public void cashthroughotherincome()
+        {
+            DataTable cashotherincome = new DataTable();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select * from Other_income where Date=@date";
+            cmd.Parameters.AddWithValue("@date", now.ToString("yyyy-MMM-dd"));
+            cmd.ExecuteNonQuery();
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            sda.Fill(cashotherincome);
+            Othercash.DataSource = cashotherincome;
+        }
+        public void cashoutexp()
+        {
+            DataTable cashout = new DataTable();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select * from Expenses where Date=@date";
+            cmd.Parameters.AddWithValue("@date", now.ToString("yyyy-MMM-dd"));
+            cmd.ExecuteNonQuery();
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            sda.Fill(cashout);
+            cashoutexpg.DataSource = cashout;
+
+
+            
+            
+
+        }
 
         private void CashInCashOut_Load(object sender, EventArgs e)
         {
             con.ConnectionString = Connection.c;
             con.Open();
-           // CashIn();
+            CashIn();
             CashOut();
+            lbl_CashIn.Text = totalCashIn.ToString();
+            lbl_CashOut.Text = totalCashOut.ToString();
+            cashthroughotherincome();
+            cashthroughsale();
+            cashoutexp();
+
 
             
         }
