@@ -56,20 +56,73 @@ namespace BaarDanaTraderPOS.Screens
 
             }
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         public void CashIn()
         {
             DateTime now = DateTime.Now;
-            
+            int totalsales, totalotherincome;
+
+
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "SELECT SUM(Total) FROM Sales_report where Date=@d";
-            cmd.Parameters.AddWithValue("@d", now.ToString("yyyy-MM-dd"));
-            int totalsales =(int)cmd.ExecuteScalar();
-            cmd.CommandText = "SELECT SUM(amount) FROM Other_income where date=@date";
-            cmd.Parameters.AddWithValue("@date", now.ToString("yyyy-MM-dd"));
-            int totalotherincome = (int)cmd.ExecuteScalar();
-            int cashin = totalotherincome + totalsales;
-            MessageBox.Show(cashin.ToString()) ;
+            try {
+                cmd.CommandText = "SELECT SUM(Total) FROM Sales_report where Date=@d";
+                cmd.Parameters.AddWithValue("@d", now.ToString("yyyy-MM-dd"));
+                totalsales = (int)cmd.ExecuteScalar();
+            } catch
+            {
+                totalsales = 0;
+            }
+            try {
+                cmd.CommandText = "SELECT SUM(amount) FROM Other_income where date=@date";
+                cmd.Parameters.AddWithValue("@date", now.ToString("yyyy-MM-dd"));
+                totalotherincome = (int)cmd.ExecuteScalar();
+            }
+            catch
+            {
+                totalotherincome = 0;
+            }
+
+
+            totalCashIn = totalotherincome + totalsales;
+           // MessageBox.Show(cashin.ToString()) ;
+
+        }
+
+
+
+        public void CashOut()
+        {
+            DateTime now = DateTime.Now;
+            //int totalExpanse;
+
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            try
+            {
+                cmd.CommandText = "SELECT SUM(amount) FROM Expenses where date=@d";
+                cmd.Parameters.AddWithValue("@d", now.ToString("yyyy-MM-dd"));
+                totalCashOut = (int)cmd.ExecuteScalar();
+            }
+            catch ( Exception e )
+            {
+                totalCashOut = 0;
+                MessageBox.Show(e.ToString());
+
+            }
+
+            //MessageBox.Show(totalExpanse.ToString());
 
         }
 
@@ -82,7 +135,8 @@ namespace BaarDanaTraderPOS.Screens
         {
             con.ConnectionString = Connection.c;
             con.Open();
-            CashIn();
+           // CashIn();
+            CashOut();
 
             
         }
