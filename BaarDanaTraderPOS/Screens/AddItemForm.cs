@@ -14,8 +14,8 @@ namespace BaarDanaTraderPOS.Screens
     {
         DataTable Item = new DataTable();
         SqlConnection con = new SqlConnection();
-        public int id, price, quantity;
-        public String name;
+        public int id, price, purchase ,quantity;
+        public String name, company,barcode;
         public AddItemForm()
         {
             InitializeComponent();
@@ -28,13 +28,14 @@ namespace BaarDanaTraderPOS.Screens
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "insert into Add_item values(@name,@price,@quantity,@barcode,@company)";
+            cmd.CommandText = "insert into Add_item values(@name,@price,@quantity,@barcode,@company,@purchase)";
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.AddWithValue("@name", tbItemName.Text);
             cmd.Parameters.AddWithValue("@price", tbItemPrice.Text);
             cmd.Parameters.AddWithValue("@quantity", tbItemQuantity.Text);
             cmd.Parameters.AddWithValue("@barcode", tbBarCode.Text);
             cmd.Parameters.AddWithValue("@company", cbCompany.GetItemText(cbCompany.SelectedItem));
+            cmd.Parameters.AddWithValue("@purchase", tbPurchasePrice.Text);
 
                 try
             {
@@ -67,13 +68,15 @@ namespace BaarDanaTraderPOS.Screens
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "UPDATE Add_item SET Name=@name, Price=@price, Quantity=@quantity WHERE Item_id=@id";
+            cmd.CommandText = "UPDATE Add_item SET Name=@name, Price=@price, Quantity=@quantity, Purchase_price=@purchase WHERE Item_id=@id";
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.AddWithValue("@name", name);
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@price", price);
             cmd.Parameters.AddWithValue("@quantity", quantity);
-            
+            cmd.Parameters.AddWithValue("@purchase", tbPurchasePrice.Text);
+
+
             int r = cmd.ExecuteNonQuery();
             if (r > 0)
             {
@@ -185,14 +188,14 @@ namespace BaarDanaTraderPOS.Screens
             tbItemName.Text = "";
             tbItemPrice.Text = "";
             tbItemQuantity.Text = "";
+            tbPurchasePrice.Text = "";
+            tbBarCode.Text = "";
+            cbCompany.SelectedIndex = 0;
         }
 
         private void btnItemDelete_Click(object sender, EventArgs e)
         {
             DeleteItem(id);
-            tbItemName.Text = "";
-            tbItemPrice.Text = ""; 
-            tbItemQuantity.Text = "";
             LoadItems();
         }
 
@@ -240,16 +243,23 @@ namespace BaarDanaTraderPOS.Screens
 
         private void dgvItems_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+
             try
             {
                 id = Convert.ToInt32(dgvItems.CurrentRow.Cells[0].Value.ToString());
                 name = dgvItems.CurrentRow.Cells[1].Value.ToString();
                 price= Convert.ToInt32(dgvItems.CurrentRow.Cells[2].Value.ToString());
                 quantity = Convert.ToInt32(dgvItems.CurrentRow.Cells[3].Value.ToString());
+                purchase = Convert.ToInt32(dgvItems.CurrentRow.Cells[6].Value.ToString());
+                barcode = dgvItems.CurrentRow.Cells[4].Value.ToString();
+                company = dgvItems.CurrentRow.Cells[5].Value.ToString();
                 tbItemName.Text = name;
                 tbItemPrice.Text = price.ToString();
                 tbItemQuantity.Text = quantity.ToString();
-                
+                tbPurchasePrice.Text =purchase.ToString();
+                tbBarCode.Text = barcode;
+                cbCompany.SelectedIndex = cbCompany.Items.IndexOf(company);
+
             }
             catch
             {

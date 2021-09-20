@@ -162,6 +162,16 @@ namespace BaarDanaTraderPOS.Screens
             calculateTotal();
         }
 
+        private void dgvViewHistory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvViewHistory_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void to_ValueChanged(object sender, EventArgs e)
         {
             flag = true;
