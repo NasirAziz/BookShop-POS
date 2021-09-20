@@ -32,7 +32,7 @@ namespace BaarDanaTraderPOS.Screens
             cmd.Parameters.AddWithValue("@desc", tbDesc.Text);
             cmd.Parameters.AddWithValue("@amount", tbExpense.Text);
             cmd.Parameters.AddWithValue("@date", dtpDate.Value.Date);
-
+             
             try
             {
                 int r = cmd.ExecuteNonQuery();
