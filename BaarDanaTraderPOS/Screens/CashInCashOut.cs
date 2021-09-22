@@ -115,10 +115,10 @@ namespace BaarDanaTraderPOS.Screens
                 cmd.Parameters.AddWithValue("@d", now.ToString("yyyy-MM-dd"));
                 totalCashOut = (int)cmd.ExecuteScalar();
             }
-            catch ( Exception e )
+            catch 
             {
                 totalCashOut = 0;
-                MessageBox.Show(e.ToString());
+               
 
             }
 

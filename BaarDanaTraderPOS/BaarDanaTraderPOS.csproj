@@ -156,6 +156,12 @@
     <Compile Include="Screens\OtherIncome.Designer.cs">
       <DependentUpon>OtherIncome.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\SalesReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\SalesReturn.Designer.cs">
+      <DependentUpon>SalesReturn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Settings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\OtherIncome.resx">
       <DependentUpon>OtherIncome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\SalesReturn.resx">
+      <DependentUpon>SalesReturn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>

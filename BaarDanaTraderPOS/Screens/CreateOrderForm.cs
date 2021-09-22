@@ -36,7 +36,7 @@ namespace BaarDanaTraderPOS.Screens
             con.ConnectionString = Connection.c;
             con.Open();
 
-            order.Columns.Add("ID", typeof(int));
+            order.Columns.Add("Product_id", typeof(int));
             order.Columns.Add("Product");
             order.Columns.Add("Quantity", typeof(int));
             order.Columns.Add("Price", typeof(int));
@@ -44,6 +44,7 @@ namespace BaarDanaTraderPOS.Screens
             order.Columns.Add("Date",typeof(DateTime));
             order.Columns.Add("Customer_name");
             order.Columns.Add("Invoice_id", typeof(int));
+            
             /*            loaddataincategory();
             */
             flag = true;
@@ -102,7 +103,7 @@ namespace BaarDanaTraderPOS.Screens
         private void CreateOrderForm_Load(object sender, EventArgs e)
         {
             dgvOrderItems.DataSource = order;
-            this.dgvOrderItems.Columns["ID"].ReadOnly = true;
+            this.dgvOrderItems.Columns["Product_id"].ReadOnly = true;
             this.dgvOrderItems.Columns["Product"].ReadOnly = true;
             this.dgvOrderItems.Columns["Total"].ReadOnly = true;
 
@@ -424,6 +425,7 @@ namespace BaarDanaTraderPOS.Screens
             objbulk.ColumnMappings.Add("Price", "Price");
             objbulk.ColumnMappings.Add("Customer_name", "Customer_name");
             objbulk.ColumnMappings.Add("Invoice_id", "Invoice_id");
+            objbulk.ColumnMappings.Add("Product_id", "Product_id");
             objbulk.WriteToServer(order);
 
         }
@@ -596,7 +598,7 @@ namespace BaarDanaTraderPOS.Screens
 
                 for (int i = 0; i < order.Rows.Count; i++)
                 {
-                    ids[i] = int.Parse(order.Rows[i]["ID"].ToString());
+                    ids[i] = int.Parse(order.Rows[i]["Product_id"].ToString());
                     quantity[i] = int.Parse(order.Rows[i]["Quantity"].ToString());
                     ReductProductQuantity(ids[i], quantity[i], order.Rows.Count);
 

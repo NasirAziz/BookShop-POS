@@ -162,3 +162,4 @@ C:\Users\Abdul\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTra
 C:\Users\Abdul\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.CashInCashOut.resources
 C:\Users\Abdul\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.Expenses.resources
 C:\Users\Abdul\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.OtherIncome.resources
+C:\Users\Abdul\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.SalesReturn.resources

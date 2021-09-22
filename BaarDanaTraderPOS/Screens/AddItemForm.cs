@@ -263,7 +263,7 @@ namespace BaarDanaTraderPOS.Screens
             }
             catch
             {
-
+                MessageBox.Show("Error");
             }
         }
     }
