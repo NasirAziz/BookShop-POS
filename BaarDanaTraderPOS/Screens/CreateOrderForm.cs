@@ -45,11 +45,9 @@ namespace BaarDanaTraderPOS.Screens
             order.Columns.Add("Date",typeof(DateTime));
             order.Columns.Add("Customer_name");
             order.Columns.Add("Invoice_id", typeof(int));
-<<<<<<< HEAD
-            
-=======
+
             order.Columns.Add("Profit", typeof(int));
->>>>>>> 7ff45125fd4d98dfc6c68468eb8a4dcd9590b528
+
             /*            loaddataincategory();
             */
             flag = true;
@@ -300,7 +298,7 @@ namespace BaarDanaTraderPOS.Screens
                 totalPrice = price * quantity;
                 DateTime currentdate = dateTimePicker1.Value.Date;
 
-                bool contains = order.AsEnumerable().Any(row => id == row.Field<Int32>("ID"));
+                bool contains = order.AsEnumerable().Any(row => id == row.Field<Int32>("Product_id"));
                 if (quantity == 0)
                 {
                     MessageBox.Show("Product is out of stock!");
@@ -449,11 +447,11 @@ namespace BaarDanaTraderPOS.Screens
             objbulk.ColumnMappings.Add("Price", "Price");
             objbulk.ColumnMappings.Add("Customer_name", "Customer_name");
             objbulk.ColumnMappings.Add("Invoice_id", "Invoice_id");
-<<<<<<< HEAD
+
             objbulk.ColumnMappings.Add("Product_id", "Product_id");
-=======
+
             objbulk.ColumnMappings.Add("Profit", "Profit");
->>>>>>> 7ff45125fd4d98dfc6c68468eb8a4dcd9590b528
+
             objbulk.WriteToServer(order);
 
         }
