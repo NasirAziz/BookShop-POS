@@ -40,6 +40,7 @@ namespace BaarDanaTraderPOS
             this.button5 = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -119,12 +120,14 @@ namespace BaarDanaTraderPOS
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.btnCash);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.btnSettings);
@@ -145,7 +148,7 @@ namespace BaarDanaTraderPOS
             this.btnCash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCash.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCash.ForeColor = System.Drawing.Color.DimGray;
-            this.btnCash.Location = new System.Drawing.Point(156, 623);
+            this.btnCash.Location = new System.Drawing.Point(193, 646);
             this.btnCash.Name = "btnCash";
             this.btnCash.Size = new System.Drawing.Size(200, 91);
             this.btnCash.TabIndex = 9;
@@ -194,6 +197,21 @@ namespace BaarDanaTraderPOS
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.White;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.DimGray;
+            this.button6.Location = new System.Drawing.Point(165, 841);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(200, 91);
+            this.button6.TabIndex = 10;
+            this.button6.Text = "Profit Loss Report";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -225,6 +243,7 @@ namespace BaarDanaTraderPOS
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnCash;
+        private System.Windows.Forms.Button button6;
     }
 }
 

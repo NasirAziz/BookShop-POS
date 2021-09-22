@@ -21,10 +21,11 @@ namespace BaarDanaTraderPOS.Screens
         private String customerName = "Waling Customer";
         private int price, id;
         public static int Invoice_id = 0;
-        private int quantity, chagne;
+        int inventory_quantity;
+        private int quantity=0,chagne,purchase;
         // int timesEnterPressed = 0;
         public static int Balance, Paid;
-        public int totalPrice;
+        public int totalPrice, profit=0;
         public static int FinalPrice;
         public int grandTotal = 0;
         public bool flag = false, invoiceFlag = false;
@@ -44,6 +45,7 @@ namespace BaarDanaTraderPOS.Screens
             order.Columns.Add("Date",typeof(DateTime));
             order.Columns.Add("Customer_name");
             order.Columns.Add("Invoice_id", typeof(int));
+            order.Columns.Add("Profit", typeof(int));
             /*            loaddataincategory();
             */
             flag = true;
@@ -51,6 +53,7 @@ namespace BaarDanaTraderPOS.Screens
             dgvOrderItems.Columns["Date"].Visible = false;
             dgvOrderItems.Columns["Invoice_id"].Visible = false;
             dgvOrderItems.Columns["Customer_name"].Visible = false;
+            dgvOrderItems.Columns["Profit"].Visible = false;
         }
 
         void ResetTextBoxes()
@@ -196,7 +199,16 @@ namespace BaarDanaTraderPOS.Screens
             cmd.CommandText = "select Quantity from Add_item where Item_id=@id3 OR BarCode=@id";
             cmd.Parameters.AddWithValue("@id3", tbOrderProductID.Text);
             /* cmd.Parameters.AddWithValue("@name3", tbOrderProductName.Text);*/
-            quantity = (int)cmd.ExecuteScalar();
+            inventory_quantity = (int)cmd.ExecuteScalar();
+
+            if (inventory_quantity > 0)
+                quantity = 1;
+
+            ///purchase  
+            cmd.CommandText = "select Purchase_price from Add_item where Item_id=@id4 OR BarCode=@id";
+            cmd.Parameters.AddWithValue("@id4", tbOrderProductID.Text);
+            /* cmd.Parameters.AddWithValue("@name3", tbOrderProductName.Text);*/
+            purchase = (int)cmd.ExecuteScalar();
 
             /*  tbOrderProductQuantity.Text = quantity.ToString();*/
         }
@@ -293,7 +305,8 @@ namespace BaarDanaTraderPOS.Screens
                 }
                 if (!contains)
                 {
-                    order.Rows.Add(id, productName, quantity, price, totalPrice, currentdate, customerName, Invoice_id);
+                    profit = (price - purchase) * quantity;
+                    order.Rows.Add(id, productName, quantity, price, totalPrice, currentdate, customerName, Invoice_id,profit);
                 }
                 else
                 {
@@ -313,6 +326,9 @@ namespace BaarDanaTraderPOS.Screens
 
         private void CalculateTotalPrice()
         {
+            profit = (price - purchase) * quantity;
+            MessageBox.Show(profit.ToString()
+            );
             grandTotal = 0;
             foreach (DataRow row in order.Rows)
             {
@@ -351,6 +367,9 @@ namespace BaarDanaTraderPOS.Screens
             if (dgvOrderItems.Rows[rowIndex].Cells["Quantity"].Value.ToString().Length != 0)
             {
                 productQuantityAtIndex = int.Parse(order.Rows[rowIndex]["Quantity"].ToString());
+                quantity = (int)productQuantityAtIndex;
+                profit = (price - purchase) * quantity;
+
             }
             if (productPriceAtIndex != null && productQuantityAtIndex != null)
             {
@@ -361,16 +380,18 @@ namespace BaarDanaTraderPOS.Screens
                 MessageBox.Show("Please Enter valid values in cells");
                 return;
             }
-            if (productQuantityAtIndex > quantity)
+            if (productQuantityAtIndex > inventory_quantity)
             {
                 dgvOrderItems.Rows[rowIndex].Cells["Quantity"].Value = quantity;
-                MessageBox.Show("Entered Quantity is greater than product in stock!\nCurrent Stock: " + quantity);
+                MessageBox.Show("Entered Quantity is greater than product in stock!\nCurrent Stock: " + inventory_quantity);
                 return;
             }
             //update datatable with new values from grid view
             order.Rows[rowIndex]["Total"] = totalPrice;
             order.Rows[rowIndex]["Price"] = productPriceAtIndex;
             order.Rows[rowIndex]["Quantity"] = productQuantityAtIndex;
+            order.Rows[rowIndex]["Profit"] = profit;
+
             CalculateTotalPrice();
 
             // MessageBox.Show(order.Rows[rowIndex]["Product"].ToString() + order.Rows[rowIndex]["Quantity"].ToString() + order.Rows[rowIndex]["Total"].ToString());
@@ -424,6 +445,7 @@ namespace BaarDanaTraderPOS.Screens
             objbulk.ColumnMappings.Add("Price", "Price");
             objbulk.ColumnMappings.Add("Customer_name", "Customer_name");
             objbulk.ColumnMappings.Add("Invoice_id", "Invoice_id");
+            objbulk.ColumnMappings.Add("Profit", "Profit");
             objbulk.WriteToServer(order);
 
         }
@@ -549,7 +571,6 @@ namespace BaarDanaTraderPOS.Screens
         */
         private void btn_Confirm_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("sad");
             if (order.Rows.Count == 0)
             {
                 MessageBox.Show("Please Select Alteast One Item", "Empty Order",

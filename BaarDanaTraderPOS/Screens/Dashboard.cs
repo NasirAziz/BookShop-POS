@@ -86,5 +86,16 @@ namespace BaarDanaTraderPOS
             OtherIncome c = new  OtherIncome();
             c.Show();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ProfitAndLoss pf = new ProfitAndLoss();
+            pf.Show();
+        }
     }
 }

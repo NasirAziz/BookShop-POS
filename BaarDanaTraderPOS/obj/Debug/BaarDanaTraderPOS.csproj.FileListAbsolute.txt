@@ -248,3 +248,4 @@ C:\Users\hp\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\ur-PK\BaarDana
 C:\Users\hp\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.csproj.CopyComplete
 C:\Users\hp\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.exe
 C:\Users\hp\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.pdb
+C:\Users\hp\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.ProfitAndLoss.resources
