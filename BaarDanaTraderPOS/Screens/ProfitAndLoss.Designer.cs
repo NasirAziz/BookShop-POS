@@ -34,6 +34,10 @@ namespace BaarDanaTraderPOS.Screens
             this.to = new System.Windows.Forms.DateTimePicker();
             this.from = new System.Windows.Forms.DateTimePicker();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblTotalProfit = new System.Windows.Forms.Label();
+            this.lblLoss = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblProfit = new System.Windows.Forms.Label();
             this.lblExpenses = new System.Windows.Forms.Label();
@@ -41,10 +45,6 @@ namespace BaarDanaTraderPOS.Screens
             this.dgvSalesProfit = new System.Windows.Forms.DataGridView();
             this.dgvOtherProfit = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblTotalProfit = new System.Windows.Forms.Label();
-            this.lblLoss = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesProfit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOtherProfit)).BeginInit();
@@ -105,6 +105,58 @@ namespace BaarDanaTraderPOS.Screens
             this.panel4.Size = new System.Drawing.Size(329, 337);
             this.panel4.TabIndex = 24;
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 165);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 29);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Total Profit:";
+            // 
+            // lblTotalProfit
+            // 
+            this.lblTotalProfit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotalProfit.AutoSize = true;
+            this.lblTotalProfit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalProfit.Location = new System.Drawing.Point(145, 165);
+            this.lblTotalProfit.Name = "lblTotalProfit";
+            this.lblTotalProfit.Size = new System.Drawing.Size(26, 29);
+            this.lblTotalProfit.TabIndex = 30;
+            this.lblTotalProfit.Text = "0";
+            // 
+            // lblLoss
+            // 
+            this.lblLoss.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblLoss.AutoSize = true;
+            this.lblLoss.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoss.Location = new System.Drawing.Point(145, 233);
+            this.lblLoss.Name = "lblLoss";
+            this.lblLoss.Size = new System.Drawing.Size(26, 29);
+            this.lblLoss.TabIndex = 31;
+            this.lblLoss.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(3, 233);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(131, 29);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Total Loss:";
+            // 
             // label7
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -162,6 +214,8 @@ namespace BaarDanaTraderPOS.Screens
             this.dgvSalesProfit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvSalesProfit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSalesProfit.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvSalesProfit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSalesProfit.Location = new System.Drawing.Point(374, 166);
             this.dgvSalesProfit.Name = "dgvSalesProfit";
@@ -175,6 +229,8 @@ namespace BaarDanaTraderPOS.Screens
             this.dgvOtherProfit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvOtherProfit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvOtherProfit.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvOtherProfit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOtherProfit.Location = new System.Drawing.Point(1040, 166);
             this.dgvOtherProfit.Name = "dgvOtherProfit";
@@ -185,70 +241,20 @@ namespace BaarDanaTraderPOS.Screens
             // 
             // btnSearch
             // 
+            this.btnSearch.BackColor = System.Drawing.Color.Gainsboro;
             this.btnSearch.Location = new System.Drawing.Point(1040, 39);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(153, 40);
             this.btnSearch.TabIndex = 27;
             this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 165);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 29);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Total Profit:";
-            // 
-            // lblTotalProfit
-            // 
-            this.lblTotalProfit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTotalProfit.AutoSize = true;
-            this.lblTotalProfit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalProfit.Location = new System.Drawing.Point(145, 165);
-            this.lblTotalProfit.Name = "lblTotalProfit";
-            this.lblTotalProfit.Size = new System.Drawing.Size(26, 29);
-            this.lblTotalProfit.TabIndex = 30;
-            this.lblTotalProfit.Text = "0";
-            // 
-            // lblLoss
-            // 
-            this.lblLoss.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblLoss.AutoSize = true;
-            this.lblLoss.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoss.Location = new System.Drawing.Point(145, 233);
-            this.lblLoss.Name = "lblLoss";
-            this.lblLoss.Size = new System.Drawing.Size(26, 29);
-            this.lblLoss.TabIndex = 31;
-            this.lblLoss.Text = "0";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 233);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(131, 29);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "Total Loss:";
             // 
             // ProfitAndLoss
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1714, 671);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.dgvOtherProfit);

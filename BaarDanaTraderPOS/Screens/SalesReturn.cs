@@ -108,6 +108,7 @@ namespace BaarDanaTraderPOS.Screens
         private void addSaleReturnToDatabase() {
 
             double qtyReturned = Convert.ToDouble(tbQuantity.Text);
+            double nprice = qtyReturned * price;
 
             SqlCommand cmd = new SqlCommand
             {
@@ -116,7 +117,7 @@ namespace BaarDanaTraderPOS.Screens
             };
             cmd.Parameters.AddWithValue("@invoice", Invoice_id);
             cmd.Parameters.AddWithValue("@product", ProductName);
-            cmd.Parameters.AddWithValue("@price", newprice);
+            cmd.Parameters.AddWithValue("@price", nprice);
             cmd.Parameters.AddWithValue("@qty", qtyReturned);
             cmd.Parameters.AddWithValue("@date", DateTime.Now.Date);
             int r = cmd.ExecuteNonQuery();
