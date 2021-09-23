@@ -10,6 +10,8 @@ namespace BaarDanaTraderPOS.Screens
         SqlConnection con;
         DataTable dt, dt2;
         double total,expense;
+        String fromdate;
+        String todate;
 
         public ProfitAndLoss()
         {
@@ -22,59 +24,66 @@ namespace BaarDanaTraderPOS.Screens
             con.Open();
             from.Value = DateTime.Now;
             to.Value = DateTime.Now;
-            /*            String fromdate = DateTime.Now.ToString("yyyy-MM-dd");
-                        String todate = DateTime.Now.ToString("yyyy-MM-dd");
+
+            fromdate = DateTime.Now.ToString("yyyy-MM-dd");
+            todate = DateTime.Now.ToString("yyyy-MM-dd");
 
 
-
-                        dt = new DataTable();
-                        SqlCommand cmd = new SqlCommand();
-                        cmd.Connection = con;
-                        try
-                        {
-
-
-                            dgvSalesProfit.Refresh();
-                            cmd.CommandText = "select * from Sales_report WHERE Date between @first And @second";
-                            cmd.Parameters.AddWithValue("@first", Convert.ToDateTime(fromdate));
-                            cmd.Parameters.AddWithValue("@second", Convert.ToDateTime(todate));
-                            SqlDataAdapter ad = new SqlDataAdapter(cmd);
-                            cmd.ExecuteNonQuery();
-                            dt.Clear();
-                            ad.Fill(dt);
-                            dgvSalesProfit.DataSource = dt;
-
-                            dgvSalesProfit.Refresh();
-
-                        }
-                        catch
-                        {
+            dt = new DataTable();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            try
+            {
 
 
-                        }
+                dgvSalesProfit.Refresh();
+                cmd.CommandText = "select * from Sales_report WHERE Date between @first And @second";
+                cmd.Parameters.AddWithValue("@first", Convert.ToDateTime(fromdate));
+                cmd.Parameters.AddWithValue("@second", Convert.ToDateTime(todate));
+                SqlDataAdapter ad = new SqlDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                dt.Clear();
+                ad.Fill(dt);
+                dgvSalesProfit.DataSource = dt;
 
-                        try
-                        {
-                            dt2 = new DataTable();
-                            dgvOtherProfit.Refresh();
-                            cmd.CommandText = "select * from Other_income WHERE date between @first2 And @second2";
-                            cmd.Parameters.AddWithValue("@first2", Convert.ToDateTime(fromdate));
-                            cmd.Parameters.AddWithValue("@second2", Convert.ToDateTime(todate));
-                            SqlDataAdapter ad2 = new SqlDataAdapter(cmd);
-                            // DataTable viewhistory = new DataTable();
-                            cmd.ExecuteNonQuery();
-                            dt2.Clear();
-                            ad2.Fill(dt2);
-                            dgvOtherProfit.DataSource = dt2;
+                dgvSalesProfit.Refresh();
 
-                            dgvOtherProfit.Refresh();
-
-                        }
-                        catch { }
+            }
+            catch
+            {
 
 
-                        calculateTotal();
-            */
+            }
+
+            try
+            {
+                dt2 = new DataTable();
+                dgvOtherProfit.Refresh();
+                cmd.CommandText = "select * from Other_income WHERE date between @first2 And @second2";
+                cmd.Parameters.AddWithValue("@first2", Convert.ToDateTime(fromdate));
+                cmd.Parameters.AddWithValue("@second2", Convert.ToDateTime(todate));
+                SqlDataAdapter ad2 = new SqlDataAdapter(cmd);
+                // DataTable viewhistory = new DataTable();
+                cmd.ExecuteNonQuery();
+                dt2.Clear();
+                ad2.Fill(dt2);
+                dgvOtherProfit.DataSource = dt2;
+
+                dgvOtherProfit.Refresh();
+
+            }
+            catch { }
+
+            dgvSalesProfit.Columns["Sale_id"].Visible = false;
+            dgvSalesProfit.Columns["Price"].Visible = false;
+            dgvSalesProfit.Columns["Customer_name"].Visible = false;
+            dgvSalesProfit.Columns["Product_id"].Visible = false;
+
+
+            calculateTotal();
+            calculateExpense();
+
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -129,7 +138,20 @@ namespace BaarDanaTraderPOS.Screens
 
             calculateTotal();
 
+            calculateExpense();
+          
+/*
+            if(expense > total)
+                lblLoss.Text = expense.ToString();
+            else
+                lblLoss.Text = "0";*/
 
+        }
+
+        void calculateExpense()
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
             try
             {
                 cmd.CommandText = "SELECT SUM(amount) FROM Expenses where date  between @first3 And @second3";
@@ -149,7 +171,7 @@ namespace BaarDanaTraderPOS.Screens
             double loss = total - expense;
 
 
-            if (loss < 0) 
+            if (loss < 0)
             {
                 loss = loss * -1;
                 MessageBox.Show(loss.ToString());
@@ -162,12 +184,6 @@ namespace BaarDanaTraderPOS.Screens
             {
                 lblTotalProfit.Text = loss.ToString();
             }
-/*
-            if(expense > total)
-                lblLoss.Text = expense.ToString();
-            else
-                lblLoss.Text = "0";*/
-
         }
 
         void calculateTotal()
