@@ -97,5 +97,10 @@ namespace BaarDanaTraderPOS
             ProfitAndLoss pf = new ProfitAndLoss();
             pf.Show();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
