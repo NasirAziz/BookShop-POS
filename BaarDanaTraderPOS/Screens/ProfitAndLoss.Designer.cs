@@ -45,6 +45,8 @@ namespace BaarDanaTraderPOS.Screens
             this.dgvSalesProfit = new System.Windows.Forms.DataGridView();
             this.dgvOtherProfit = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesProfit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOtherProfit)).BeginInit();
@@ -64,7 +66,7 @@ namespace BaarDanaTraderPOS.Screens
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(526, 45);
+            this.label2.Location = new System.Drawing.Point(539, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 25);
             this.label2.TabIndex = 12;
@@ -73,7 +75,7 @@ namespace BaarDanaTraderPOS.Screens
             // to
             // 
             this.to.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.to.Location = new System.Drawing.Point(658, 41);
+            this.to.Location = new System.Drawing.Point(681, 41);
             this.to.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.to.Name = "to";
             this.to.Size = new System.Drawing.Size(348, 30);
@@ -138,6 +140,7 @@ namespace BaarDanaTraderPOS.Screens
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLoss.AutoSize = true;
             this.lblLoss.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoss.ForeColor = System.Drawing.Color.Red;
             this.lblLoss.Location = new System.Drawing.Point(145, 233);
             this.lblLoss.Name = "lblLoss";
             this.lblLoss.Size = new System.Drawing.Size(26, 29);
@@ -220,7 +223,7 @@ namespace BaarDanaTraderPOS.Screens
             this.dgvSalesProfit.Name = "dgvSalesProfit";
             this.dgvSalesProfit.RowHeadersWidth = 62;
             this.dgvSalesProfit.RowTemplate.Height = 28;
-            this.dgvSalesProfit.Size = new System.Drawing.Size(592, 467);
+            this.dgvSalesProfit.Size = new System.Drawing.Size(720, 467);
             this.dgvSalesProfit.TabIndex = 25;
             // 
             // dgvOtherProfit
@@ -230,17 +233,17 @@ namespace BaarDanaTraderPOS.Screens
             this.dgvOtherProfit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOtherProfit.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvOtherProfit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOtherProfit.Location = new System.Drawing.Point(1089, 166);
+            this.dgvOtherProfit.Location = new System.Drawing.Point(1191, 166);
             this.dgvOtherProfit.Name = "dgvOtherProfit";
             this.dgvOtherProfit.RowHeadersWidth = 62;
             this.dgvOtherProfit.RowTemplate.Height = 28;
-            this.dgvOtherProfit.Size = new System.Drawing.Size(592, 467);
+            this.dgvOtherProfit.Size = new System.Drawing.Size(652, 467);
             this.dgvOtherProfit.TabIndex = 26;
             // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnSearch.Location = new System.Drawing.Point(1040, 39);
+            this.btnSearch.Location = new System.Drawing.Point(1053, 39);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(153, 40);
             this.btnSearch.TabIndex = 27;
@@ -248,12 +251,40 @@ namespace BaarDanaTraderPOS.Screens
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(660, 110);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(199, 29);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "Profit From Sales";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(1417, 110);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(158, 29);
+            this.label5.TabIndex = 33;
+            this.label5.Text = "Other Income";
+            // 
             // ProfitAndLoss
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1702, 671);
+            this.ClientSize = new System.Drawing.Size(1881, 671);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.dgvOtherProfit);
             this.Controls.Add(this.dgvSalesProfit);
@@ -264,6 +295,7 @@ namespace BaarDanaTraderPOS.Screens
             this.Controls.Add(this.from);
             this.Name = "ProfitAndLoss";
             this.Text = "ProfitAndLoss";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ProfitAndLoss_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -292,5 +324,7 @@ namespace BaarDanaTraderPOS.Screens
         private System.Windows.Forms.Label lblTotalProfit;
         private System.Windows.Forms.Label lblLoss;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
