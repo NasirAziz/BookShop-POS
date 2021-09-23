@@ -83,18 +83,19 @@ namespace BaarDanaTraderPOS.Screens
             {
                 totalsales = 0;
             }
-            try {
+            try
+            {
                 cmd.CommandText = "SELECT SUM(amount) FROM Other_income where date=@date";
                 cmd.Parameters.AddWithValue("@date", now.ToString("yyyy-MM-dd"));
                 totalotherincome = (int)cmd.ExecuteScalar();
-            }
+        }
             catch
             {
                 totalotherincome = 0;
             }
 
 
-            totalCashIn = totalotherincome + totalsales;
+    totalCashIn = totalotherincome + totalsales;
            // MessageBox.Show(cashin.ToString()) ;
 
         }
@@ -114,12 +115,22 @@ namespace BaarDanaTraderPOS.Screens
                 cmd.CommandText = "SELECT SUM(amount) FROM Expenses where date=@d";
                 cmd.Parameters.AddWithValue("@d", now.ToString("yyyy-MM-dd"));
                 totalCashOut = (int)cmd.ExecuteScalar();
+
             }
             catch 
             {
                 totalCashOut = 0;
-               
 
+            }
+            try
+            {
+                cmd.CommandText = "SELECT SUM(price) FROM Sales_return where date=@d1";
+                cmd.Parameters.AddWithValue("@d1", now.ToString("yyyy-MM-dd"));
+                totalCashOut += (int)cmd.ExecuteScalar();
+            }
+            catch
+            {
+                totalCashOut += 0;
             }
 
             //MessageBox.Show(totalExpanse.ToString());
@@ -167,9 +178,18 @@ namespace BaarDanaTraderPOS.Screens
             sda.Fill(cashout);
             cashoutexpg.DataSource = cashout;
 
-
-            
-            
+        }
+        public void cashOutSalesReturn()
+        {
+            DataTable saleReturn = new DataTable();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select * from Sales_return where date=@date";
+            cmd.Parameters.AddWithValue("@date", now.ToString("yyyy-MMM-dd"));
+            cmd.ExecuteNonQuery();
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            sda.Fill(saleReturn);
+            dgvSalesReturn.DataSource = saleReturn;
 
         }
 
@@ -184,9 +204,7 @@ namespace BaarDanaTraderPOS.Screens
             cashthroughotherincome();
             cashthroughsale();
             cashoutexp();
-
-
-            
+            cashOutSalesReturn();
         }
 
     }

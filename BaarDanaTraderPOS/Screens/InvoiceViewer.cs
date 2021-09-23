@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Microsoft.Reporting.WinForms;
+using System.Threading;
 
 namespace BaarDanaTraderPOS.Screens
 {
@@ -36,9 +37,15 @@ namespace BaarDanaTraderPOS.Screens
             this.reportViewer1.RefreshReport();
             con.ConnectionString = Connection.c;
             con.Open();
+/*            var thread = new Thread(() => {
+                SettingsLoader();
+               
+            });
+            thread.IsBackground = true;
+            thread.Start();*/
             SettingsLoader();
             load();
-            
+
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
@@ -71,7 +78,6 @@ namespace BaarDanaTraderPOS.Screens
             reportParameters.Add(new ReportParameter("Phno", Phno));
             this.reportViewer1.LocalReport.SetParameters(reportParameters);
             this.reportViewer1.RefreshReport();
-
 
 
         }

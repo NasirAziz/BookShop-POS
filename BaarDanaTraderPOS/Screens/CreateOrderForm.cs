@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
+
 using System.Windows.Forms;
 
 namespace BaarDanaTraderPOS.Screens
@@ -44,8 +42,7 @@ namespace BaarDanaTraderPOS.Screens
             order.Columns.Add("Total", typeof(int));
             order.Columns.Add("Date",typeof(DateTime));
             order.Columns.Add("Customer_name");
-            order.Columns.Add("Invoice_id", typeof(int));
-
+            order.Columns.Add("Invoice_id", typeof(int));            
             order.Columns.Add("Profit", typeof(int));
 
             /*            loaddataincategory();
@@ -329,8 +326,6 @@ namespace BaarDanaTraderPOS.Screens
         private void CalculateTotalPrice()
         {
             profit = (price - purchase) * quantity;
-            MessageBox.Show(profit.ToString()
-            );
             grandTotal = 0;
             foreach (DataRow row in order.Rows)
             {
@@ -440,6 +435,7 @@ namespace BaarDanaTraderPOS.Screens
         {
             SqlBulkCopy objbulk = new SqlBulkCopy(con);
             objbulk.DestinationTableName = "Sales_report";
+
             objbulk.ColumnMappings.Add("Date", "Date");
             objbulk.ColumnMappings.Add("Product", "Product");
             objbulk.ColumnMappings.Add("Quantity", "Quantity");
@@ -447,12 +443,11 @@ namespace BaarDanaTraderPOS.Screens
             objbulk.ColumnMappings.Add("Price", "Price");
             objbulk.ColumnMappings.Add("Customer_name", "Customer_name");
             objbulk.ColumnMappings.Add("Invoice_id", "Invoice_id");
-
             objbulk.ColumnMappings.Add("Product_id", "Product_id");
-
             objbulk.ColumnMappings.Add("Profit", "Profit");
-
             objbulk.WriteToServer(order);
+
+           // MessageBox.Show("moved");
 
         }
         public int InvoiceIdGenerator()
@@ -618,6 +613,14 @@ namespace BaarDanaTraderPOS.Screens
                 paymentAmount = int.Parse(tbPaidAmount.Text);
                 // ChangeBalanceFromServer();
 
+          Paid = int.Parse(tbPaidAmount.Text);
+               // Balance = -Convert.ToInt32(tbPaidAmount.Text) + FinalPrice;
+                invoiceFlag = true;
+           // MessageBox.Show("thread will be created now");
+
+            var thread = new Thread(()=> {
+
+                //  MessageBox.Show("inside thread");
                 int[] ids = new int[order.Rows.Count];
                 int[] quantity = new int[order.Rows.Count];
 
@@ -629,11 +632,15 @@ namespace BaarDanaTraderPOS.Screens
 
                 }
 
-                Paid = int.Parse(tbPaidAmount.Text);
-               // Balance = -Convert.ToInt32(tbPaidAmount.Text) + FinalPrice;
-                invoiceFlag = true;
                 MoveOrdersToSaleTable();
-                ResetTextBoxes();
+
+            });
+            //MessageBox.Show("out side thread");
+            thread.IsBackground = true;
+            thread.Start();
+            //MessageBox.Show("started");
+
+            ResetTextBoxes();
                 dgvOrderItems.DataSource = null;
 
 

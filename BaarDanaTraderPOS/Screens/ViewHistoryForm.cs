@@ -16,7 +16,7 @@ namespace BaarDanaTraderPOS.Screens
         public string fromdate, todate;
         bool flag = false;
         public static DataTable viewhistory = new DataTable();
-        public static double total, sale_id, Quantity, Price, Total, Product_id, Profit;
+        public static double total, sale_id, Quantity, Price, Total, Product_id, Profit,Invoice_id;
         public static string Product_name;
 
 
@@ -176,9 +176,10 @@ namespace BaarDanaTraderPOS.Screens
             Quantity = Convert.ToDouble(dgvViewHistory.CurrentRow.Cells[2].Value.ToString());
             Price = Convert.ToDouble(dgvViewHistory.CurrentRow.Cells[3].Value.ToString());
             Total = Convert.ToDouble(dgvViewHistory.CurrentRow.Cells[4].Value.ToString());
-            Product_id = Convert.ToDouble(dgvViewHistory.CurrentRow.Cells[7].Value.ToString());
+            Product_id = Convert.ToDouble(dgvViewHistory.CurrentRow.Cells[8].Value.ToString());
+            Invoice_id = Convert.ToDouble(dgvViewHistory.CurrentRow.Cells[7].Value.ToString());
             Profit = Convert.ToDouble(dgvViewHistory.CurrentRow.Cells[9].Value.ToString());
-            SalesReturn salesReturn = new SalesReturn(Price, Quantity, Total, Product_name, sale_id,Product_id,Profit);
+            SalesReturn salesReturn = new SalesReturn(Price, Quantity, Total, Product_name, sale_id,Product_id, Profit,Invoice_id);
             salesReturn.Show();
 
         }
