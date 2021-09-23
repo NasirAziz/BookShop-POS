@@ -204,6 +204,8 @@ namespace BaarDanaTraderPOS.Screens
                 quantity = 1;
 
             ///purchase  
+            ///
+
             cmd.CommandText = "select Purchase_price from Add_item where Item_id=@id4 OR BarCode=@id";
             cmd.Parameters.AddWithValue("@id4", tbOrderProductID.Text);
             /* cmd.Parameters.AddWithValue("@name3", tbOrderProductName.Text);*/

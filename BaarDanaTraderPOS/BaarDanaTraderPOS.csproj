@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -156,12 +156,18 @@
     <Compile Include="Screens\OtherIncome.Designer.cs">
       <DependentUpon>OtherIncome.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\SalesReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\SalesReportViewer.Designer.cs">
+      <DependentUpon>SalesReportViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\SalesReturn.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Screens\SalesReturn.Designer.cs">
       <DependentUpon>SalesReturn.cs</DependentUpon>
-</Compile>
+    </Compile>
     <Compile Include="Screens\ProfitAndLoss.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,9 +208,13 @@
     <EmbeddedResource Include="Screens\OtherIncome.resx">
       <DependentUpon>OtherIncome.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Report1.rdlc" />
+    <EmbeddedResource Include="Screens\SalesReportViewer.resx">
+      <DependentUpon>SalesReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\SalesReturn.resx">
       <DependentUpon>SalesReturn.cs</DependentUpon>
-       </EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\ProfitAndLoss.resx">
       <DependentUpon>ProfitAndLoss.cs</DependentUpon>
     </EmbeddedResource>

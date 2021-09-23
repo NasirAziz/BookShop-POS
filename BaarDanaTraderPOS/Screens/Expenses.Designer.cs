@@ -43,9 +43,10 @@ namespace BaarDanaTraderPOS.Screens
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(254, 272);
+            this.btnAdd.Location = new System.Drawing.Point(169, 177);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(106, 42);
+            this.btnAdd.Size = new System.Drawing.Size(71, 27);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -55,36 +56,40 @@ namespace BaarDanaTraderPOS.Screens
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 21);
+            this.label1.Location = new System.Drawing.Point(10, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 25);
+            this.label1.Size = new System.Drawing.Size(83, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Description:";
             // 
             // tbDesc
             // 
             this.tbDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDesc.Location = new System.Drawing.Point(157, 18);
+            this.tbDesc.Location = new System.Drawing.Point(105, 12);
+            this.tbDesc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbDesc.Multiline = true;
             this.tbDesc.Name = "tbDesc";
-            this.tbDesc.Size = new System.Drawing.Size(247, 78);
+            this.tbDesc.Size = new System.Drawing.Size(166, 52);
             this.tbDesc.TabIndex = 2;
             // 
             // tbExpense
             // 
             this.tbExpense.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbExpense.Location = new System.Drawing.Point(157, 126);
+            this.tbExpense.Location = new System.Drawing.Point(105, 82);
+            this.tbExpense.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbExpense.Name = "tbExpense";
-            this.tbExpense.Size = new System.Drawing.Size(176, 30);
+            this.tbExpense.Size = new System.Drawing.Size(119, 23);
             this.tbExpense.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 131);
+            this.label2.Location = new System.Drawing.Point(10, 85);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 25);
+            this.label2.Size = new System.Drawing.Size(91, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Amount (Rs):";
             // 
@@ -92,9 +97,10 @@ namespace BaarDanaTraderPOS.Screens
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 197);
+            this.label3.Location = new System.Drawing.Point(10, 128);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 25);
+            this.label3.Size = new System.Drawing.Size(42, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "Date:";
             // 
@@ -102,18 +108,20 @@ namespace BaarDanaTraderPOS.Screens
             // 
             this.dtpDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDate.Location = new System.Drawing.Point(157, 192);
+            this.dtpDate.Location = new System.Drawing.Point(105, 125);
+            this.dtpDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(176, 30);
+            this.dtpDate.Size = new System.Drawing.Size(119, 23);
             this.dtpDate.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(211, 23);
+            this.label4.Location = new System.Drawing.Point(141, 15);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(195, 32);
+            this.label4.Size = new System.Drawing.Size(137, 24);
             this.label4.TabIndex = 7;
             this.label4.Text = "Add Expense";
             // 
@@ -127,18 +135,21 @@ namespace BaarDanaTraderPOS.Screens
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.tbExpense);
-            this.panel1.Location = new System.Drawing.Point(46, 99);
+            this.panel1.Location = new System.Drawing.Point(31, 64);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(478, 383);
+            this.panel1.Size = new System.Drawing.Size(319, 250);
             this.panel1.TabIndex = 8;
             // 
             // Expenses
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 549);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(411, 357);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Expenses";
             this.Text = "Expenses";
             this.Load += new System.EventHandler(this.Expenses_Load);

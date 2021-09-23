@@ -146,7 +146,7 @@ namespace BaarDanaTraderPOS.Screens
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAddCustomers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAddCustomers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvAddCustomers.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvAddCustomers.BackgroundColor = System.Drawing.Color.White;
             this.dgvAddCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAddCustomers.Location = new System.Drawing.Point(367, 94);
             this.dgvAddCustomers.Margin = new System.Windows.Forms.Padding(2);
@@ -261,6 +261,7 @@ namespace BaarDanaTraderPOS.Screens
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(856, 448);
             this.Controls.Add(this.btnShowAll);
             this.Controls.Add(this.tbCustomerBalance);

@@ -126,8 +126,9 @@ namespace BaarDanaTraderPOS.Screens
             // 
             resources.ApplyResources(this.dgvItems, "dgvItems");
             this.dgvItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvItems.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvItems.BackgroundColor = System.Drawing.Color.White;
             this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvItems.GridColor = System.Drawing.Color.White;
             this.dgvItems.Name = "dgvItems";
             this.dgvItems.ReadOnly = true;
             this.dgvItems.RowTemplate.Height = 28;
@@ -213,7 +214,7 @@ namespace BaarDanaTraderPOS.Screens
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.tbPurchasePrice);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
