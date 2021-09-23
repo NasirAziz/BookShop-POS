@@ -116,7 +116,7 @@ namespace BaarDanaTraderPOS.Screens
                 CommandText = "INSERT INTO Sales_return VALUES(@invoice, @product, @price, @qty, @date)"
             };
             cmd.Parameters.AddWithValue("@invoice", Invoice_id);
-            cmd.Parameters.AddWithValue("@product", ProductName);
+            cmd.Parameters.AddWithValue("@product", Product_name);
             cmd.Parameters.AddWithValue("@price", nprice);
             cmd.Parameters.AddWithValue("@qty", qtyReturned);
             cmd.Parameters.AddWithValue("@date", DateTime.Now.Date);
@@ -164,6 +164,7 @@ namespace BaarDanaTraderPOS.Screens
                     MessageBox.Show("Partial Sale Return");
                     QuantityBack(newqty);
                     addSaleReturnToDatabase();
+                    MessageBox.Show(Product_name);
                 }
                 else
                 {

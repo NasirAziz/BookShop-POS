@@ -436,7 +436,7 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="dgvItems.Location" type="System.Drawing.Point, System.Drawing">
-    <value>353, 79</value>
+    <value>336, 79</value>
   </data>
   <data name="dgvItems.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -445,7 +445,7 @@
     <value>62</value>
   </data>
   <data name="dgvItems.Size" type="System.Drawing.Size, System.Drawing">
-    <value>580, 363</value>
+    <value>620, 363</value>
   </data>
   <data name="dgvItems.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -469,13 +469,13 @@
     <value>Microsoft Sans Serif, 10pt</value>
   </data>
   <data name="tbAISearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>463, 40</value>
+    <value>440, 41</value>
   </data>
   <data name="tbAISearch.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="tbAISearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>333, 23</value>
+    <value>379, 23</value>
   </data>
   <data name="tbAISearch.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -502,7 +502,7 @@
     <value>Microsoft Sans Serif, 10pt</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>350, 42</value>
+    <value>327, 43</value>
   </data>
   <data name="label5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -535,7 +535,7 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="btnAISearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>799, 40</value>
+    <value>822, 41</value>
   </data>
   <data name="btnAISearch.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -568,7 +568,7 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="btnShowAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>863, 40</value>
+    <value>886, 41</value>
   </data>
   <data name="btnShowAll.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -862,7 +862,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>913, 482</value>
+    <value>959, 482</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>

@@ -106,6 +106,7 @@ namespace BaarDanaTraderPOS.Screens
             dgvOrderItems.DataSource = order;
             this.dgvOrderItems.Columns["Product_id"].ReadOnly = true;
             this.dgvOrderItems.Columns["Product"].ReadOnly = true;
+            this.dgvOrderItems.Columns["Price"].ReadOnly = true;
             this.dgvOrderItems.Columns["Total"].ReadOnly = true;
 
             dateTimePicker1.Format = DateTimePickerFormat.Custom;

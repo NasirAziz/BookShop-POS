@@ -205,6 +205,10 @@ namespace BaarDanaTraderPOS.Screens
             cashthroughsale();
             cashoutexp();
             cashOutSalesReturn();
+            Salecash.Columns["Sale_id"].Visible = false;
+            Salecash.Columns["Invoice_id"].Visible = false;
+            Salecash.Columns["Customer_name"].Visible = false;
+            Salecash.Columns["Profit"].Visible = false;
         }
 
     }

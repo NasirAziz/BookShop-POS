@@ -14,8 +14,8 @@ namespace BaarDanaTraderPOS.Screens
     {
         DataTable Item = new DataTable();
         SqlConnection con = new SqlConnection();
-        public int id, price, purchase ,quantity;
-        public String name, company,barcode;
+        public int id, price, purchase, quantity;
+        public String name, company, barcode;
         public AddItemForm()
         {
             InitializeComponent();
@@ -23,39 +23,39 @@ namespace BaarDanaTraderPOS.Screens
 
         private void btnItemAdd_Click(object sender, EventArgs e)
         {
-            if(tbItemName.Text.Length !=0 && tbItemPrice.Text.Length != 0 && tbItemQuantity.Text.Length != 0)
+            if (tbItemName.Text.Length != 0 && tbItemPrice.Text.Length != 0 && tbItemQuantity.Text.Length != 0)
             {
 
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
-            cmd.CommandText = "insert into Add_item values(@name,@price,@quantity,@barcode,@company,@purchase)";
-            cmd.CommandType = CommandType.Text;
-            cmd.Parameters.AddWithValue("@name", tbItemName.Text);
-            cmd.Parameters.AddWithValue("@price", tbItemPrice.Text);
-            cmd.Parameters.AddWithValue("@quantity", tbItemQuantity.Text);
-            cmd.Parameters.AddWithValue("@barcode", tbBarCode.Text);
-            cmd.Parameters.AddWithValue("@company", cbCompany.GetItemText(cbCompany.SelectedItem));
-            cmd.Parameters.AddWithValue("@purchase", tbPurchasePrice.Text);
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "insert into Add_item values(@name,@price,@quantity,@barcode,@company,@purchase)";
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@name", tbItemName.Text);
+                cmd.Parameters.AddWithValue("@price", tbItemPrice.Text);
+                cmd.Parameters.AddWithValue("@quantity", tbItemQuantity.Text);
+                cmd.Parameters.AddWithValue("@barcode", tbBarCode.Text);
+                cmd.Parameters.AddWithValue("@company", cbCompany.GetItemText(cbCompany.SelectedItem));
+                cmd.Parameters.AddWithValue("@purchase", tbPurchasePrice.Text);
 
                 try
-            {
-                int r = cmd.ExecuteNonQuery();
-                if (r > 0)
                 {
-                    MessageBox.Show("Item Added Successfully");
+                    int r = cmd.ExecuteNonQuery();
+                    if (r > 0)
+                    {
+                        MessageBox.Show("Item Added Successfully");
                         Resettext();
-                    
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Item Not Added");
+                    }
                 }
-                else
+                catch
                 {
-                    MessageBox.Show("Item Not Added");
+                    MessageBox.Show("Please add valid data!");
                 }
-            }
-            catch
-            {
-                MessageBox.Show("Please add valid data!");
-            }
-            LoadItems();
+                LoadItems();
             }
             else
             {
@@ -82,13 +82,13 @@ namespace BaarDanaTraderPOS.Screens
             {
                 MessageBox.Show("Updated");
             }
-            
+
 
 
         }
         private void LoadItems()
         {
-          
+
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandText = "Select * from Add_item";
@@ -100,8 +100,8 @@ namespace BaarDanaTraderPOS.Screens
             cmd.ExecuteNonQuery();
 
         }
-       
-        
+
+
 
         private void AddItemForm_Load(object sender, EventArgs e)
         {
@@ -110,7 +110,7 @@ namespace BaarDanaTraderPOS.Screens
 
             LoadItems();
             LoadCompany();
-          
+
         }
 
         private void btnAISearch_Click(object sender, EventArgs e)
@@ -160,30 +160,31 @@ namespace BaarDanaTraderPOS.Screens
                 cbCompany.DisplayMember = "CompanyName";
                 cbCompany.ValueMember = "id";
             }
-            catch(Exception ) {
+            catch (Exception)
+            {
                 MessageBox.Show("");
             }
-           
+
         }
         private void btnItemUpdate_Click(object sender, EventArgs e)
         {
             try
             {
-            name = tbItemName.Text;
-            price = Convert.ToInt32(tbItemPrice.Text);
-            quantity = Convert.ToInt32(tbItemQuantity.Text);
-            UpdateItem(id, name, price, quantity);
-            LoadItems();
-            Resettext();
-            
+                name = tbItemName.Text;
+                price = Convert.ToInt32(tbItemPrice.Text);
+                quantity = Convert.ToInt32(tbItemQuantity.Text);
+                UpdateItem(id, name, price, quantity);
+                LoadItems();
+                Resettext();
+
 
             }
             catch
             {
-               
+
             }
         }
-        private void  Resettext()
+        private void Resettext()
         {
             tbItemName.Text = "";
             tbItemPrice.Text = "";
@@ -248,7 +249,7 @@ namespace BaarDanaTraderPOS.Screens
             {
                 id = Convert.ToInt32(dgvItems.CurrentRow.Cells[0].Value.ToString());
                 name = dgvItems.CurrentRow.Cells[1].Value.ToString();
-                price= Convert.ToInt32(dgvItems.CurrentRow.Cells[2].Value.ToString());
+                price = Convert.ToInt32(dgvItems.CurrentRow.Cells[2].Value.ToString());
                 quantity = Convert.ToInt32(dgvItems.CurrentRow.Cells[3].Value.ToString());
                 purchase = Convert.ToInt32(dgvItems.CurrentRow.Cells[6].Value.ToString());
                 barcode = dgvItems.CurrentRow.Cells[4].Value.ToString();
@@ -256,7 +257,7 @@ namespace BaarDanaTraderPOS.Screens
                 tbItemName.Text = name;
                 tbItemPrice.Text = price.ToString();
                 tbItemQuantity.Text = quantity.ToString();
-                tbPurchasePrice.Text =purchase.ToString();
+                tbPurchasePrice.Text = purchase.ToString();
                 tbBarCode.Text = barcode;
                 cbCompany.SelectedIndex = cbCompany.Items.IndexOf(company);
 
