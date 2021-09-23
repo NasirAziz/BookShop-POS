@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
+
 using System.Windows.Forms;
 
 namespace BaarDanaTraderPOS.Screens
@@ -297,7 +295,7 @@ namespace BaarDanaTraderPOS.Screens
                 totalPrice = price * quantity;
                 DateTime currentdate = dateTimePicker1.Value.Date;
 
-                bool contains = order.AsEnumerable().Any(row => id == row.Field<Int32>("Prodict_id"));
+                bool contains = order.AsEnumerable().Any(row => id == row.Field<Int32>("Product_id"));
                 if (quantity == 0)
                 {
                     MessageBox.Show("Product is out of stock!");
@@ -328,8 +326,6 @@ namespace BaarDanaTraderPOS.Screens
         private void CalculateTotalPrice()
         {
             profit = (price - purchase) * quantity;
-            MessageBox.Show(profit.ToString()
-            );
             grandTotal = 0;
             foreach (DataRow row in order.Rows)
             {
@@ -439,6 +435,7 @@ namespace BaarDanaTraderPOS.Screens
         {
             SqlBulkCopy objbulk = new SqlBulkCopy(con);
             objbulk.DestinationTableName = "Sales_report";
+
             objbulk.ColumnMappings.Add("Date", "Date");
             objbulk.ColumnMappings.Add("Product", "Product");
             objbulk.ColumnMappings.Add("Quantity", "Quantity");
@@ -449,6 +446,8 @@ namespace BaarDanaTraderPOS.Screens
             objbulk.ColumnMappings.Add("Product_id", "Product_id");
             objbulk.ColumnMappings.Add("Profit", "Profit");
             objbulk.WriteToServer(order);
+
+           // MessageBox.Show("moved");
 
         }
         public int InvoiceIdGenerator()
@@ -614,6 +613,14 @@ namespace BaarDanaTraderPOS.Screens
                 paymentAmount = int.Parse(tbPaidAmount.Text);
                 // ChangeBalanceFromServer();
 
+          Paid = int.Parse(tbPaidAmount.Text);
+               // Balance = -Convert.ToInt32(tbPaidAmount.Text) + FinalPrice;
+                invoiceFlag = true;
+           // MessageBox.Show("thread will be created now");
+
+            var thread = new Thread(()=> {
+
+                //  MessageBox.Show("inside thread");
                 int[] ids = new int[order.Rows.Count];
                 int[] quantity = new int[order.Rows.Count];
 
@@ -625,11 +632,15 @@ namespace BaarDanaTraderPOS.Screens
 
                 }
 
-                Paid = int.Parse(tbPaidAmount.Text);
-               // Balance = -Convert.ToInt32(tbPaidAmount.Text) + FinalPrice;
-                invoiceFlag = true;
                 MoveOrdersToSaleTable();
-                ResetTextBoxes();
+
+            });
+            //MessageBox.Show("out side thread");
+            thread.IsBackground = true;
+            thread.Start();
+            //MessageBox.Show("started");
+
+            ResetTextBoxes();
                 dgvOrderItems.DataSource = null;
 
 
