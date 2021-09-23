@@ -211,32 +211,30 @@ namespace BaarDanaTraderPOS.Screens
             // 
             // dgvSalesProfit
             // 
-            this.dgvSalesProfit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvSalesProfit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvSalesProfit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSalesProfit.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvSalesProfit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSalesProfit.Location = new System.Drawing.Point(374, 166);
+            this.dgvSalesProfit.Location = new System.Drawing.Point(414, 166);
             this.dgvSalesProfit.Name = "dgvSalesProfit";
             this.dgvSalesProfit.RowHeadersWidth = 62;
             this.dgvSalesProfit.RowTemplate.Height = 28;
-            this.dgvSalesProfit.Size = new System.Drawing.Size(632, 467);
+            this.dgvSalesProfit.Size = new System.Drawing.Size(592, 467);
             this.dgvSalesProfit.TabIndex = 25;
             // 
             // dgvOtherProfit
             // 
-            this.dgvOtherProfit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvOtherProfit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvOtherProfit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOtherProfit.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvOtherProfit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOtherProfit.Location = new System.Drawing.Point(1040, 166);
+            this.dgvOtherProfit.Location = new System.Drawing.Point(1089, 166);
             this.dgvOtherProfit.Name = "dgvOtherProfit";
             this.dgvOtherProfit.RowHeadersWidth = 62;
             this.dgvOtherProfit.RowTemplate.Height = 28;
-            this.dgvOtherProfit.Size = new System.Drawing.Size(632, 467);
+            this.dgvOtherProfit.Size = new System.Drawing.Size(592, 467);
             this.dgvOtherProfit.TabIndex = 26;
             // 
             // btnSearch
@@ -255,7 +253,7 @@ namespace BaarDanaTraderPOS.Screens
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1714, 671);
+            this.ClientSize = new System.Drawing.Size(1702, 671);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.dgvOtherProfit);
             this.Controls.Add(this.dgvSalesProfit);
