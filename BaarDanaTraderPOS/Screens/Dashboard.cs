@@ -136,7 +136,7 @@ namespace BaarDanaTraderPOS
 
         private void btnUsers_Click(object sender, EventArgs e)
         {
-            Users user =new Users();
+            Users user = new Users();
             user.Show();
         }
 

@@ -158,6 +158,7 @@ namespace BaarDanaTraderPOS.Screens
             this.btnAdd.TabIndex = 21;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // permissionsList
             // 
@@ -177,9 +178,7 @@ namespace BaarDanaTraderPOS.Screens
             this.permissionsList.Name = "permissionsList";
             this.permissionsList.Size = new System.Drawing.Size(266, 211);
             this.permissionsList.TabIndex = 38;
-            this.permissionsList.SelectedIndexChanged += new System.EventHandler(this.permissionsList_SelectedIndexChanged);
-            this.permissionsList.SelectedValueChanged += new System.EventHandler(this.permissionsList_SelectedValueChanged);
-            this.permissionsList.Validated += new System.EventHandler(this.permissionsList_Validated);
+            this.permissionsList.Validating += new System.ComponentModel.CancelEventHandler(this.permissionsList_Validating);
             // 
             // panel1
             // 
@@ -207,6 +206,7 @@ namespace BaarDanaTraderPOS.Screens
             this.Controls.Add(this.dgvUsers);
             this.Name = "Users";
             this.Text = "Users";
+            this.Load += new System.EventHandler(this.Users_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

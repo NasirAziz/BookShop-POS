@@ -356,7 +356,7 @@ namespace BaarDanaTraderPOS
             this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUsers.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsers.ForeColor = System.Drawing.Color.DimGray;
-            this.btnUsers.Location = new System.Drawing.Point(50, 544);
+            this.btnUsers.Location = new System.Drawing.Point(52, 544);
             this.btnUsers.Margin = new System.Windows.Forms.Padding(2);
             this.btnUsers.Name = "btnUsers";
             this.btnUsers.Size = new System.Drawing.Size(200, 47);

@@ -1,0 +1,50 @@
+[33m6846bfe[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m HEAD@{0}: reset: moving to 6846bfe0b6c01a813b7f50dcd5ed49f70c8b6a2f
+[33m6846bfe[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m HEAD@{1}: reset: moving to 6846bfe0b6c01a813b7f50dcd5ed49f70c8b6a2f
+[33m959b5e2[m HEAD@{2}: commit (amend): users1
+[33m7989afe[m HEAD@{3}: reset: moving to 7989afe1f1a6e8c0d327cecf241793a95b26b757
+[33m7989afe[m HEAD@{4}: reset: moving to 7989afe1f1a6e8c0d327cecf241793a95b26b757
+[33m8f1b135[m HEAD@{5}: reset: moving to 8f1b13583673f898a2768f77a16da06529bacbe0
+[33m8f1b135[m HEAD@{6}: reset: moving to 8f1b13583673f898a2768f77a16da06529bacbe0
+[33m8f1b135[m HEAD@{7}: revert: Revert "users"
+[33me95a728[m HEAD@{8}: reset: moving to e95a728bbabc0fe2eb5d8eeca9cd675c7349229a
+[33me95a728[m HEAD@{9}: commit (merge): jhjkh
+[33mc152b66[m HEAD@{10}: reset: moving to HEAD
+[33mc152b66[m HEAD@{11}: reset: moving to c152b66133a8ee569ca89840bbddaff4b472cb4c
+[33mc152b66[m HEAD@{12}: reset: moving to c152b66133a8ee569ca89840bbddaff4b472cb4c
+[33mc152b66[m HEAD@{13}: reset: moving to c152b66133a8ee569ca89840bbddaff4b472cb4c
+[33mc152b66[m HEAD@{14}: reset: moving to c152b66133a8ee569ca89840bbddaff4b472cb4c
+[33mc152b66[m HEAD@{15}: reset: moving to c152b66133a8ee569ca89840bbddaff4b472cb4c
+[33mc152b66[m HEAD@{16}: reset: moving to c152b66133a8ee569ca89840bbddaff4b472cb4c
+[33mc152b66[m HEAD@{17}: reset: moving to c152b66133a8ee569ca89840bbddaff4b472cb4c
+[33mc152b66[m HEAD@{18}: commit (merge): has
+[33m7989afe[m HEAD@{19}: commit: users
+[33m41dad93[m HEAD@{20}: commit: dash
+[33mefe93fa[m HEAD@{21}: pull --progress --no-edit --no-stat --recurse-submodules=no origin: Fast-forward
+[33mea85626[m HEAD@{22}: commit: updatess
+[33m9287814[m HEAD@{23}: commit: anchors
+[33m1f57d25[m HEAD@{24}: commit: profit loss
+[33me8a2803[m HEAD@{25}: pull --progress --no-edit --no-stat --recurse-submodules=no origin: Fast-forward
+[33m2272db3[m HEAD@{26}: commit: updated
+[33mc3e3a6f[m HEAD@{27}: commit (merge): sta
+[33m1e73815[m HEAD@{28}: commit: dsad
+[33m81c638b[m HEAD@{29}: commit: error fixed
+[33m459d9c4[m HEAD@{30}: pull --progress --no-edit --no-stat --recurse-submodules=no origin: Fast-forward
+[33m7ff4512[m HEAD@{31}: commit: profit loss form
+[33m1bd6567[m HEAD@{32}: commit: videw history updated
+[33m37d73b6[m HEAD@{33}: pull --progress --no-edit --no-stat --recurse-submodules=no origin: Fast-forward
+[33mdd961ca[m HEAD@{34}: commit: Cash in Out updated
+[33me211e9f[m HEAD@{35}: commit (merge): haseeb
+[33m7ddd52b[m HEAD@{36}: commit: abc
+[33m6490b7f[m HEAD@{37}: commit (merge): asa
+[33ma4db327[m HEAD@{38}: commit: other income
+[33meeb95b0[m HEAD@{39}: commit: sep 14
+[33mc33083c[m HEAD@{40}: commit (merge): haseeb 1
+[33m683cf1f[m HEAD@{41}: commit: cash in out 3
+[33md46983a[m HEAD@{42}: revert: Revert "cash in out 2"
+[33mff044a6[m HEAD@{43}: commit: cash in out 2
+[33m507eb4e[m HEAD@{44}: commit: cash in out
+[33m5a11aba[m HEAD@{45}: commit: add item form chabged
+[33m6024cae[m HEAD@{46}: commit: create order changed
+[33m471d98e[m HEAD@{47}: commit (merge): first pull
+[33m2308b08[m HEAD@{48}: commit: my first
+[33m3c241c6[m HEAD@{49}: clone: from https://github.com/NasirAziz/BookShop-POS.git
