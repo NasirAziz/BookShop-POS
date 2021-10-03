@@ -14,6 +14,8 @@ namespace BaarDanaTraderPOS
     public partial class Form1 : Form
     {
         SqlConnection con = new SqlConnection();
+        int cashSale, cashOther,countSales;
+        int profitSales;
 
 
         public Form1()
@@ -23,7 +25,7 @@ namespace BaarDanaTraderPOS
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            con.ConnectionString = Connection.c;
+             con.ConnectionString = Connection.c;
             con.Open();
 /*            try
             {
@@ -101,6 +103,89 @@ namespace BaarDanaTraderPOS
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            cashthroughsale();
+            cashthroughotherincome();
+            ProfitFromSales();
+            profitSales += cashOther;
+           // CountSales();
+            int total = cashSale + cashOther;
+            lblTotalCashIn.Text = total.ToString();
+            lblTotalSales.Text = countSales.ToString();
+            lblTotalProfit.Text = profitSales.ToString();
+        }
+
+        public void cashthroughsale()
+        {
+            try {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT SUM(price) FROM Sales_report where date=@d1";
+                cmd.Parameters.AddWithValue("@d1", DateTime.Now.ToString("yyyy-MMM-dd"));
+                cashSale = (int)cmd.ExecuteScalar();
+
+            } catch {
+                cashSale = 0;
+            }
+          
+
+        }
+
+        public void ProfitFromSales()
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT SUM(Profit) FROM Sales_report where date=@d1";
+                cmd.Parameters.AddWithValue("@d1", DateTime.Now.ToString("yyyy-MMM-dd"));
+                profitSales = (int)cmd.ExecuteScalar();
+
+            }
+            catch
+            {
+                profitSales = 0;
+            }
+
+
+        }
+
+        /*        public void CountSales()
+                {
+                    try
+                    {
+                        SqlCommand cmd = new SqlCommand();
+                        cmd.Connection = con;
+                        cmd.CommandText = "SELECT Invoide_id FROM Invoice_id";
+                        int id = (int)cmd.ExecuteScalar();
+
+
+
+                    }
+                    catch
+                    {
+                        countSales = 0;
+                    }
+
+
+                }
+        */
+        public void cashthroughotherincome()
+        {
+            try {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "select SUM(amount) from Other_income where Date=@date";
+                cmd.Parameters.AddWithValue("@date", DateTime.Now.ToString("yyyy-MMM-dd"));
+                cashOther = (int)cmd.ExecuteScalar();
+
+            } catch {
+                cashOther = 0;
+            }
+          
         }
     }
 }
