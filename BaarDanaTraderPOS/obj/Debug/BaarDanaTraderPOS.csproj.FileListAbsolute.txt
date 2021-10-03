@@ -254,3 +254,4 @@ C:\Users\hp\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTrader
 C:\Users\Abdul\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.ProfitAndLoss.resources
 C:\Users\Abdul\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.SalesReportViewer.resources
 C:\Users\hp\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.SalesReportViewer.resources
+C:\Users\hp\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.Users.resources

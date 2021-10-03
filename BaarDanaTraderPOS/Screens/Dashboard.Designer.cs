@@ -41,6 +41,7 @@ namespace BaarDanaTraderPOS
             this.btnSettings = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblTotalSales = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -50,7 +51,7 @@ namespace BaarDanaTraderPOS
             this.label5 = new System.Windows.Forms.Label();
             this.lblTotalProfit = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.btnUsers = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -127,6 +128,7 @@ namespace BaarDanaTraderPOS
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.btnUsers);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.btnCash);
             this.panel1.Controls.Add(this.button5);
@@ -232,6 +234,18 @@ namespace BaarDanaTraderPOS
             this.panel2.Size = new System.Drawing.Size(311, 122);
             this.panel2.TabIndex = 6;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(91, 78);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(111, 25);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Total Sales";
+            // 
             // label2
             // 
             this.label2.Location = new System.Drawing.Point(0, 0);
@@ -335,17 +349,21 @@ namespace BaarDanaTraderPOS
             this.label7.TabIndex = 8;
             this.label7.Text = "DashBoard";
             // 
-            // label10
+            // btnUsers
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(91, 78);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(111, 25);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Total Sales";
+            this.btnUsers.BackColor = System.Drawing.Color.White;
+            this.btnUsers.FlatAppearance.BorderSize = 0;
+            this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUsers.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsers.ForeColor = System.Drawing.Color.DimGray;
+            this.btnUsers.Location = new System.Drawing.Point(50, 544);
+            this.btnUsers.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUsers.Name = "btnUsers";
+            this.btnUsers.Size = new System.Drawing.Size(200, 47);
+            this.btnUsers.TabIndex = 11;
+            this.btnUsers.Text = "Users";
+            this.btnUsers.UseVisualStyleBackColor = false;
+            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
             // Form1
             // 
@@ -400,6 +418,7 @@ namespace BaarDanaTraderPOS
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnUsers;
     }
 }
 
