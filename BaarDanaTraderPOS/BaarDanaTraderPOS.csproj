@@ -150,6 +150,12 @@
     <Compile Include="Screens\InvoiceViewer.Designer.cs">
       <DependentUpon>InvoiceViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\OtherIncome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,12 +186,6 @@
     <Compile Include="Screens\Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Users.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screens\Users.Designer.cs">
-      <DependentUpon>Users.cs</DependentUpon>
-    </Compile>
     <Compile Include="Screens\ViewHistoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +211,9 @@
     <EmbeddedResource Include="Screens\Expenses.resx">
       <DependentUpon>Expenses.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\OtherIncome.resx">
       <DependentUpon>OtherIncome.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,9 +229,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Users.resx">
-      <DependentUpon>Users.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\ViewHistoryReport.resx">
       <DependentUpon>ViewHistoryReport.cs</DependentUpon>
