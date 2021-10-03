@@ -253,3 +253,4 @@ C:\Users\hp\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\ur-PK\BaarDana
 C:\Users\hp\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.csproj.CopyComplete
 C:\Users\Abdul\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.ProfitAndLoss.resources
 C:\Users\Abdul\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.SalesReportViewer.resources
+C:\Users\Abdul\Source\Repos\BookShop-POS\BaarDanaTraderPOS\obj\Debug\BaarDanaTraderPOS.Screens.Login.resources
