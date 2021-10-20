@@ -35,6 +35,7 @@ namespace BaarDanaTraderPOS
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnUsers = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.btnCash = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@ namespace BaarDanaTraderPOS
             this.label5 = new System.Windows.Forms.Label();
             this.lblTotalProfit = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnUsers = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -145,6 +145,22 @@ namespace BaarDanaTraderPOS
             this.panel1.TabIndex = 5;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // btnUsers
+            // 
+            this.btnUsers.BackColor = System.Drawing.Color.White;
+            this.btnUsers.FlatAppearance.BorderSize = 0;
+            this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUsers.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsers.ForeColor = System.Drawing.Color.DimGray;
+            this.btnUsers.Location = new System.Drawing.Point(52, 544);
+            this.btnUsers.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUsers.Name = "btnUsers";
+            this.btnUsers.Size = new System.Drawing.Size(200, 47);
+            this.btnUsers.TabIndex = 11;
+            this.btnUsers.Text = "Users";
+            this.btnUsers.UseVisualStyleBackColor = false;
+            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
+            // 
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.White;
@@ -228,7 +244,7 @@ namespace BaarDanaTraderPOS
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.lblTotalSales);
-            this.panel2.Location = new System.Drawing.Point(438, 168);
+            this.panel2.Location = new System.Drawing.Point(555, 478);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(311, 122);
@@ -348,22 +364,6 @@ namespace BaarDanaTraderPOS
             this.label7.Size = new System.Drawing.Size(241, 52);
             this.label7.TabIndex = 8;
             this.label7.Text = "DashBoard";
-            // 
-            // btnUsers
-            // 
-            this.btnUsers.BackColor = System.Drawing.Color.White;
-            this.btnUsers.FlatAppearance.BorderSize = 0;
-            this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnUsers.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsers.ForeColor = System.Drawing.Color.DimGray;
-            this.btnUsers.Location = new System.Drawing.Point(52, 544);
-            this.btnUsers.Margin = new System.Windows.Forms.Padding(2);
-            this.btnUsers.Name = "btnUsers";
-            this.btnUsers.Size = new System.Drawing.Size(200, 47);
-            this.btnUsers.TabIndex = 11;
-            this.btnUsers.Text = "Users";
-            this.btnUsers.UseVisualStyleBackColor = false;
-            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
             // Form1
             // 
